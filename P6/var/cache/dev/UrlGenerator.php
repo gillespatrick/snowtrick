@@ -15,5 +15,10 @@ return [
     '_profiler_router' => [['token'], ['_controller' => 'web_profiler.controller.router::panelAction'], [], [['text', '/router'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
     '_profiler_exception' => [['token'], ['_controller' => 'web_profiler.controller.exception::showAction'], [], [['text', '/exception'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
     '_profiler_exception_css' => [['token'], ['_controller' => 'web_profiler.controller.exception::cssAction'], [], [['text', '/exception.css'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
+    'category' => [[], ['_controller' => 'App\\Controller\\CategoryController::index'], [], [['text', '/category']], [], []],
+    'category_new' => [[], ['_controller' => 'App\\Controller\\CategoryController::new'], [], [['text', '/category/new']], [], []],
+    'category_show' => [['name'], ['_controller' => 'App\\Controller\\CategoryController::show'], [], [['variable', '/', '[^/]++', 'name', true], ['text', '/category']], [], []],
+    'category_delete' => [['id'], ['_controller' => 'App\\Controller\\CategoryController::delete'], [], [['text', '/delete'], ['variable', '/', '[^/]++', 'id', true], ['text', '/category']], [], []],
+    'category_delete_name' => [['name'], ['_controller' => 'App\\Controller\\CategoryController::delete_name'], [], [['text', '/delete'], ['variable', '/', '[^/]++', 'name', true], ['text', '/category']], [], []],
     'homePage' => [[], ['_controller' => 'App\\Controller\\HomeController::homepage'], [], [['text', '/']], [], []],
 ];

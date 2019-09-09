@@ -1,0 +1,9 @@
+{#<form method="post" action="{{ path('category_delete', {'name': category.name}) }}" onsubmit="return confirm('Are you sure you want to delete this {{category.getName}}?');">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ category.name) }}">
+    <a href="{{path('category_delete',{'name':category.name})}}" type="button" class="btn btn-danger">
+                    Delete</a>
+   
+</form
+
+#}

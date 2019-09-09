@@ -2,22 +2,25 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title> SNOWMASS-{% block title %} {% endblock %}</title>
+        <title>
+            SNOWMASS-
+            {% block title %}{% endblock %}
+        </title>
 
 
         {% block stylesheets %}
             <link href="{{ asset('/css/bootstrap.min.css') }}" rel="stylesheet"/>
-        <link href="{{ asset ('https://fonts.googleapis.com/css?family=Montserrat:400,700')}}" rel="stylesheet" type="text/css">
-        <link
-        href="{{ asset('https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic')}}" rel="stylesheet" type="text/css">
-        <!-- Theme CSS -->
-       
+            <script src="{{ asset('/js/font-awesome.js') }}"></script>
+            <link href="{{ asset ('https://fonts.googleapis.com/css?family=Montserrat:400,700')}}" rel="stylesheet" type="text/css">
+            <link href="{{ asset('https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic')}}" rel="stylesheet" type="text/css">
+
+
         {% endblock %}
     </head>
 
     {% include "part/header.html.twig" %}
     <body>
-     
+
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
     </body>

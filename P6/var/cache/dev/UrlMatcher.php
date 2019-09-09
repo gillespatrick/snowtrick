@@ -13,6 +13,8 @@ return [
         '/_profiler/search_bar' => [[['_route' => '_profiler_search_bar', '_controller' => 'web_profiler.controller.profiler::searchBarAction'], null, null, null, false, false, null]],
         '/_profiler/phpinfo' => [[['_route' => '_profiler_phpinfo', '_controller' => 'web_profiler.controller.profiler::phpinfoAction'], null, null, null, false, false, null]],
         '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
+        '/category' => [[['_route' => 'category', '_controller' => 'App\\Controller\\CategoryController::index'], null, null, null, false, false, null]],
+        '/category/new' => [[['_route' => 'category_new', '_controller' => 'App\\Controller\\CategoryController::new'], null, null, null, false, false, null]],
         '/' => [[['_route' => 'homePage', '_controller' => 'App\\Controller\\HomeController::homepage'], null, null, null, false, false, null]],
     ],
     [ // $regexpList
@@ -32,6 +34,13 @@ return [
                         .'|(*:159)'
                     .')'
                 .')'
+                .'|/category/([^/]++)(?'
+                    .'|(*:190)'
+                    .'|/delete(?'
+                        .'|(*:208)'
+                        .'|(*:216)'
+                    .')'
+                .')'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -41,8 +50,11 @@ return [
         116 => [[['_route' => '_profiler_router', '_controller' => 'web_profiler.controller.router::panelAction'], ['token'], null, null, false, false, null]],
         136 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception::showAction'], ['token'], null, null, false, false, null]],
         149 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception::cssAction'], ['token'], null, null, false, false, null]],
-        159 => [
-            [['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null],
+        159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
+        190 => [[['_route' => 'category_show', '_controller' => 'App\\Controller\\CategoryController::show'], ['name'], ['GET' => 0], null, false, true, null]],
+        208 => [[['_route' => 'category_delete', '_controller' => 'App\\Controller\\CategoryController::delete'], ['id'], null, null, false, false, null]],
+        216 => [
+            [['_route' => 'category_delete_name', '_controller' => 'App\\Controller\\CategoryController::delete_name'], ['name'], null, null, false, false, null],
             [null, null, null, null, false, false, 0],
         ],
     ],

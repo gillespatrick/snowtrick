@@ -48,31 +48,34 @@ class __TwigTemplate_0b5c35090fe633f34af78715b4f73e93218fa1e1dc6b15c754dcadb3bfa
 <html>
     <head>
         <meta charset=\"UTF-8\">
-        <title> SNOWMASS-";
-        // line 5
+        <title>
+            SNOWMASS-
+            ";
+        // line 7
         $this->displayBlock('title', $context, $blocks);
-        echo "</title>
+        // line 8
+        echo "        </title>
 
 
         ";
-        // line 8
+        // line 11
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 16
+        // line 19
         echo "    </head>
 
     ";
-        // line 18
-        $this->loadTemplate("part/header.html.twig", "base.html.twig", 18)->display($context);
-        // line 19
-        echo "    <body>
-     
-        ";
         // line 21
-        $this->displayBlock('body', $context, $blocks);
+        $this->loadTemplate("part/header.html.twig", "base.html.twig", 21)->display($context);
         // line 22
+        echo "    <body>
+
+        ";
+        // line 24
+        $this->displayBlock('body', $context, $blocks);
+        // line 25
         echo "        ";
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 23
+        // line 26
         echo "    </body>
 </html>
 ";
@@ -84,7 +87,7 @@ class __TwigTemplate_0b5c35090fe633f34af78715b4f73e93218fa1e1dc6b15c754dcadb3bfa
 
     }
 
-    // line 5
+    // line 7
     public function block_title($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -94,7 +97,6 @@ class __TwigTemplate_0b5c35090fe633f34af78715b4f73e93218fa1e1dc6b15c754dcadb3bfa
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo " ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -103,7 +105,7 @@ class __TwigTemplate_0b5c35090fe633f34af78715b4f73e93218fa1e1dc6b15c754dcadb3bfa
 
     }
 
-    // line 8
+    // line 11
     public function block_stylesheets($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -113,21 +115,24 @@ class __TwigTemplate_0b5c35090fe633f34af78715b4f73e93218fa1e1dc6b15c754dcadb3bfa
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
 
-        // line 9
+        // line 12
         echo "            <link href=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/css/bootstrap.min.css"), "html", null, true);
         echo "\" rel=\"stylesheet\"/>
-        <link href=\"";
-        // line 10
+            <script src=\"";
+        // line 13
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/js/font-awesome.js"), "html", null, true);
+        echo "\"></script>
+            <link href=\"";
+        // line 14
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("https://fonts.googleapis.com/css?family=Montserrat:400,700"), "html", null, true);
         echo "\" rel=\"stylesheet\" type=\"text/css\">
-        <link
-        href=\"";
-        // line 12
+            <link href=\"";
+        // line 15
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic"), "html", null, true);
         echo "\" rel=\"stylesheet\" type=\"text/css\">
-        <!-- Theme CSS -->
-       
+
+
         ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -137,7 +142,7 @@ class __TwigTemplate_0b5c35090fe633f34af78715b4f73e93218fa1e1dc6b15c754dcadb3bfa
 
     }
 
-    // line 21
+    // line 24
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -155,7 +160,7 @@ class __TwigTemplate_0b5c35090fe633f34af78715b4f73e93218fa1e1dc6b15c754dcadb3bfa
 
     }
 
-    // line 22
+    // line 25
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -185,7 +190,7 @@ class __TwigTemplate_0b5c35090fe633f34af78715b4f73e93218fa1e1dc6b15c754dcadb3bfa
 
     public function getDebugInfo()
     {
-        return array (  159 => 22,  141 => 21,  127 => 12,  122 => 10,  117 => 9,  107 => 8,  88 => 5,  76 => 23,  73 => 22,  71 => 21,  67 => 19,  65 => 18,  61 => 16,  59 => 8,  53 => 5,  47 => 1,);
+        return array (  164 => 25,  146 => 24,  132 => 15,  128 => 14,  124 => 13,  119 => 12,  109 => 11,  91 => 7,  79 => 26,  76 => 25,  74 => 24,  70 => 22,  68 => 21,  64 => 19,  62 => 11,  57 => 8,  55 => 7,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -194,22 +199,25 @@ class __TwigTemplate_0b5c35090fe633f34af78715b4f73e93218fa1e1dc6b15c754dcadb3bfa
 <html>
     <head>
         <meta charset=\"UTF-8\">
-        <title> SNOWMASS-{% block title %} {% endblock %}</title>
+        <title>
+            SNOWMASS-
+            {% block title %}{% endblock %}
+        </title>
 
 
         {% block stylesheets %}
             <link href=\"{{ asset('/css/bootstrap.min.css') }}\" rel=\"stylesheet\"/>
-        <link href=\"{{ asset ('https://fonts.googleapis.com/css?family=Montserrat:400,700')}}\" rel=\"stylesheet\" type=\"text/css\">
-        <link
-        href=\"{{ asset('https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic')}}\" rel=\"stylesheet\" type=\"text/css\">
-        <!-- Theme CSS -->
-       
+            <script src=\"{{ asset('/js/font-awesome.js') }}\"></script>
+            <link href=\"{{ asset ('https://fonts.googleapis.com/css?family=Montserrat:400,700')}}\" rel=\"stylesheet\" type=\"text/css\">
+            <link href=\"{{ asset('https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic')}}\" rel=\"stylesheet\" type=\"text/css\">
+
+
         {% endblock %}
     </head>
 
     {% include \"part/header.html.twig\" %}
     <body>
-     
+
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
     </body>

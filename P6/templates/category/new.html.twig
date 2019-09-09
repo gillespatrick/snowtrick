@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Category
+{% endblock %}
+
+{% block body %}
+
+    <div class="container">
+
+
+        <div class="row">
+            <div class="col s12 m12">
+
+                {% for message in app.flashes('notice') %}
+                   <div class="alert alert-dismissible alert-success">
+                        {{ message }}
+                    </div> <br><br>
+                {% endfor %}
+                <h1>ADD A NEW CATEGORY
+                </h2><br>
+
+                {{form_start(form)}}
+                {{form_widget(form)}}
+               <button type="submit" class="btn btn-success"><i class="fa fa-save" style='font-size:24px'></i></button><br><br><br>
+                {{form_end(form)}}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

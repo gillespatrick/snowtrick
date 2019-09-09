@@ -49,7 +49,14 @@ class __TwigTemplate_f214c0f413623c85242e2257693619b7c86bde545104ab5e77f53dc5585
     <div class=\"collapse navbar-collapse\" id=\"navbarColor03\">
         <ul class=\"navbar-nav mr-auto\">
             <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"#\">ADD TRICK (ONLY SAMPLE)</a>
+                <a class=\"nav-link\" href=\"#\">ADD TRICK </a>
+            </li>
+             <li class=\"dropdown\" >
+                <a class=\"nav-link\" href=\"";
+        // line 13
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("category_new");
+        echo "\">ADD CATEGORY</a>
+            
             </li>
         </ul>
         <form class=\"form-inline my-2 my-lg-0\">
@@ -95,9 +102,14 @@ class __TwigTemplate_f214c0f413623c85242e2257693619b7c86bde545104ab5e77f53dc5585
         return "part/header.html.twig";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  43 => 1,);
+        return array (  57 => 13,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -111,7 +123,11 @@ class __TwigTemplate_f214c0f413623c85242e2257693619b7c86bde545104ab5e77f53dc5585
     <div class=\"collapse navbar-collapse\" id=\"navbarColor03\">
         <ul class=\"navbar-nav mr-auto\">
             <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"#\">ADD TRICK (ONLY SAMPLE)</a>
+                <a class=\"nav-link\" href=\"#\">ADD TRICK </a>
+            </li>
+             <li class=\"dropdown\" >
+                <a class=\"nav-link\" href=\"{{ path('category_new')}}\">ADD CATEGORY</a>
+            
             </li>
         </ul>
         <form class=\"form-inline my-2 my-lg-0\">
