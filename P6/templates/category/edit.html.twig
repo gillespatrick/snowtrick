@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Category Edition
+{% endblock %}
+
+{% block body %}
+
+    <div class="container">
+
+
+        <div class="row">
+            <div class="col s12 m12">
+
+                {% for message in app.flashes('notice') %}
+                    <div class="alert alert-dismissible alert-success">
+                        {{ message }}
+                    </div>
+                    <br><br>
+                {% endfor %}
+
+
+                <h1>Edition
+                    {{ category.name }}
+                    category
+                </h1><br><br>
+
+                {{form_start(form)}}
+
+                {{form_widget(form)}}
+                 <button type="submit" class="btn btn-success">
+                    <i class="fa fa-check"></i>
+                    Update</button><br><br><br>
+
+                {{form_end(form)}}<br>
+
+               
+
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

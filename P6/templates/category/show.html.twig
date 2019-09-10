@@ -18,10 +18,10 @@
                 <h5>{{category.description}}</h5><br><br><br><br>
 
                 
-                <a href="#" type="button" class="btn btn-info"style='font-size:24px'>
-                    <i class="fas fa-edit"></i></a>
+                <a href="{{path('category_edit',{'id':category.id})}}" type="button" class="btn btn-info">
+                    <i class="fas fa-edit"></i> Edit</a>
                 <a href="{{path('category_delete',{'id':category.id})}}"  type="button" class="btn btn-danger">
-                    <i class="fa fa-trash-alt" style='font-size:24px'></i> </a>
+                    <i class="fa fa-trash-alt" ></i> Delete</a>
                 
 
                 

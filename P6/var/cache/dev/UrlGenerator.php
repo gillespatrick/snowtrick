@@ -19,6 +19,6 @@ return [
     'category_new' => [[], ['_controller' => 'App\\Controller\\CategoryController::new'], [], [['text', '/category/new']], [], []],
     'category_show' => [['name'], ['_controller' => 'App\\Controller\\CategoryController::show'], [], [['variable', '/', '[^/]++', 'name', true], ['text', '/category']], [], []],
     'category_delete' => [['id'], ['_controller' => 'App\\Controller\\CategoryController::delete'], [], [['text', '/delete'], ['variable', '/', '[^/]++', 'id', true], ['text', '/category']], [], []],
-    'category_delete_name' => [['name'], ['_controller' => 'App\\Controller\\CategoryController::delete_name'], [], [['text', '/delete'], ['variable', '/', '[^/]++', 'name', true], ['text', '/category']], [], []],
+    'category_edit' => [['id'], ['_controller' => 'App\\Controller\\CategoryController::edit'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'id', true], ['text', '/category']], [], []],
     'homePage' => [[], ['_controller' => 'App\\Controller\\HomeController::homepage'], [], [['text', '/']], [], []],
 ];

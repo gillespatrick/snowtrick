@@ -5,7 +5,7 @@
 
 {% block body %}
 
-    <div class="container-fluid">
+    <div class="container">
 
         {% for message in app.flashes('notice') %}
             <div class="alert alert-dismissible alert-success">
@@ -40,13 +40,13 @@
 
                                 <td>
                                     <a href="{{path('category_show',{'name':category.name})}}" type="button" class="btn btn-dark">
-                                        <i class="fas fa-info" style='font-size:24px'></i>
+                                        <i class="fas fa-info" ></i> Detail
                                     </a>
-                                    <a href="#" type="button" class="btn btn-info">
-                                        <i class="fas fa-edit" style='font-size:24px'></i>
+                                    <a href="{{path('category_edit',{'id':category.id})}}" type="button" class="btn btn-info">
+                                        <i class="fas fa-edit" ></i> Edit
                                     </a>
                                     <a href="{{path('category_delete',{'id':category.id})}}" type="button" class="btn btn-danger">
-                                        <i class="fa fa-trash-alt" style='font-size:24px'></i>
+                                        <i class="fa fa-trash-alt" > </i> Delete
                                     </a>
                                 </td>
 

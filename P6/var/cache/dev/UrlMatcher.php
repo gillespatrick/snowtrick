@@ -36,9 +36,9 @@ return [
                 .')'
                 .'|/category/([^/]++)(?'
                     .'|(*:190)'
-                    .'|/delete(?'
-                        .'|(*:208)'
-                        .'|(*:216)'
+                    .'|/(?'
+                        .'|delete(*:208)'
+                        .'|edit(*:220)'
                     .')'
                 .')'
             .')/?$}sDu',
@@ -53,8 +53,8 @@ return [
         159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
         190 => [[['_route' => 'category_show', '_controller' => 'App\\Controller\\CategoryController::show'], ['name'], ['GET' => 0], null, false, true, null]],
         208 => [[['_route' => 'category_delete', '_controller' => 'App\\Controller\\CategoryController::delete'], ['id'], null, null, false, false, null]],
-        216 => [
-            [['_route' => 'category_delete_name', '_controller' => 'App\\Controller\\CategoryController::delete_name'], ['name'], null, null, false, false, null],
+        220 => [
+            [['_route' => 'category_edit', '_controller' => 'App\\Controller\\CategoryController::edit'], ['id'], null, null, false, false, null],
             [null, null, null, null, false, false, 0],
         ],
     ],

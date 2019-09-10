@@ -40,7 +40,7 @@ class CategoryController extends AbstractController
 
             $this->addFlash(
                 'notice',
-              "Category has been added" );
+              " {$category -> getName()}  Category has been added" );
 
             
             return $this->redirectToRoute('category_new');
@@ -77,30 +77,47 @@ class CategoryController extends AbstractController
 
             $this->addFlash(
                 'notice',
-              "Category has been removed" );
+              "{$category -> getName()} Category has been removed" );
   
 
         return $this->redirectToRoute('category');
     }
 
 
+    
+  
+
+        
+
+
+
     /**
-     * @Route("/category/{name}/delete", name="category_delete_name")
-     * @return Response
+     * @Route("category/{id}/edit", name="category_edit")
+     *@return Response
+     *@package ObjectManager $manager
      * @param Category $category
-     * @package ObjectManager $manager
      */
-    public function delete_name( Category $category, ObjectManager $manager)
+    public function edit(Category $category, Request $request,ObjectManager $manager): Response
     {
-           
-            $manager->remove($category);
-            $manager->flush();
+        $form = $this -> createForm(CategoryType::class, $category);
+
+        $form -> handleRequest($request);
+        if ($form -> isSubmitted() && $form -> isValid()) {
+
+            $manager -> persist($category);
+            $manager -> flush();
 
             $this->addFlash(
                 'notice',
-              "Category has been removed" );
-  
+              " {$category -> getName()} category has been updated" );
 
-        return $this->redirectToRoute('category');
+              return $this->redirectToRoute('category');
+            
+        }
+
+        return $this -> render('category/edit.html.twig',[
+            'category' => $category,
+            'form' => $form -> createView()
+        ]);
     }
 }
