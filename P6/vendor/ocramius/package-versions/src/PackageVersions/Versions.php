@@ -12,7 +12,7 @@ namespace PackageVersions;
  */
 final class Versions
 {
-    public const ROOT_PACKAGE_NAME = 'symfony/website-skeleton';
+    public const ROOT_PACKAGE_NAME = '__root__';
     /**
      * Array of all available composer packages.
      * Dont read this array from your calling code, but use the \PackageVersions\Versions::getVersion() method instead.
@@ -111,6 +111,8 @@ final class Versions
   'webmozart/assert' => '1.5.0@88e6d84706d09a236046d686bbea96f07b3a34f4',
   'zendframework/zend-code' => '3.3.2@936fa7ad4d53897ea3e3eb41b5b760828246a20b',
   'zendframework/zend-eventmanager' => '3.2.1@a5e2583a211f73604691586b8406ff7296a946dd',
+  'doctrine/data-fixtures' => 'v1.3.2@09b16943b27f3d80d63988d100ff256148c2f78b',
+  'doctrine/doctrine-fixtures-bundle' => '3.2.2@90e4a4f968b2dae40e290a6ee516957af043f16c',
   'easycorp/easy-log-handler' => 'v1.0.7@5f95717248d20684f88cfb878d8bf3d78aadcbba',
   'nikic/php-parser' => 'v4.2.4@97e59c7a16464196a8b9c77c47df68e4a39a45c4',
   'symfony/browser-kit' => 'v4.3.4@9e5dddb637b13db82e35695a8603fe6e118cc119',
@@ -125,13 +127,13 @@ final class Versions
   'symfony/var-dumper' => 'v4.3.4@641043e0f3e615990a0f29479f9c117e8a6698c6',
   'symfony/web-profiler-bundle' => 'v4.3.4@387c36fd133c08bb0d78d8de17c1121681b37a09',
   'symfony/web-server-bundle' => 'v4.3.4@dc26b980900ddf3e9feade14e5b21c029e8ca92f',
-  'paragonie/random_compat' => '2.*@',
-  'symfony/polyfill-ctype' => '*@',
-  'symfony/polyfill-iconv' => '*@',
-  'symfony/polyfill-php71' => '*@',
-  'symfony/polyfill-php70' => '*@',
-  'symfony/polyfill-php56' => '*@',
-  'symfony/website-skeleton' => 'v4.3.99@',
+  'paragonie/random_compat' => '2.*@7cd411a4cbea87ff80b8291cbcaf77f5f3e0e523',
+  'symfony/polyfill-ctype' => '*@7cd411a4cbea87ff80b8291cbcaf77f5f3e0e523',
+  'symfony/polyfill-iconv' => '*@7cd411a4cbea87ff80b8291cbcaf77f5f3e0e523',
+  'symfony/polyfill-php71' => '*@7cd411a4cbea87ff80b8291cbcaf77f5f3e0e523',
+  'symfony/polyfill-php70' => '*@7cd411a4cbea87ff80b8291cbcaf77f5f3e0e523',
+  'symfony/polyfill-php56' => '*@7cd411a4cbea87ff80b8291cbcaf77f5f3e0e523',
+  '__root__' => 'dev-temp@7cd411a4cbea87ff80b8291cbcaf77f5f3e0e523',
 );
 
     private function __construct()
