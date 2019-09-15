@@ -65,7 +65,8 @@ class __TwigTemplate_ab9e4ff879ba5deca74104c5fa6e9bbed96ac9d1d88c8d5ff3d603ca9fb
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Hello HomeController!";
+        echo "Hello HomeController!
+";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -74,7 +75,7 @@ class __TwigTemplate_ab9e4ff879ba5deca74104c5fa6e9bbed96ac9d1d88c8d5ff3d603ca9fb
 
     }
 
-    // line 5
+    // line 6
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -84,30 +85,62 @@ class __TwigTemplate_ab9e4ff879ba5deca74104c5fa6e9bbed96ac9d1d88c8d5ff3d603ca9fb
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 6
-        echo "<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+        // line 7
+        echo "
+    <div class=\"container mt-5\">
+        <h1>
+            There are all my snowtrick list
+        </h1><br>
 
-<div class=\"example-wrapper\">
-    <h1>Hello ";
-        // line 12
-        echo twig_escape_filter($this->env, (isset($context["controller_name"]) || array_key_exists("controller_name", $context) ? $context["controller_name"] : (function () { throw new RuntimeError('Variable "controller_name" does not exist.', 12, $this->source); })()), "html", null, true);
-        echo "! ✅</h1>
+        <div class=\"row\">
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href=\"";
-        // line 16
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\CodeExtension']->getFileLink("/home/gilles/DEV/snowtrick/P6/src/Controller/HomeController.php", 0), "html", null, true);
-        echo "\">src/Controller/HomeController.php</a></code></li>
-        <li>Your template at <code><a href=\"";
-        // line 17
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\CodeExtension']->getFileLink("/home/gilles/DEV/snowtrick/P6/templates/home/index.html.twig", 0), "html", null, true);
-        echo "\">templates/home/index.html.twig</a></code></li>
-    </ul>
-</div>
+            ";
+        // line 15
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable($context["tricks"]);
+        foreach ($context['_seq'] as $context["_key"] => $context["tricks"]) {
+            // line 16
+            echo "                <div class=\"col-md-4\">
+                    <div class=\"card bg-light mb-3\">
+
+                        <img alt=\"Trick Picture\" src=\"";
+            // line 19
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["tricks"], "cover", [], "any", false, false, false, 19), "html", null, true);
+            echo "\" style=\"height: 200px ;
+                                                                                                                                    width: 100% ; display: block\">
+
+                        <div class=\"card-body\">
+
+
+                            <h4 class=\"card-title\">";
+            // line 25
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["tricks"], "name", [], "any", false, false, false, 25), "html", null, true);
+            echo "</h4>
+
+                            <p class=\"card-text\">
+                                ";
+            // line 28
+            echo twig_get_attribute($this->env, $this->source, $context["tricks"], "description", [], "any", false, false, false, 28);
+            echo "
+                            </p>
+                        </div>
+
+                        ";
+            // line 33
+            echo "                    </div>
+
+
+                </div>
+            ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['tricks'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 38
+        echo "
+
+        </div>
+    </div>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -129,30 +162,52 @@ class __TwigTemplate_ab9e4ff879ba5deca74104c5fa6e9bbed96ac9d1d88c8d5ff3d603ca9fb
 
     public function getDebugInfo()
     {
-        return array (  107 => 17,  103 => 16,  96 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  140 => 38,  130 => 33,  123 => 28,  117 => 25,  108 => 19,  103 => 16,  99 => 15,  89 => 7,  79 => 6,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!{% endblock %}
+{% block title %}Hello HomeController!
+{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class=\"example-wrapper\">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <div class=\"container mt-5\">
+        <h1>
+            There are all my snowtrick list
+        </h1><br>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href=\"{{ '/home/gilles/DEV/snowtrick/P6/src/Controller/HomeController.php'|file_link(0) }}\">src/Controller/HomeController.php</a></code></li>
-        <li>Your template at <code><a href=\"{{ '/home/gilles/DEV/snowtrick/P6/templates/home/index.html.twig'|file_link(0) }}\">templates/home/index.html.twig</a></code></li>
-    </ul>
-</div>
+        <div class=\"row\">
+
+            {% for tricks in tricks %}
+                <div class=\"col-md-4\">
+                    <div class=\"card bg-light mb-3\">
+
+                        <img alt=\"Trick Picture\" src=\"{{ tricks.cover}}\" style=\"height: 200px ;
+                                                                                                                                    width: 100% ; display: block\">
+
+                        <div class=\"card-body\">
+
+
+                            <h4 class=\"card-title\">{{  tricks.name}}</h4>
+
+                            <p class=\"card-text\">
+                                {{tricks.description | raw}}
+                            </p>
+                        </div>
+
+                        {#  <a class=\"btn btn-primary\" href=\"#\">More details</a> #}
+                    </div>
+
+
+                </div>
+            {% endfor %}
+
+
+        </div>
+    </div>
 {% endblock %}
 ", "home/home.html.twig", "/home/gilles/DEV/snowtrick/P6/templates/home/home.html.twig");
     }

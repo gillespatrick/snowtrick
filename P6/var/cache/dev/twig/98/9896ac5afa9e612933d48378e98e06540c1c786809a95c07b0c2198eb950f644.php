@@ -41,7 +41,10 @@ class __TwigTemplate_f214c0f413623c85242e2257693619b7c86bde545104ab5e77f53dc5585
 
         // line 1
         echo "<nav class=\"navbar navbar-expand-lg navbar-light bg-light\">
-    <a class=\"navbar-brand\" href=\"/\">SNOWMASS</a>
+    <a class=\"navbar-brand\" href=\"";
+        // line 2
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
+        echo "\">SNOWMASS</a>
     <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarColor03\" aria-controls=\"navbarColor03\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
         <span class=\"navbar-toggler-icon\"></span>
     </button>
@@ -84,7 +87,7 @@ class __TwigTemplate_f214c0f413623c85242e2257693619b7c86bde545104ab5e77f53dc5585
 
 <div class=\"container mt-3\">
 
-    <div class=\"jumbotron\">
+    <div class=\"jumbotron\" style=\"background-image: url(/images/snow.jpg)\">
         <h1 class=\"display-3\">Welcome on SnowMass!</h1>
         <p class=\"lead text-warning\">All things you want to know about snowtrick are here.</p>
 
@@ -104,15 +107,20 @@ class __TwigTemplate_f214c0f413623c85242e2257693619b7c86bde545104ab5e77f53dc5585
         return "part/header.html.twig";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  43 => 1,);
+        return array (  46 => 2,  43 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("<nav class=\"navbar navbar-expand-lg navbar-light bg-light\">
-    <a class=\"navbar-brand\" href=\"/\">SNOWMASS</a>
+    <a class=\"navbar-brand\" href=\"{{path('home')}}\">SNOWMASS</a>
     <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarColor03\" aria-controls=\"navbarColor03\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
         <span class=\"navbar-toggler-icon\"></span>
     </button>
@@ -155,7 +163,7 @@ class __TwigTemplate_f214c0f413623c85242e2257693619b7c86bde545104ab5e77f53dc5585
 
 <div class=\"container mt-3\">
 
-    <div class=\"jumbotron\">
+    <div class=\"jumbotron\" style=\"background-image: url(/images/snow.jpg)\">
         <h1 class=\"display-3\">Welcome on SnowMass!</h1>
         <p class=\"lead text-warning\">All things you want to know about snowtrick are here.</p>
 

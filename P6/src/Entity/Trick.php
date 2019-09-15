@@ -48,6 +48,11 @@ class Trick
      */
     private $user;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $cover;
+
     public function __construct()
     {
         $this->comments = new ArrayCollection();
@@ -145,6 +150,18 @@ class Trick
     public function setUser(?User $user): self
     {
         $this->user = $user;
+
+        return $this;
+    }
+
+    public function getCover(): ?string
+    {
+        return $this->cover;
+    }
+
+    public function setCover(string $cover): self
+    {
+        $this->cover = $cover;
 
         return $this;
     }

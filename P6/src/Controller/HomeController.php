@@ -2,8 +2,9 @@
 
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Entity\Trick;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class HomeController extends AbstractController
 {
@@ -12,8 +13,11 @@ class HomeController extends AbstractController
      */
     public function index()
     {
+        
+        $trickRepository = $this -> getDoctrine() -> getRepository(Trick::class);
+        $tricks = $trickRepository->findAll();
         return $this->render('home/home.html.twig', [
-            'controller_name' => 'HomeController',
+            'tricks' => $tricks
         ]);
     }
 }
