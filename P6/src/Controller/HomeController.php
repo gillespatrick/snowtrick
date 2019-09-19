@@ -29,16 +29,33 @@ class HomeController extends AbstractController
     /**
      * Display trick details
      * 
-     * @Route("trick/{name}", name = "detailTrick")
+     * @Route("/trick", name = "detailTrick")
      *
      */
 
-    public function detail_trick($name)
+    public function detail_trick()
     {
+       // $trickRepository = $this->getDoctrine()-> getRepository(Trick::class);
+       // $trick = $trickRepository->findOneByName($name);
+        return $this->render('home/detail_trick.html.twig', [
+            //'trick' => $trick
+        ]);
+    }
+
+
+    /**
+     * @Route("trick/{name}", name = "showdetail")
+     *
+     * @return void
+     */
+    public function show($name){
+
         $trickRepository = $this->getDoctrine()-> getRepository(Trick::class);
         $trick = $trickRepository->findOneByName($name);
-        return $this->render('home/detail_trick.html.twig', [
+
+        return $this -> render('home/showDetail.html.twig',[
             'trick' => $trick
         ]);
+
     }
 }

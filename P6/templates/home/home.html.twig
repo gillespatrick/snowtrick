@@ -6,6 +6,17 @@
 {% block body %}
 
     <div class="container mt-5">
+        <div class="jumbotron" style="background-image: url(/images/snow.jpg)">
+            <h1 class="display-3">Welcome on SnowMass!</h1>
+            <p class="lead text-warning">All things you want to know about snowtrick are here.</p>
+
+        </div>
+        <div class="text-right">
+            <a href="#" id="back-bottom" class="page-scroll">
+
+                <i class="far fa-arrow-alt-circle-down fa-2x"></i>
+            </a>
+        </div>
         <h1>
             There are all my snowtrick list
         </h1><br>
@@ -17,21 +28,21 @@
                     <div class="card bg-light mb-3">
 
                         <img alt="Trick Picture" src="{{ trick.cover}}" style="height: 200px ;
-                                                                                                 width: 100% ; display: block">
+                                                                                                                                                                                                                 width: 100% ; display: block">
 
                         <div class="card-body">
 
 
-                            <a href="{{ path ('detailTrick', {'name': trick.name}) }}">
+                            <a href="{{ path ('showdetail', {'name': trick.name}) }}">
                                 <h4 class="card-title">{{trick.name}}</h4>
                             </a>
 
                             <p class="card-text">
-                                {{trick.description | raw}}
+                                {{trick.description | slice(0, 50)| raw }}
                             </p>
                         </div>
 
-                        {#  <a class="btn btn-primary" href="#">More details</a> #}
+                        <a class="btn btn-secondary" href="{{ path ('showdetail', {'name': trick.name}) }}">More details</a>
                     </div>
 
 
@@ -40,6 +51,12 @@
             {% endfor %}
 
 
+        </div>
+
+        <div class=" container text-right">
+            <a href="#tricks" id="back-top" class="page-scroll">
+                <i class="far fa-arrow-alt-circle-up fa-2x"></i>
+            </a>
         </div>
     </div>
 {% endblock %}

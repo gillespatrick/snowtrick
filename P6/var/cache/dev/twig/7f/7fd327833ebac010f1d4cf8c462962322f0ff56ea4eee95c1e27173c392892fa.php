@@ -76,19 +76,20 @@ class __TwigTemplate_0b5c35090fe633f34af78715b4f73e93218fa1e1dc6b15c754dcadb3bfa
         // line 30
         $this->loadTemplate("part/header.html.twig", "base.html.twig", 30)->display($context);
         // line 31
-        echo "
+        echo "    
+
         ";
-        // line 32
-        $this->displayBlock('body', $context, $blocks);
         // line 33
+        $this->displayBlock('body', $context, $blocks);
+        // line 34
         echo "        ";
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 34
+        // line 35
         echo "
         ";
-        // line 35
-        $this->loadTemplate("part/footer.html.twig", "base.html.twig", 35)->display($context);
         // line 36
+        $this->loadTemplate("part/footer.html.twig", "base.html.twig", 36)->display($context);
+        // line 37
         echo "
 
 
@@ -163,7 +164,7 @@ class __TwigTemplate_0b5c35090fe633f34af78715b4f73e93218fa1e1dc6b15c754dcadb3bfa
 
     }
 
-    // line 32
+    // line 33
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -181,7 +182,7 @@ class __TwigTemplate_0b5c35090fe633f34af78715b4f73e93218fa1e1dc6b15c754dcadb3bfa
 
     }
 
-    // line 33
+    // line 34
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -211,7 +212,7 @@ class __TwigTemplate_0b5c35090fe633f34af78715b4f73e93218fa1e1dc6b15c754dcadb3bfa
 
     public function getDebugInfo()
     {
-        return array (  185 => 33,  167 => 32,  156 => 23,  152 => 22,  147 => 20,  142 => 18,  136 => 16,  126 => 15,  108 => 11,  92 => 36,  90 => 35,  87 => 34,  84 => 33,  82 => 32,  79 => 31,  77 => 30,  68 => 23,  66 => 15,  61 => 12,  59 => 11,  47 => 1,);
+        return array (  186 => 34,  168 => 33,  157 => 23,  153 => 22,  148 => 20,  143 => 18,  137 => 16,  127 => 15,  109 => 11,  93 => 37,  91 => 36,  88 => 35,  85 => 34,  83 => 33,  79 => 31,  77 => 30,  68 => 23,  66 => 15,  61 => 12,  59 => 11,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -246,6 +247,7 @@ class __TwigTemplate_0b5c35090fe633f34af78715b4f73e93218fa1e1dc6b15c754dcadb3bfa
     
     <body>
     {% include \"part/header.html.twig\" %}
+    
 
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}

@@ -30,7 +30,7 @@ class TrickFixtures extends Fixture
                 $trick = new Trick();
 
                 $name = $faker->name();
-                $description = '<p>' . join('</p><p>', $faker->paragraphs(1)) . '</p>';
+                $description = '<p>' . join('</p><p>', $faker->paragraphs(20)) . '</p>';
                 $cover = $faker->imageUrl();
 
 

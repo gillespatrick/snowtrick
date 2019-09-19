@@ -88,6 +88,17 @@ class __TwigTemplate_ab9e4ff879ba5deca74104c5fa6e9bbed96ac9d1d88c8d5ff3d603ca9fb
         // line 7
         echo "
     <div class=\"container mt-5\">
+        <div class=\"jumbotron\" style=\"background-image: url(/images/snow.jpg)\">
+            <h1 class=\"display-3\">Welcome on SnowMass!</h1>
+            <p class=\"lead text-warning\">All things you want to know about snowtrick are here.</p>
+
+        </div>
+        <div class=\"text-right\">
+            <a href=\"#\" id=\"back-bottom\" class=\"page-scroll\">
+
+                <i class=\"far fa-arrow-alt-circle-down fa-2x\"></i>
+            </a>
+        </div>
         <h1>
             There are all my snowtrick list
         </h1><br>
@@ -95,44 +106,46 @@ class __TwigTemplate_ab9e4ff879ba5deca74104c5fa6e9bbed96ac9d1d88c8d5ff3d603ca9fb
         <div id=\"tricks\" class=\"row\">
 
             ";
-        // line 15
+        // line 26
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["tricks"]) || array_key_exists("tricks", $context) ? $context["tricks"] : (function () { throw new RuntimeError('Variable "tricks" does not exist.', 15, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["tricks"]) || array_key_exists("tricks", $context) ? $context["tricks"] : (function () { throw new RuntimeError('Variable "tricks" does not exist.', 26, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["trick"]) {
-            // line 16
+            // line 27
             echo "                <div class=\"col-md-4\">
                     <div class=\"card bg-light mb-3\">
 
                         <img alt=\"Trick Picture\" src=\"";
-            // line 19
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["trick"], "cover", [], "any", false, false, false, 19), "html", null, true);
+            // line 30
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["trick"], "cover", [], "any", false, false, false, 30), "html", null, true);
             echo "\" style=\"height: 200px ;
-                                                                                                 width: 100% ; display: block\">
+                                                                                                                                                                                                                 width: 100% ; display: block\">
 
                         <div class=\"card-body\">
 
 
                             <a href=\"";
-            // line 25
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("detailTrick", ["name" => twig_get_attribute($this->env, $this->source, $context["trick"], "name", [], "any", false, false, false, 25)]), "html", null, true);
+            // line 36
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("showdetail", ["name" => twig_get_attribute($this->env, $this->source, $context["trick"], "name", [], "any", false, false, false, 36)]), "html", null, true);
             echo "\">
                                 <h4 class=\"card-title\">";
-            // line 26
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["trick"], "name", [], "any", false, false, false, 26), "html", null, true);
+            // line 37
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["trick"], "name", [], "any", false, false, false, 37), "html", null, true);
             echo "</h4>
                             </a>
 
                             <p class=\"card-text\">
                                 ";
-            // line 30
-            echo twig_get_attribute($this->env, $this->source, $context["trick"], "description", [], "any", false, false, false, 30);
+            // line 41
+            echo twig_slice($this->env, twig_get_attribute($this->env, $this->source, $context["trick"], "description", [], "any", false, false, false, 41), 0, 50);
             echo "
                             </p>
                         </div>
 
-                        ";
-            // line 35
-            echo "                    </div>
+                        <a class=\"btn btn-secondary\" href=\"";
+            // line 45
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("showdetail", ["name" => twig_get_attribute($this->env, $this->source, $context["trick"], "name", [], "any", false, false, false, 45)]), "html", null, true);
+            echo "\">More details</a>
+                    </div>
 
 
                 </div>
@@ -142,9 +155,15 @@ class __TwigTemplate_ab9e4ff879ba5deca74104c5fa6e9bbed96ac9d1d88c8d5ff3d603ca9fb
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['trick'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 41
+        // line 52
         echo "
 
+        </div>
+
+        <div class=\" container text-right\">
+            <a href=\"#tricks\" id=\"back-top\" class=\"page-scroll\">
+                <i class=\"far fa-arrow-alt-circle-up fa-2x\"></i>
+            </a>
         </div>
     </div>
 ";
@@ -168,7 +187,7 @@ class __TwigTemplate_ab9e4ff879ba5deca74104c5fa6e9bbed96ac9d1d88c8d5ff3d603ca9fb
 
     public function getDebugInfo()
     {
-        return array (  146 => 41,  135 => 35,  128 => 30,  121 => 26,  117 => 25,  108 => 19,  103 => 16,  99 => 15,  89 => 7,  79 => 6,  59 => 3,  36 => 1,);
+        return array (  159 => 52,  146 => 45,  139 => 41,  132 => 37,  128 => 36,  119 => 30,  114 => 27,  110 => 26,  89 => 7,  79 => 6,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -181,6 +200,17 @@ class __TwigTemplate_ab9e4ff879ba5deca74104c5fa6e9bbed96ac9d1d88c8d5ff3d603ca9fb
 {% block body %}
 
     <div class=\"container mt-5\">
+        <div class=\"jumbotron\" style=\"background-image: url(/images/snow.jpg)\">
+            <h1 class=\"display-3\">Welcome on SnowMass!</h1>
+            <p class=\"lead text-warning\">All things you want to know about snowtrick are here.</p>
+
+        </div>
+        <div class=\"text-right\">
+            <a href=\"#\" id=\"back-bottom\" class=\"page-scroll\">
+
+                <i class=\"far fa-arrow-alt-circle-down fa-2x\"></i>
+            </a>
+        </div>
         <h1>
             There are all my snowtrick list
         </h1><br>
@@ -192,21 +222,21 @@ class __TwigTemplate_ab9e4ff879ba5deca74104c5fa6e9bbed96ac9d1d88c8d5ff3d603ca9fb
                     <div class=\"card bg-light mb-3\">
 
                         <img alt=\"Trick Picture\" src=\"{{ trick.cover}}\" style=\"height: 200px ;
-                                                                                                 width: 100% ; display: block\">
+                                                                                                                                                                                                                 width: 100% ; display: block\">
 
                         <div class=\"card-body\">
 
 
-                            <a href=\"{{ path ('detailTrick', {'name': trick.name}) }}\">
+                            <a href=\"{{ path ('showdetail', {'name': trick.name}) }}\">
                                 <h4 class=\"card-title\">{{trick.name}}</h4>
                             </a>
 
                             <p class=\"card-text\">
-                                {{trick.description | raw}}
+                                {{trick.description | slice(0, 50)| raw }}
                             </p>
                         </div>
 
-                        {#  <a class=\"btn btn-primary\" href=\"#\">More details</a> #}
+                        <a class=\"btn btn-secondary\" href=\"{{ path ('showdetail', {'name': trick.name}) }}\">More details</a>
                     </div>
 
 
@@ -215,6 +245,12 @@ class __TwigTemplate_ab9e4ff879ba5deca74104c5fa6e9bbed96ac9d1d88c8d5ff3d603ca9fb
             {% endfor %}
 
 
+        </div>
+
+        <div class=\" container text-right\">
+            <a href=\"#tricks\" id=\"back-top\" class=\"page-scroll\">
+                <i class=\"far fa-arrow-alt-circle-up fa-2x\"></i>
+            </a>
         </div>
     </div>
 {% endblock %}
