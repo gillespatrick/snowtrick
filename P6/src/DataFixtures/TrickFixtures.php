@@ -2,6 +2,7 @@
 
 namespace App\DataFixtures;
 
+use App\Entity\Category;
 use Faker\Factory;
 use App\Entity\Trick;
 use Doctrine\Bundle\FixturesBundle\Fixture;
@@ -11,27 +12,39 @@ class TrickFixtures extends Fixture
 {
     public function load(ObjectManager $manager)
     {
+
+
         $faker = Factory::create('US-us');
 
-        for ($i=1; $i <=12 ; $i++) {
 
-            $trick = new Trick();
+        for ($j = 1; $j <= 5; $j++) {
+            $category = new Category();
+            $category->setName($faker->sentence())
+                ->setDescription($faker->paragraph());
 
-            $name = $faker -> name();
-            $description = '<p>' . join('</p><p>', $faker -> paragraphs(1)) .'</p>';
-            $cover = $faker -> imageUrl("https://lorempixel.com/1000/350/");
-            
+            $manager->persist($category);
 
-            $trick -> setName($name)
-                   -> setDescription($description)
-                   -> setCreateDate(new \DateTime())
-                   -> setCover($cover);
-            
-                   $manager->persist($trick);
-            
+
+            for ($i = 1; $i <= 12; $i++) {
+
+                $trick = new Trick();
+
+                $name = $faker->name();
+                $description = '<p>' . join('</p><p>', $faker->paragraphs(1)) . '</p>';
+                $cover = $faker->imageUrl();
+
+
+                $trick->setName($name)
+                    -> setDescription($description)
+                    -> setCreateDate(new \DateTime())
+                    -> setCover($cover)
+                    -> setCategory($category);;
+
+                $manager->persist($trick);
+            }
         }
-        
-    
+
+
 
         $manager->flush();
     }

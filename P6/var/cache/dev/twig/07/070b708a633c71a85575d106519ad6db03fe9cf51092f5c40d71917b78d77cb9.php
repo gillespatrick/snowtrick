@@ -92,51 +92,57 @@ class __TwigTemplate_ab9e4ff879ba5deca74104c5fa6e9bbed96ac9d1d88c8d5ff3d603ca9fb
             There are all my snowtrick list
         </h1><br>
 
-        <div class=\"row\">
+        <div id=\"tricks\" class=\"row\">
 
             ";
         // line 15
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable($context["tricks"]);
-        foreach ($context['_seq'] as $context["_key"] => $context["tricks"]) {
+        $context['_seq'] = twig_ensure_traversable((isset($context["tricks"]) || array_key_exists("tricks", $context) ? $context["tricks"] : (function () { throw new RuntimeError('Variable "tricks" does not exist.', 15, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["trick"]) {
             // line 16
             echo "                <div class=\"col-md-4\">
                     <div class=\"card bg-light mb-3\">
 
                         <img alt=\"Trick Picture\" src=\"";
             // line 19
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["tricks"], "cover", [], "any", false, false, false, 19), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["trick"], "cover", [], "any", false, false, false, 19), "html", null, true);
             echo "\" style=\"height: 200px ;
-                                                                                                                                    width: 100% ; display: block\">
+                                                                                                 width: 100% ; display: block\">
 
                         <div class=\"card-body\">
 
 
-                            <h4 class=\"card-title\">";
+                            <a href=\"";
             // line 25
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["tricks"], "name", [], "any", false, false, false, 25), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("detailTrick", ["name" => twig_get_attribute($this->env, $this->source, $context["trick"], "name", [], "any", false, false, false, 25)]), "html", null, true);
+            echo "\">
+                                <h4 class=\"card-title\">";
+            // line 26
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["trick"], "name", [], "any", false, false, false, 26), "html", null, true);
             echo "</h4>
+                            </a>
 
                             <p class=\"card-text\">
                                 ";
-            // line 28
-            echo twig_get_attribute($this->env, $this->source, $context["tricks"], "description", [], "any", false, false, false, 28);
+            // line 30
+            echo twig_get_attribute($this->env, $this->source, $context["trick"], "description", [], "any", false, false, false, 30);
             echo "
                             </p>
                         </div>
 
                         ";
-            // line 33
+            // line 35
             echo "                    </div>
 
 
                 </div>
+
             ";
         }
         $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['tricks'], $context['_parent'], $context['loop']);
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['trick'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 38
+        // line 41
         echo "
 
         </div>
@@ -162,7 +168,7 @@ class __TwigTemplate_ab9e4ff879ba5deca74104c5fa6e9bbed96ac9d1d88c8d5ff3d603ca9fb
 
     public function getDebugInfo()
     {
-        return array (  140 => 38,  130 => 33,  123 => 28,  117 => 25,  108 => 19,  103 => 16,  99 => 15,  89 => 7,  79 => 6,  59 => 3,  36 => 1,);
+        return array (  146 => 41,  135 => 35,  128 => 30,  121 => 26,  117 => 25,  108 => 19,  103 => 16,  99 => 15,  89 => 7,  79 => 6,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -179,22 +185,24 @@ class __TwigTemplate_ab9e4ff879ba5deca74104c5fa6e9bbed96ac9d1d88c8d5ff3d603ca9fb
             There are all my snowtrick list
         </h1><br>
 
-        <div class=\"row\">
+        <div id=\"tricks\" class=\"row\">
 
-            {% for tricks in tricks %}
+            {% for trick in tricks %}
                 <div class=\"col-md-4\">
                     <div class=\"card bg-light mb-3\">
 
-                        <img alt=\"Trick Picture\" src=\"{{ tricks.cover}}\" style=\"height: 200px ;
-                                                                                                                                    width: 100% ; display: block\">
+                        <img alt=\"Trick Picture\" src=\"{{ trick.cover}}\" style=\"height: 200px ;
+                                                                                                 width: 100% ; display: block\">
 
                         <div class=\"card-body\">
 
 
-                            <h4 class=\"card-title\">{{  tricks.name}}</h4>
+                            <a href=\"{{ path ('detailTrick', {'name': trick.name}) }}\">
+                                <h4 class=\"card-title\">{{trick.name}}</h4>
+                            </a>
 
                             <p class=\"card-text\">
-                                {{tricks.description | raw}}
+                                {{trick.description | raw}}
                             </p>
                         </div>
 
@@ -203,6 +211,7 @@ class __TwigTemplate_ab9e4ff879ba5deca74104c5fa6e9bbed96ac9d1d88c8d5ff3d603ca9fb
 
 
                 </div>
+
             {% endfor %}
 
 

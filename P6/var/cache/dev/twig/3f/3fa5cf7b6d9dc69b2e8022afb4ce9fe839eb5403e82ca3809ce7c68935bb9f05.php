@@ -40,20 +40,29 @@ class __TwigTemplate_09f67f0b8b09d559fffe05acb9d0fe3b552c39ed8c82d1bdc8280aca9e8
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "part/footer.html.twig"));
 
         // line 1
-        echo "<!-- Footer -->
+        echo "<!-- Footer --> <br><br>
 
-
+<div class=\" container text-right\">
+        <a href=\"#tricks\" id=\"back-top\" class=\"page-scroll\">
+            <i class=\"far fa-arrow-alt-circle-up fa-2x\"></i>
+        </a>
+    </div>
+    <br>
 <!-- Copyright Section -->
 <section class=\"copyright py-4 text-center text-white\">
     <div class=\"container\">
-        <small>Copyright &copy; Snowmass-2019</small>
+        <small>Copyright &copy; Snowmass-2019 -  
+        <i class=\"fab fa-github-alt fa-1x\"></i></small>
+       
     </div>
 </section>
+
+  
 
 <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
 <div class=\"scroll-to-top d-lg-none position-fixed \">
     <a class=\"js-scroll-trigger d-block text-center text-white rounded\" href=\"#page-top\">
-        <i class=\"fa fa-chevron-up\"></i>
+        <i class=\"far fa-arrow-circle-up\"></i>
     </a>
 </div>
 
@@ -81,20 +90,29 @@ class __TwigTemplate_09f67f0b8b09d559fffe05acb9d0fe3b552c39ed8c82d1bdc8280aca9e8
 
     public function getSourceContext()
     {
-        return new Source("<!-- Footer -->
+        return new Source("<!-- Footer --> <br><br>
 
-
+<div class=\" container text-right\">
+        <a href=\"#tricks\" id=\"back-top\" class=\"page-scroll\">
+            <i class=\"far fa-arrow-alt-circle-up fa-2x\"></i>
+        </a>
+    </div>
+    <br>
 <!-- Copyright Section -->
 <section class=\"copyright py-4 text-center text-white\">
     <div class=\"container\">
-        <small>Copyright &copy; Snowmass-2019</small>
+        <small>Copyright &copy; Snowmass-2019 -  
+        <i class=\"fab fa-github-alt fa-1x\"></i></small>
+       
     </div>
 </section>
+
+  
 
 <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
 <div class=\"scroll-to-top d-lg-none position-fixed \">
     <a class=\"js-scroll-trigger d-block text-center text-white rounded\" href=\"#page-top\">
-        <i class=\"fa fa-chevron-up\"></i>
+        <i class=\"far fa-arrow-circle-up\"></i>
     </a>
 </div>
 

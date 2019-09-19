@@ -85,11 +85,41 @@ class __TwigTemplate_f214c0f413623c85242e2257693619b7c86bde545104ab5e77f53dc5585
 </nav>
 
 
+
+
 <div class=\"container mt-3\">
 
     <div class=\"jumbotron\" style=\"background-image: url(/images/snow.jpg)\">
         <h1 class=\"display-3\">Welcome on SnowMass!</h1>
         <p class=\"lead text-warning\">All things you want to know about snowtrick are here.</p>
+
+    </div>
+
+    <div class=\"text-right\">
+        <a href=\"#\" id=\"back-bottom\" class=\"page-scroll\">
+
+            <i class=\"far fa-arrow-alt-circle-down fa-2x\"></i>
+        </a>
+    </div>
+</div>
+<div class=\"navbar-mobile col-xs-12 navbar-inverse navbar-fixed-bottom\">
+    <div class=\"row\" id=\"bottomNav\">
+        <div class=\"col-xs-4 text-center\">
+            <a href=\"#\">
+                <i class=\"fas fa-home\"></i>
+            </a>
+        </div>
+        <div class=\"col-xs-4 text-center\">
+            <a class=\"navbar-link\" href=\"#\">
+                <i class=\"fas fa-bookmark\"></i>
+            </a>
+
+        </div>
+        <div class=\"col-xs-4 text-center\">
+            <a href=\"#\">
+                <i class=\"fas fa-sign-in-alt\"></i>
+            </a>
+        </div>
 
     </div>
 </div>
@@ -161,11 +191,41 @@ class __TwigTemplate_f214c0f413623c85242e2257693619b7c86bde545104ab5e77f53dc5585
 </nav>
 
 
+
+
 <div class=\"container mt-3\">
 
     <div class=\"jumbotron\" style=\"background-image: url(/images/snow.jpg)\">
         <h1 class=\"display-3\">Welcome on SnowMass!</h1>
         <p class=\"lead text-warning\">All things you want to know about snowtrick are here.</p>
+
+    </div>
+
+    <div class=\"text-right\">
+        <a href=\"#\" id=\"back-bottom\" class=\"page-scroll\">
+
+            <i class=\"far fa-arrow-alt-circle-down fa-2x\"></i>
+        </a>
+    </div>
+</div>
+<div class=\"navbar-mobile col-xs-12 navbar-inverse navbar-fixed-bottom\">
+    <div class=\"row\" id=\"bottomNav\">
+        <div class=\"col-xs-4 text-center\">
+            <a href=\"#\">
+                <i class=\"fas fa-home\"></i>
+            </a>
+        </div>
+        <div class=\"col-xs-4 text-center\">
+            <a class=\"navbar-link\" href=\"#\">
+                <i class=\"fas fa-bookmark\"></i>
+            </a>
+
+        </div>
+        <div class=\"col-xs-4 text-center\">
+            <a href=\"#\">
+                <i class=\"fas fa-sign-in-alt\"></i>
+            </a>
+        </div>
 
     </div>
 </div>

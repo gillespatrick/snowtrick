@@ -10,22 +10,24 @@
             There are all my snowtrick list
         </h1><br>
 
-        <div class="row">
+        <div id="tricks" class="row">
 
-            {% for tricks in tricks %}
+            {% for trick in tricks %}
                 <div class="col-md-4">
                     <div class="card bg-light mb-3">
 
-                        <img alt="Trick Picture" src="{{ tricks.cover}}" style="height: 200px ;
-                                                                                                                                    width: 100% ; display: block">
+                        <img alt="Trick Picture" src="{{ trick.cover}}" style="height: 200px ;
+                                                                                                 width: 100% ; display: block">
 
                         <div class="card-body">
 
 
-                            <h4 class="card-title">{{  tricks.name}}</h4>
+                            <a href="{{ path ('detailTrick', {'name': trick.name}) }}">
+                                <h4 class="card-title">{{trick.name}}</h4>
+                            </a>
 
                             <p class="card-text">
-                                {{tricks.description | raw}}
+                                {{trick.description | raw}}
                             </p>
                         </div>
 
@@ -34,6 +36,7 @@
 
 
                 </div>
+
             {% endfor %}
 
 
