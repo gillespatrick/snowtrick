@@ -64,11 +64,17 @@ class __TwigTemplate_f214c0f413623c85242e2257693619b7c86bde545104ab5e77f53dc5585
             <ul class=\"navbar-nav mr-auto\">
 
                 <li class=\"nav-item\">
-                    <a class=\"nav-link\" href=\"#\">HOME</a>
+                    <a class=\"nav-link\" href=\"";
+        // line 22
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
+        echo "\">HOME</a>
                 </li>
 
                 <li class=\"nav-item\">
-                    <a class=\"nav-link\" href=\"#\">TRICKS</a>
+                    <a class=\"nav-link\" href=\"";
+        // line 26
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("tricks");
+        echo "\">TRICKS</a>
                 </li>
 
                 <li class=\"nav-item\">
@@ -132,7 +138,7 @@ class __TwigTemplate_f214c0f413623c85242e2257693619b7c86bde545104ab5e77f53dc5585
 
     public function getDebugInfo()
     {
-        return array (  46 => 2,  43 => 1,);
+        return array (  76 => 26,  69 => 22,  46 => 2,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -158,11 +164,11 @@ class __TwigTemplate_f214c0f413623c85242e2257693619b7c86bde545104ab5e77f53dc5585
             <ul class=\"navbar-nav mr-auto\">
 
                 <li class=\"nav-item\">
-                    <a class=\"nav-link\" href=\"#\">HOME</a>
+                    <a class=\"nav-link\" href=\"{{ path('home')}}\">HOME</a>
                 </li>
 
                 <li class=\"nav-item\">
-                    <a class=\"nav-link\" href=\"#\">TRICKS</a>
+                    <a class=\"nav-link\" href=\"{{ path('tricks')}}\">TRICKS</a>
                 </li>
 
                 <li class=\"nav-item\">
