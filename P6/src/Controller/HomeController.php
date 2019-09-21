@@ -21,41 +21,18 @@ class HomeController extends AbstractController
         ]);
     }
 
-    //1-Cree un TrickController.php : action qui permet de load les tricks
-    // Detail d'un trick
-    //2- Maquette = index (Desktop && Mobil)
+    
+    //min-higth?
+    //Creer un Controller trick 
+    //Ajouter un slug
+    //Reouvre le doc des specifications detaillees
+    //et trouver les detail qui concerne les medias
 
 
-    /**
-     * Display trick details
-     * 
-     * @Route("/trick", name = "detailTrick")
-     *
-     */
+   
 
-    public function detail_trick()
-    {
-       // $trickRepository = $this->getDoctrine()-> getRepository(Trick::class);
-       // $trick = $trickRepository->findOneByName($name);
-        return $this->render('home/detail_trick.html.twig', [
-            //'trick' => $trick
-        ]);
-    }
+    
 
 
-    /**
-     * @Route("trick/{name}", name = "showdetail")
-     *
-     * @return void
-     */
-    public function show($name){
-
-        $trickRepository = $this->getDoctrine()-> getRepository(Trick::class);
-        $trick = $trickRepository->findOneByName($name);
-
-        return $this -> render('home/showDetail.html.twig',[
-            'trick' => $trick
-        ]);
-
-    }
+   
 }

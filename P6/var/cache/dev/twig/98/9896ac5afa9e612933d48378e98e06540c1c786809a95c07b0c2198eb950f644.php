@@ -85,9 +85,33 @@ class __TwigTemplate_f214c0f413623c85242e2257693619b7c86bde545104ab5e77f53dc5585
 </nav>
 
 
-<div class=\"container mt-3\">
 
-   ";
+
+    <div class=\"navbar-mobile col-xs-12 navbar-inverse navbar-fixed-bottom\" style =\"background-image: f358\" >
+        <div class=\"row\" id=\"bottomNav\">
+            <div class=\"col-xs-4 text-center\">
+                <a href=\"#\">
+                    <i class=\"fas fa-home\"></i>
+                </a>
+            </div>
+            <div class=\"col-xs-4 text-center\">
+                <a class=\"navbar-link\" href=\"#\">
+                    <i class=\"fas fa-bookmark\"></i>
+                </a>
+
+            </div>
+            <div class=\"col-xs-4 text-center\">
+                <a href=\"#\">
+                    <i class=\"fas fa-sign-in-alt\"></i>
+                </a>
+            </div>
+
+        </div>
+   
+
+
+</div>
+";
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
 
@@ -155,9 +179,9 @@ class __TwigTemplate_f214c0f413623c85242e2257693619b7c86bde545104ab5e77f53dc5585
 </nav>
 
 
-<div class=\"container mt-3\">
 
-   {#} <div class=\"navbar-mobile col-xs-12 navbar-inverse navbar-fixed-bottom\">
+
+    <div class=\"navbar-mobile col-xs-12 navbar-inverse navbar-fixed-bottom\" style =\"background-image: f358\" >
         <div class=\"row\" id=\"bottomNav\">
             <div class=\"col-xs-4 text-center\">
                 <a href=\"#\">
@@ -177,10 +201,10 @@ class __TwigTemplate_f214c0f413623c85242e2257693619b7c86bde545104ab5e77f53dc5585
             </div>
 
         </div>
-    </div>
+   
 
 
-</div>#}
+</div>
 ", "part/header.html.twig", "/home/gilles/DEV/snowtrick/P6/templates/part/header.html.twig");
     }
 }

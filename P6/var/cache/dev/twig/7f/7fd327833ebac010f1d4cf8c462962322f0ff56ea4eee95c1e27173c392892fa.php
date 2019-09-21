@@ -49,7 +49,7 @@ class __TwigTemplate_0b5c35090fe633f34af78715b4f73e93218fa1e1dc6b15c754dcadb3bfa
     <head>
         <meta charset=\"utf-8\">
         <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">
-        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
+        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">
         <meta name=\"description\" content=\"\">
         <meta name=\"author\" content=\"\">
         <title>
@@ -222,7 +222,7 @@ class __TwigTemplate_0b5c35090fe633f34af78715b4f73e93218fa1e1dc6b15c754dcadb3bfa
     <head>
         <meta charset=\"utf-8\">
         <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">
-        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
+        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">
         <meta name=\"description\" content=\"\">
         <meta name=\"author\" content=\"\">
         <title>
