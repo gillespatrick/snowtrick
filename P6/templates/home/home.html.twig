@@ -33,7 +33,7 @@
                         <div class="card-body">
 
 
-                            <a href="{{ path ('showdetail', {'name': trick.name}) }}">
+                            <a href="{{ path ('showdetail', {'slug': trick.name}) }}">
                                 <h4 class="card-title">{{trick.name}}</h4>
                             </a>
 
@@ -42,7 +42,7 @@
                             </p>
                         </div>
 
-                        <a class="btn btn-secondary" href="{{ path ('showdetail', {'name': trick.name}) }}">More details</a>
+                        <a class="btn btn-secondary" href="{{ path ('showdetail', {'slug': trick.name}) }}">More details</a>
                     </div>
 
 

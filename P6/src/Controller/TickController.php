@@ -9,14 +9,14 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class TickController extends AbstractController
 {
      /**
-     * @Route("trick/{name}", name = "showdetail")
+     * @Route("trick/{slug}", name = "showdetail")
      *
      * @return void
      */
-    public function show($name){
+    public function show($slug){
 
         $trickRepository = $this->getDoctrine()-> getRepository(Trick::class);
-        $trick = $trickRepository->findOneByName($name);
+        $trick = $trickRepository->findOneBySlug($slug);
 
         return $this -> render('home/showDetail.html.twig',[
             'trick' => $trick

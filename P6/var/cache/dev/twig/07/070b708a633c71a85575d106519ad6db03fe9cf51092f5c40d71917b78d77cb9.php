@@ -125,7 +125,7 @@ class __TwigTemplate_ab9e4ff879ba5deca74104c5fa6e9bbed96ac9d1d88c8d5ff3d603ca9fb
 
                             <a href=\"";
             // line 36
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("showdetail", ["name" => twig_get_attribute($this->env, $this->source, $context["trick"], "name", [], "any", false, false, false, 36)]), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("showdetail", ["slug" => twig_get_attribute($this->env, $this->source, $context["trick"], "name", [], "any", false, false, false, 36)]), "html", null, true);
             echo "\">
                                 <h4 class=\"card-title\">";
             // line 37
@@ -143,7 +143,7 @@ class __TwigTemplate_ab9e4ff879ba5deca74104c5fa6e9bbed96ac9d1d88c8d5ff3d603ca9fb
 
                         <a class=\"btn btn-secondary\" href=\"";
             // line 45
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("showdetail", ["name" => twig_get_attribute($this->env, $this->source, $context["trick"], "name", [], "any", false, false, false, 45)]), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("showdetail", ["slug" => twig_get_attribute($this->env, $this->source, $context["trick"], "name", [], "any", false, false, false, 45)]), "html", null, true);
             echo "\">More details</a>
                     </div>
 
@@ -227,7 +227,7 @@ class __TwigTemplate_ab9e4ff879ba5deca74104c5fa6e9bbed96ac9d1d88c8d5ff3d603ca9fb
                         <div class=\"card-body\">
 
 
-                            <a href=\"{{ path ('showdetail', {'name': trick.name}) }}\">
+                            <a href=\"{{ path ('showdetail', {'slug': trick.name}) }}\">
                                 <h4 class=\"card-title\">{{trick.name}}</h4>
                             </a>
 
@@ -236,7 +236,7 @@ class __TwigTemplate_ab9e4ff879ba5deca74104c5fa6e9bbed96ac9d1d88c8d5ff3d603ca9fb
                             </p>
                         </div>
 
-                        <a class=\"btn btn-secondary\" href=\"{{ path ('showdetail', {'name': trick.name}) }}\">More details</a>
+                        <a class=\"btn btn-secondary\" href=\"{{ path ('showdetail', {'slug': trick.name}) }}\">More details</a>
                     </div>
 
 

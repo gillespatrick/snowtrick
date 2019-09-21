@@ -44,7 +44,7 @@ return [
         149 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception::cssAction'], ['token'], null, null, false, false, null]],
         159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
         184 => [
-            [['_route' => 'showdetail', '_controller' => 'App\\Controller\\TickController::show'], ['name'], null, null, false, true, null],
+            [['_route' => 'showdetail', '_controller' => 'App\\Controller\\TickController::show'], ['slug'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],

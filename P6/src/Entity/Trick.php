@@ -19,7 +19,7 @@ class Trick
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255, unique=true)
+     * @ORM\Column(type="string", length=255)
      */
     private $name;
 
@@ -52,6 +52,11 @@ class Trick
      * @ORM\Column(type="string", length=255)
      */
     private $cover;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $slug;
 
     public function __construct()
     {
@@ -164,5 +169,31 @@ class Trick
         $this->cover = $cover;
 
         return $this;
+    }
+
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    public function setSlug(string $slug): self
+    {
+        $this->slug = $slug;
+
+        return $this;
+    }
+
+
+     /**
+     * @ORM\PrePersist
+     * @ORM\PreUpdate
+     *
+     * @return void
+     */
+    public function initSlug(){
+        if (empty ($this -> slug)){
+            $slugify = new Slugify();
+            $this -> slug = $slugify -> slugify($this -> name);
+        }
     }
 }
