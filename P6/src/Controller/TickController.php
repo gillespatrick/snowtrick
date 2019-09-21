@@ -2,14 +2,18 @@
 
 namespace App\Controller;
 
+use DateTime;
 use App\Entity\Trick;
+use App\Form\TrickFormType;
+use Symfony\Component\HttpFoundation\Request;
+use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class TickController extends AbstractController
 {
      /**
-     * @Route("trick/{slug}", name = "showdetail")
+     * @Route("/trick/{slug}", name = "showdetail")
      *
      * @return void
      */
