@@ -90,40 +90,42 @@ class __TwigTemplate_cba735108c28ea24742e361071718ff55f92ddbc90aff4b02235896af0d
 
         // line 9
         echo "
-
-    <header class=\"masthead bg-primary text-white text-center \" style=\"background-image: url(";
+    <div class=\"container\">
+        <header class=\"masthead bg-primary text-white text-center \" style=\"background-image: url(";
         // line 11
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["trick"]) || array_key_exists("trick", $context) ? $context["trick"] : (function () { throw new RuntimeError('Variable "trick" does not exist.', 11, $this->source); })()), "cover", [], "any", false, false, false, 11), "html", null, true);
-        echo ")\">
+        echo ")\"></header><br>
 
-    </header><br>
-    <div class=\"container\">
         <h1>";
-        // line 15
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["trick"]) || array_key_exists("trick", $context) ? $context["trick"] : (function () { throw new RuntimeError('Variable "trick" does not exist.', 15, $this->source); })()), "name", [], "any", false, false, false, 15), "html", null, true);
-        echo " </h1> 
-        <small>the ";
-        // line 16
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["trick"]) || array_key_exists("trick", $context) ? $context["trick"] : (function () { throw new RuntimeError('Variable "trick" does not exist.', 16, $this->source); })()), "name", [], "any", false, false, false, 16), "html", null, true);
-        echo " belong to the ";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["trick"]) || array_key_exists("trick", $context) ? $context["trick"] : (function () { throw new RuntimeError('Variable "trick" does not exist.', 16, $this->source); })()), "category", [], "any", false, false, false, 16), "name", [], "any", false, false, false, 16), "html", null, true);
+        // line 13
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["trick"]) || array_key_exists("trick", $context) ? $context["trick"] : (function () { throw new RuntimeError('Variable "trick" does not exist.', 13, $this->source); })()), "name", [], "any", false, false, false, 13), "html", null, true);
+        echo "</h1>
+
+        <h5>
+            <small>the
+                ";
+        // line 17
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["trick"]) || array_key_exists("trick", $context) ? $context["trick"] : (function () { throw new RuntimeError('Variable "trick" does not exist.', 17, $this->source); })()), "name", [], "any", false, false, false, 17), "html", null, true);
+        echo "
+                belong to the
+                ";
+        // line 19
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["trick"]) || array_key_exists("trick", $context) ? $context["trick"] : (function () { throw new RuntimeError('Variable "trick" does not exist.', 19, $this->source); })()), "category", [], "any", false, false, false, 19), "name", [], "any", false, false, false, 19), "html", null, true);
         echo "</small>
-        <h5></h5>
+        </h5><br>
         <img src=\"";
-        // line 18
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["trick"]) || array_key_exists("trick", $context) ? $context["trick"] : (function () { throw new RuntimeError('Variable "trick" does not exist.', 18, $this->source); })()), "cover", [], "any", false, false, false, 18), "html", null, true);
+        // line 21
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["trick"]) || array_key_exists("trick", $context) ? $context["trick"] : (function () { throw new RuntimeError('Variable "trick" does not exist.', 21, $this->source); })()), "cover", [], "any", false, false, false, 21), "html", null, true);
         echo "\">
 
         <p class=\" justify-content-center\">
             ";
-        // line 21
-        echo twig_get_attribute($this->env, $this->source, (isset($context["trick"]) || array_key_exists("trick", $context) ? $context["trick"] : (function () { throw new RuntimeError('Variable "trick" does not exist.', 21, $this->source); })()), "description", [], "any", false, false, false, 21);
+        // line 24
+        echo twig_get_attribute($this->env, $this->source, (isset($context["trick"]) || array_key_exists("trick", $context) ? $context["trick"] : (function () { throw new RuntimeError('Variable "trick" does not exist.', 24, $this->source); })()), "description", [], "any", false, false, false, 24);
         echo "</p><br>
-        
+
 
     </div>
-
-   
 
 
 ";
@@ -147,7 +149,7 @@ class __TwigTemplate_cba735108c28ea24742e361071718ff55f92ddbc90aff4b02235896af0d
 
     public function getDebugInfo()
     {
-        return array (  120 => 21,  114 => 18,  107 => 16,  103 => 15,  96 => 11,  92 => 9,  82 => 8,  69 => 4,  59 => 3,  36 => 1,);
+        return array (  124 => 24,  118 => 21,  113 => 19,  108 => 17,  101 => 13,  96 => 11,  92 => 9,  82 => 8,  69 => 4,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -161,25 +163,27 @@ class __TwigTemplate_cba735108c28ea24742e361071718ff55f92ddbc90aff4b02235896af0d
 
 {% block body %}
 
-
-    <header class=\"masthead bg-primary text-white text-center \" style=\"background-image: url({{trick.cover}})\">
-
-    </header><br>
     <div class=\"container\">
-        <h1>{{trick.name}} </h1> 
-        <small>the {{trick.name}} belong to the {{trick.category.name}}</small>
-        <h5></h5>
+        <header class=\"masthead bg-primary text-white text-center \" style=\"background-image: url({{trick.cover}})\"></header><br>
+
+        <h1>{{trick.name}}</h1>
+
+        <h5>
+            <small>the
+                {{trick.name}}
+                belong to the
+                {{trick.category.name}}</small>
+        </h5><br>
         <img src=\"{{trick.cover}}\">
 
         <p class=\" justify-content-center\">
-            {{trick.description | raw}}</p><br>
-        
+            {{trick.description | raw }}</p><br>
+
 
     </div>
 
-   
 
-
-{% endblock %}", "home/showDetail.html.twig", "/home/gilles/DEV/snowtrick/P6/templates/home/showDetail.html.twig");
+{% endblock %}
+", "home/showDetail.html.twig", "/home/gilles/DEV/snowtrick/P6/templates/home/showDetail.html.twig");
     }
 }

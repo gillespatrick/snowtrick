@@ -7,23 +7,24 @@
 
 {% block body %}
 
-
-    <header class="masthead bg-primary text-white text-center " style="background-image: url({{trick.cover}})">
-
-    </header><br>
     <div class="container">
-        <h1>{{trick.name}} </h1> 
-        <small>the {{trick.name}} belong to the {{trick.category.name}}</small>
-        <h5></h5>
+        <header class="masthead bg-primary text-white text-center " style="background-image: url({{trick.cover}})"></header><br>
+
+        <h1>{{trick.name}}</h1>
+
+        <h5>
+            <small>the
+                {{trick.name}}
+                belong to the
+                {{trick.category.name}}</small>
+        </h5><br>
         <img src="{{trick.cover}}">
 
         <p class=" justify-content-center">
-            {{trick.description | raw}}</p><br>
-        
+            {{trick.description | raw }}</p><br>
+
 
     </div>
-
-   
 
 
 {% endblock %}

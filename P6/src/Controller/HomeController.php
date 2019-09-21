@@ -10,6 +10,7 @@ class HomeController extends AbstractController
 {
     /**
      * @Route("/", name="home")
+     * @Route("tricks/", name="tricks")
      */
     public function index()
     {
@@ -23,10 +24,10 @@ class HomeController extends AbstractController
 
     
     //min-higth?
-    //Creer un Controller trick 
-    //Ajouter un slug
-    //Reouvre le doc des specifications detaillees
-    //et trouver les detail qui concerne les medias
+    //Creer un Controller trick                           --->                    OK
+    //Ajouter un slug                                     --->                    OK
+    //Reouvre le doc des specifications detaillees        --->                    OK
+    //et trouver les detail qui concerne les medias       --->                    OK
 
 
    

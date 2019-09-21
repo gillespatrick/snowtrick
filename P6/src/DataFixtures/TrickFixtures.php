@@ -22,7 +22,7 @@ class TrickFixtures extends Fixture
         for ($j = 1; $j <= 5; $j++) {
             $category = new Category();
             $category->setName($faker->sentence())
-                ->setDescription($faker->paragraph());
+                ->setDescription($faker->paragraph(2));
 
             $manager->persist($category);
 
@@ -38,11 +38,11 @@ class TrickFixtures extends Fixture
 
 
                 $trick->setName($name)
-                    -> setDescription($description)
-                    -> setCreateDate(new \DateTime())
-                    -> setCover($cover)
-                    -> setCategory($category)
-                    -> setSlug($slug);
+                      -> setDescription($description)
+                      -> setCreateDate(new \DateTime())
+                      -> setCover($cover)
+                      -> setCategory($category);
+                      //-> setSlug($slug);
 
                 $manager->persist($trick);
             }

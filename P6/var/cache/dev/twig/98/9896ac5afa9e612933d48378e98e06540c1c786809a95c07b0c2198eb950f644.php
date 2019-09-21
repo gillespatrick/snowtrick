@@ -64,11 +64,17 @@ class __TwigTemplate_f214c0f413623c85242e2257693619b7c86bde545104ab5e77f53dc5585
             <ul class=\"navbar-nav mr-auto\">
 
                 <li class=\"nav-item\">
-                    <a class=\"nav-link\" href=\"#\">HOME</a>
+                    <a class=\"nav-link\" href=\"";
+        // line 22
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
+        echo "\">HOME</a>
                 </li>
 
                 <li class=\"nav-item\">
-                    <a class=\"nav-link\" href=\"#\">TRICKS</a>
+                    <a class=\"nav-link\" href=\"";
+        // line 26
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("tricks");
+        echo "\">TRICKS</a>
                 </li>
 
                 <li class=\"nav-item\">
@@ -85,32 +91,6 @@ class __TwigTemplate_f214c0f413623c85242e2257693619b7c86bde545104ab5e77f53dc5585
 </nav>
 
 
-
-
-    <div class=\"navbar-mobile col-xs-12 navbar-inverse navbar-fixed-bottom\" style =\"background-image: f358\" >
-        <div class=\"row\" id=\"bottomNav\">
-            <div class=\"col-xs-4 text-center\">
-                <a href=\"#\">
-                    <i class=\"fas fa-home\"></i>
-                </a>
-            </div>
-            <div class=\"col-xs-4 text-center\">
-                <a class=\"navbar-link\" href=\"#\">
-                    <i class=\"fas fa-bookmark\"></i>
-                </a>
-
-            </div>
-            <div class=\"col-xs-4 text-center\">
-                <a href=\"#\">
-                    <i class=\"fas fa-sign-in-alt\"></i>
-                </a>
-            </div>
-
-        </div>
-   
-
-
-</div>
 ";
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -132,7 +112,7 @@ class __TwigTemplate_f214c0f413623c85242e2257693619b7c86bde545104ab5e77f53dc5585
 
     public function getDebugInfo()
     {
-        return array (  46 => 2,  43 => 1,);
+        return array (  76 => 26,  69 => 22,  46 => 2,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -158,11 +138,11 @@ class __TwigTemplate_f214c0f413623c85242e2257693619b7c86bde545104ab5e77f53dc5585
             <ul class=\"navbar-nav mr-auto\">
 
                 <li class=\"nav-item\">
-                    <a class=\"nav-link\" href=\"#\">HOME</a>
+                    <a class=\"nav-link\" href=\"{{path('home')}}\">HOME</a>
                 </li>
 
                 <li class=\"nav-item\">
-                    <a class=\"nav-link\" href=\"#\">TRICKS</a>
+                    <a class=\"nav-link\" href=\"{{path('tricks')}}\">TRICKS</a>
                 </li>
 
                 <li class=\"nav-item\">
@@ -179,32 +159,29 @@ class __TwigTemplate_f214c0f413623c85242e2257693619b7c86bde545104ab5e77f53dc5585
 </nav>
 
 
-
-
-    <div class=\"navbar-mobile col-xs-12 navbar-inverse navbar-fixed-bottom\" style =\"background-image: f358\" >
-        <div class=\"row\" id=\"bottomNav\">
-            <div class=\"col-xs-4 text-center\">
-                <a href=\"#\">
-                    <i class=\"fas fa-home\"></i>
-                </a>
-            </div>
-            <div class=\"col-xs-4 text-center\">
-                <a class=\"navbar-link\" href=\"#\">
-                    <i class=\"fas fa-bookmark\"></i>
-                </a>
-
-            </div>
-            <div class=\"col-xs-4 text-center\">
-                <a href=\"#\">
-                    <i class=\"fas fa-sign-in-alt\"></i>
-                </a>
-            </div>
+{#<div class=\"navbar-mobile col-xs-12 navbar-inverse navbar-fixed-bottom\" style=\"background-image: f358\">
+    <div class=\"row\" id=\"bottomNav\">
+        <div class=\"col-xs-4 text-center\">
+            <a href=\"#\">
+                <i class=\"fas fa-home\"></i>
+            </a>
+        </div>
+        <div class=\"col-xs-4 text-center\">
+            <a class=\"navbar-link\" href=\"#\">
+                <i class=\"fas fa-bookmark\"></i>
+            </a>
 
         </div>
-   
+        <div class=\"col-xs-4 text-center\">
+            <a href=\"#\">
+                <i class=\"fas fa-sign-in-alt\"></i>
+            </a>
+        </div>
+
+    </div>
 
 
-</div>
+</div>#}
 ", "part/header.html.twig", "/home/gilles/DEV/snowtrick/P6/templates/part/header.html.twig");
     }
 }
