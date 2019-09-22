@@ -6,6 +6,7 @@ use Cocur\Slugify\Slugify;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\TrickRepository")
@@ -160,12 +161,12 @@ class Trick
         return $this;
     }
 
-    public function getCover(): ?string
+    public function getCover()
     {
         return $this->cover;
     }
 
-    public function setCover(string $cover): self
+    public function setCover(UploadedFile $cover): self
     {
         $this->cover = $cover;
 

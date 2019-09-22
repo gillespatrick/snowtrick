@@ -52,7 +52,10 @@ class __TwigTemplate_f214c0f413623c85242e2257693619b7c86bde545104ab5e77f53dc5585
     <div class=\"collapse navbar-collapse\" id=\"navbarColor03\">
         <ul class=\"navbar-nav mr-auto\">
             <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"#\">ADD TRICK
+                <a class=\"nav-link\" href=\"";
+        // line 10
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("add_trick");
+        echo "\">ADD TRICK
                 </a>
             </li>
             <li class=\"dropdown\">
@@ -112,7 +115,7 @@ class __TwigTemplate_f214c0f413623c85242e2257693619b7c86bde545104ab5e77f53dc5585
 
     public function getDebugInfo()
     {
-        return array (  76 => 26,  69 => 22,  46 => 2,  43 => 1,);
+        return array (  79 => 26,  72 => 22,  57 => 10,  46 => 2,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -126,7 +129,7 @@ class __TwigTemplate_f214c0f413623c85242e2257693619b7c86bde545104ab5e77f53dc5585
     <div class=\"collapse navbar-collapse\" id=\"navbarColor03\">
         <ul class=\"navbar-nav mr-auto\">
             <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"#\">ADD TRICK
+                <a class=\"nav-link\" href=\"{{path('add_trick')}}\">ADD TRICK
                 </a>
             </li>
             <li class=\"dropdown\">

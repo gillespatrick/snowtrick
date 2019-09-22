@@ -15,6 +15,7 @@ return [
         '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
         '/' => [[['_route' => 'home', '_controller' => 'App\\Controller\\HomeController::index'], null, null, null, false, false, null]],
         '/tricks' => [[['_route' => 'tricks', '_controller' => 'App\\Controller\\HomeController::index'], null, null, null, true, false, null]],
+        '/addtrick' => [[['_route' => 'add_trick', '_controller' => 'App\\Controller\\TickController::add'], null, null, null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'

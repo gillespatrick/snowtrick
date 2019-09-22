@@ -17,5 +17,6 @@ return [
     '_profiler_exception_css' => [['token'], ['_controller' => 'web_profiler.controller.exception::cssAction'], [], [['text', '/exception.css'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
     'home' => [[], ['_controller' => 'App\\Controller\\HomeController::index'], [], [['text', '/']], [], []],
     'tricks' => [[], ['_controller' => 'App\\Controller\\HomeController::index'], [], [['text', '/tricks/']], [], []],
+    'add_trick' => [[], ['_controller' => 'App\\Controller\\TickController::add'], [], [['text', '/addtrick']], [], []],
     'showdetail' => [['slug'], ['_controller' => 'App\\Controller\\TickController::show'], [], [['variable', '/', '[^/]++', 'slug', true], ['text', '/trick']], [], []],
 ];
