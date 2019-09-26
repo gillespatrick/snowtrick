@@ -28,10 +28,11 @@ class TickController extends AbstractController
 
         if ($form -> isSubmitted() && $form -> isValid()) {
 
-            $image = $trick->getCover();
-            $imageName = md5(uniqid()).'.'.$image -> guessExtension();
-            $image->move($this -> getParameter('upload_images'),$imageName);
-            $trick -> setName($imageName);
+           // $image = $trick->getCover();
+            $image = $form ->get('cover') ->getData();
+            $fileName = md5(uniqid()).'.'.$image -> guessExtension();
+            $image->move($this -> getParameter('upload_images'),$fileName);
+            $trick -> setCover($fileName);
 
         
             

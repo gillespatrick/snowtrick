@@ -166,7 +166,7 @@ class Trick
         return $this->cover;
     }
 
-    public function setCover(UploadedFile $cover): self
+    public function setCover(String $cover): self
     {
         $this->cover = $cover;
 
