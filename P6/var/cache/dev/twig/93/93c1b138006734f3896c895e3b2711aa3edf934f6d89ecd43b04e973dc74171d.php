@@ -90,11 +90,11 @@ class __TwigTemplate_cba735108c28ea24742e361071718ff55f92ddbc90aff4b02235896af0d
 
         // line 9
         echo "
-    <div class=\"container\">
-        <header class=\"masthead bg-primary text-white text-center \" style=\"background-image: url(";
+    <div class=\"container mt-3\">
+        <header class=\"masthead bg-primary text-white text-center \" style=\"background-image: url( ";
         // line 11
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["trick"]) || array_key_exists("trick", $context) ? $context["trick"] : (function () { throw new RuntimeError('Variable "trick" does not exist.', 11, $this->source); })()), "cover", [], "any", false, false, false, 11), "html", null, true);
-        echo ")\"></header><br>
+        echo twig_escape_filter($this->env, ("/images/" . twig_get_attribute($this->env, $this->source, (isset($context["trick"]) || array_key_exists("trick", $context) ? $context["trick"] : (function () { throw new RuntimeError('Variable "trick" does not exist.', 11, $this->source); })()), "cover", [], "any", false, false, false, 11)), "html", null, true);
+        echo " ) \"></header><br>
 
         <h1>";
         // line 13
@@ -113,16 +113,29 @@ class __TwigTemplate_cba735108c28ea24742e361071718ff55f92ddbc90aff4b02235896af0d
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["trick"]) || array_key_exists("trick", $context) ? $context["trick"] : (function () { throw new RuntimeError('Variable "trick" does not exist.', 19, $this->source); })()), "category", [], "any", false, false, false, 19), "name", [], "any", false, false, false, 19), "html", null, true);
         echo "</small>
         </h5><br>
-        <img src=\"";
-        // line 21
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["trick"]) || array_key_exists("trick", $context) ? $context["trick"] : (function () { throw new RuntimeError('Variable "trick" does not exist.', 21, $this->source); })()), "cover", [], "any", false, false, false, 21), "html", null, true);
-        echo "\">
+
 
         <p class=\" justify-content-center\">
             ";
         // line 24
         echo twig_get_attribute($this->env, $this->source, (isset($context["trick"]) || array_key_exists("trick", $context) ? $context["trick"] : (function () { throw new RuntimeError('Variable "trick" does not exist.', 24, $this->source); })()), "description", [], "any", false, false, false, 24);
         echo "</p><br>
+
+        <div class=\"col-md-4\">
+            <div class=\"card bg-light mb-3\">
+
+                <img alt=\"Trick Picture\" src=";
+        // line 29
+        echo twig_escape_filter($this->env, ("/images/" . twig_get_attribute($this->env, $this->source, (isset($context["trick"]) || array_key_exists("trick", $context) ? $context["trick"] : (function () { throw new RuntimeError('Variable "trick" does not exist.', 29, $this->source); })()), "cover", [], "any", false, false, false, 29)), "html", null, true);
+        echo " target= \" _blank \" style=\"height: 200px ;
+                     width: 100% ; display: block\">
+
+
+
+            </div>
+        </div>
+
+
 
 
     </div>
@@ -149,7 +162,7 @@ class __TwigTemplate_cba735108c28ea24742e361071718ff55f92ddbc90aff4b02235896af0d
 
     public function getDebugInfo()
     {
-        return array (  124 => 24,  118 => 21,  113 => 19,  108 => 17,  101 => 13,  96 => 11,  92 => 9,  82 => 8,  69 => 4,  59 => 3,  36 => 1,);
+        return array (  129 => 29,  121 => 24,  113 => 19,  108 => 17,  101 => 13,  96 => 11,  92 => 9,  82 => 8,  69 => 4,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -163,8 +176,8 @@ class __TwigTemplate_cba735108c28ea24742e361071718ff55f92ddbc90aff4b02235896af0d
 
 {% block body %}
 
-    <div class=\"container\">
-        <header class=\"masthead bg-primary text-white text-center \" style=\"background-image: url({{trick.cover}})\"></header><br>
+    <div class=\"container mt-3\">
+        <header class=\"masthead bg-primary text-white text-center \" style=\"background-image: url( {{ '/images/'~ trick.cover }} ) \"></header><br>
 
         <h1>{{trick.name}}</h1>
 
@@ -174,10 +187,23 @@ class __TwigTemplate_cba735108c28ea24742e361071718ff55f92ddbc90aff4b02235896af0d
                 belong to the
                 {{trick.category.name}}</small>
         </h5><br>
-        <img src=\"{{trick.cover}}\">
+
 
         <p class=\" justify-content-center\">
             {{trick.description | raw }}</p><br>
+
+        <div class=\"col-md-4\">
+            <div class=\"card bg-light mb-3\">
+
+                <img alt=\"Trick Picture\" src={{ '/images/'~ trick.cover }} target= \" _blank \" style=\"height: 200px ;
+                     width: 100% ; display: block\">
+
+
+
+            </div>
+        </div>
+
+
 
 
     </div>

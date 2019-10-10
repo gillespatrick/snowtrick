@@ -64,7 +64,7 @@ class __TwigTemplate_0b5c35090fe633f34af78715b4f73e93218fa1e1dc6b15c754dcadb3bfa
         ";
         // line 15
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 23
+        // line 24
         echo " </head> <body id=\"page-top\"> 
 
         
@@ -73,23 +73,23 @@ class __TwigTemplate_0b5c35090fe633f34af78715b4f73e93218fa1e1dc6b15c754dcadb3bfa
     
     <body>
     ";
-        // line 30
-        $this->loadTemplate("part/header.html.twig", "base.html.twig", 30)->display($context);
         // line 31
+        $this->loadTemplate("part/header.html.twig", "base.html.twig", 31)->display($context);
+        // line 32
         echo "    
 
         ";
-        // line 33
-        $this->displayBlock('body', $context, $blocks);
         // line 34
+        $this->displayBlock('body', $context, $blocks);
+        // line 35
         echo "        ";
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 35
+        // line 36
         echo "
         ";
-        // line 36
-        $this->loadTemplate("part/footer.html.twig", "base.html.twig", 36)->display($context);
         // line 37
+        $this->loadTemplate("part/footer.html.twig", "base.html.twig", 37)->display($context);
+        // line 38
         echo "
 
 
@@ -138,22 +138,23 @@ class __TwigTemplate_0b5c35090fe633f34af78715b4f73e93218fa1e1dc6b15c754dcadb3bfa
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/css/all.min.css"), "html", null, true);
         echo "\" rel=\"stylesheet\"/>
             <script src=\"/js/all.js\"></script>
+            <script src=\"/js/jquery.min.js\"></script>
         <link href=\"";
-        // line 18
+        // line 19
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("https://fonts.googleapis.com/css?family=Montserrat:400,700"), "html", null, true);
         echo "\" rel=\"stylesheet\" type=\"text/css\">
         <link
         href=\"";
-        // line 20
+        // line 21
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic"), "html", null, true);
         echo "\" rel=\"stylesheet\" type=\"text/css\">
         <!-- Theme CSS -->
         <link href=\"";
-        // line 22
+        // line 23
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/css/freelancer.min.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
         <link href=\"";
-        // line 23
+        // line 24
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/css/fontawesome.min.css"), "html", null, true);
         echo "\" rel=\"stylesheet\" type=\"text/css\" ";
         
@@ -164,7 +165,7 @@ class __TwigTemplate_0b5c35090fe633f34af78715b4f73e93218fa1e1dc6b15c754dcadb3bfa
 
     }
 
-    // line 33
+    // line 34
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -182,7 +183,7 @@ class __TwigTemplate_0b5c35090fe633f34af78715b4f73e93218fa1e1dc6b15c754dcadb3bfa
 
     }
 
-    // line 34
+    // line 35
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -212,7 +213,7 @@ class __TwigTemplate_0b5c35090fe633f34af78715b4f73e93218fa1e1dc6b15c754dcadb3bfa
 
     public function getDebugInfo()
     {
-        return array (  186 => 34,  168 => 33,  157 => 23,  153 => 22,  148 => 20,  143 => 18,  137 => 16,  127 => 15,  109 => 11,  93 => 37,  91 => 36,  88 => 35,  85 => 34,  83 => 33,  79 => 31,  77 => 30,  68 => 23,  66 => 15,  61 => 12,  59 => 11,  47 => 1,);
+        return array (  187 => 35,  169 => 34,  158 => 24,  154 => 23,  149 => 21,  144 => 19,  137 => 16,  127 => 15,  109 => 11,  93 => 38,  91 => 37,  88 => 36,  85 => 35,  83 => 34,  79 => 32,  77 => 31,  68 => 24,  66 => 15,  61 => 12,  59 => 11,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -232,8 +233,9 @@ class __TwigTemplate_0b5c35090fe633f34af78715b4f73e93218fa1e1dc6b15c754dcadb3bfa
 
 
         {% block stylesheets %}
-            <link href=\"{{ asset('/css/all.min.css') }}\" rel=\"stylesheet\"/>
+            <link href=\"{{ asset ('/css/all.min.css') }}\" rel=\"stylesheet\"/>
             <script src=\"/js/all.js\"></script>
+            <script src=\"/js/jquery.min.js\"></script>
         <link href=\"{{ asset ('https://fonts.googleapis.com/css?family=Montserrat:400,700')}}\" rel=\"stylesheet\" type=\"text/css\">
         <link
         href=\"{{ asset('https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic')}}\" rel=\"stylesheet\" type=\"text/css\">

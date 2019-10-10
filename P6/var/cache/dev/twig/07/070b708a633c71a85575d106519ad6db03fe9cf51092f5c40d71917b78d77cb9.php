@@ -121,10 +121,10 @@ class __TwigTemplate_ab9e4ff879ba5deca74104c5fa6e9bbed96ac9d1d88c8d5ff3d603ca9fb
             echo "                <div class=\"col-md-4\">
                     <div class=\"card bg-light mb-3\">
 
-                        <img alt=\"Trick Picture\" src=\"";
+                        <img alt=\"Trick Picture\" src=";
             // line 39
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["trick"], "cover", [], "any", false, false, false, 39), "html", null, true);
-            echo "\" style=\"height: 200px ;
+            echo twig_escape_filter($this->env, ("/images/" . twig_get_attribute($this->env, $this->source, $context["trick"], "cover", [], "any", false, false, false, 39)), "html", null, true);
+            echo " style=\"height: 200px ;
                                                                                                                                                                                                                  width: 100% ; display: block\">
 
                         <div class=\"card-body\">
@@ -134,7 +134,7 @@ class __TwigTemplate_ab9e4ff879ba5deca74104c5fa6e9bbed96ac9d1d88c8d5ff3d603ca9fb
             // line 45
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("showdetail", ["slug" => twig_get_attribute($this->env, $this->source, $context["trick"], "slug", [], "any", false, false, false, 45)]), "html", null, true);
             echo "\">
-                                <h4 class=\"card-title\">";
+                            <h4 class=\"card-title\">";
             // line 46
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["trick"], "name", [], "any", false, false, false, 46), "html", null, true);
             echo "</h4>
@@ -148,10 +148,10 @@ class __TwigTemplate_ab9e4ff879ba5deca74104c5fa6e9bbed96ac9d1d88c8d5ff3d603ca9fb
                             </p>
                         </div>
 
-                        <a class=\"btn btn-secondary\" href=\"";
+              <a class=\"btn btn-secondary\" href=\"";
             // line 54
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("showdetail", ["slug" => twig_get_attribute($this->env, $this->source, $context["trick"], "slug", [], "any", false, false, false, 54)]), "html", null, true);
-            echo "\">More details</a>
+            echo "\">More details</a>        
                     </div>
 
 
@@ -274,14 +274,14 @@ class __TwigTemplate_ab9e4ff879ba5deca74104c5fa6e9bbed96ac9d1d88c8d5ff3d603ca9fb
                 <div class=\"col-md-4\">
                     <div class=\"card bg-light mb-3\">
 
-                        <img alt=\"Trick Picture\" src=\"{{ trick.cover}}\" style=\"height: 200px ;
+                        <img alt=\"Trick Picture\" src={{ '/images/'~ trick.cover }} style=\"height: 200px ;
                                                                                                                                                                                                                  width: 100% ; display: block\">
 
                         <div class=\"card-body\">
 
 
                             <a href=\"{{ path ('showdetail', {'slug': trick.slug}) }}\">
-                                <h4 class=\"card-title\">{{trick.name}}</h4>
+                            <h4 class=\"card-title\">{{trick.name}}</h4>
                             </a>
 
                             <p class=\"card-text\">
@@ -289,7 +289,7 @@ class __TwigTemplate_ab9e4ff879ba5deca74104c5fa6e9bbed96ac9d1d88c8d5ff3d603ca9fb
                             </p>
                         </div>
 
-                        <a class=\"btn btn-secondary\" href=\"{{ path ('showdetail', {'slug': trick.slug}) }}\">More details</a>
+              <a class=\"btn btn-secondary\" href=\"{{ path ('showdetail', {'slug': trick.slug}) }}\">More details</a>        
                     </div>
 
 

@@ -4,10 +4,12 @@ namespace App\Controller;
 
 
 use DateTime;
+use App\Entity\Media;
 use App\Entity\Trick;
 use App\Form\TrickType;
 use Symfony\Component\HttpFoundation\Request;
 use Doctrine\Common\Persistence\ObjectManager;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
@@ -22,11 +24,17 @@ class TickController extends AbstractController
     {
 
         $trick = new Trick();
+      
         
         $form = $this -> createForm(TrickType::class,$trick); 
         $form -> handleRequest($request);
 
         if ($form -> isSubmitted() && $form -> isValid()) {
+
+            foreach ($trick ->getMedia() as $media ) {
+                $media -> setTrick($trick);
+                $manager -> persist($media);
+            }
 
            // $image = $trick->getCover();
             $image = $form ->get('cover') ->getData();
@@ -56,6 +64,27 @@ class TickController extends AbstractController
     }
 
 
+
+    /**
+     * Display the edition form
+     * 
+     * @Route("/trick/{slug}/edit", name = "trick_edit")
+     * 
+     * @return Response 
+     */
+
+     public function edit(Trick $trick, Request $request){
+
+        $form = $this -> createForm(TrickType::class,$trick); 
+        $form -> handleRequest($request);
+
+        dump($form);
+
+        return $this -> render("home/trick_edit.html.twig",[
+            'form' => $form -> createView()
+        ]);
+
+     }
 
 
 

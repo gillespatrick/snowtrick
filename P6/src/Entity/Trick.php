@@ -2,14 +2,23 @@
 
 namespace App\Entity;
 
+use App\Entity\Media;
+use App\Entity\Comment;
 use Cocur\Slugify\Slugify;
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\Common\Collections\ArrayCollection;
-use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\TrickRepository")
+ * @UniqueEntity(
+ *   fields = {"name"},
+ *   message = "A trick of this name already exists. Please put  a new one!"
+ * )
  */
 class Trick
 {
@@ -22,6 +31,11 @@ class Trick
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Length(
+     *   min = 5,
+     *   max = 30,
+     *   minMessage = "Your trick name must be at least {{ limit }} characters long",
+     *   maxMessage = "Your trick name can't be longer than {{ limit }} characters long")
      */
     private $name;
 
@@ -52,17 +66,29 @@ class Trick
 
     /**
      * @ORM\Column(type="string", length=255)
+     *
      */
     private $cover;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
+ 
+
+
+   /**
+    * @var string
+    * @Gedmo\Slug(fields = {"name"})
+    * @ORM\Column(type="string", length=255, nullable = false)
+    */
     private $slug;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Media", mappedBy="trick")
+     */
+    private $media;
 
     public function __construct()
     {
         $this->comments = new ArrayCollection();
+        $this->media = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -161,19 +187,19 @@ class Trick
         return $this;
     }
 
-    public function getCover()
+    public function getCover(  )
     {
         return $this->cover;
     }
 
-    public function setCover(String $cover): self
+    public function setCover( $cover): self
     {
         $this->cover = $cover;
 
         return $this;
     }
 
-    public function getSlug(): ?string
+  /*  public function getSlug(): ?string
     {
         return $this->slug;
     }
@@ -191,11 +217,66 @@ class Trick
      * @ORM\PreUpdate
      *
      * @return void
-     */
+     
     public function initSlug(){
         if (empty ($this -> slug)){
             $slugify = new Slugify();
             $this -> slug = $slugify -> slugify($this -> name);
         }
+    }*/
+
+    /**
+     * @return Collection|Media[]
+     */
+    public function getMedia(): Collection
+    {
+        return $this->media;
+    }
+
+    public function addMedium(Media $medium): self
+    {
+        if (!$this->media->contains($medium)) {
+            $this->media[] = $medium;
+            $medium->setTrick($this);
+        }
+
+        return $this;
+    }
+
+    public function removeMedium(Media $medium): self
+    {
+        if ($this->media->contains($medium)) {
+            $this->media->removeElement($medium);
+            // set the owning side to null (unless already changed)
+            if ($medium->getTrick() === $this) {
+                $medium->setTrick(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * Get the value of slug
+     *
+     * @return  string
+     */ 
+    public function getSlug()
+    {
+        return $this->slug;
+    }
+
+    /**
+     * Set the value of slug
+     *
+     * @param  string  $slug
+     *
+     * @return  self
+     */ 
+    public function setSlug(string $slug)
+    {
+        $this->slug = $slug;
+
+        return $this;
     }
 }
