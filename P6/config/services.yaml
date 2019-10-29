@@ -5,6 +5,7 @@
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     upload_images: '%kernel.project_dir%/public/images'
+    medias: '%kernel.project_dir%/public/medias'
 
 services:
     # default configuration for services in *this* file

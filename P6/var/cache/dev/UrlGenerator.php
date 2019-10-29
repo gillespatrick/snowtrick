@@ -18,6 +18,6 @@ return [
     'home' => [[], ['_controller' => 'App\\Controller\\HomeController::index'], [], [['text', '/']], [], []],
     'tricks' => [[], ['_controller' => 'App\\Controller\\HomeController::index'], [], [['text', '/tricks/']], [], []],
     'add_trick' => [[], ['_controller' => 'App\\Controller\\TickController::add'], [], [['text', '/addtrick']], [], []],
-    'trick_edit' => [['slug'], ['_controller' => 'App\\Controller\\TickController::edit'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'slug', true], ['text', '/trick']], [], []],
+    'trick_edit' => [['id'], ['_controller' => 'App\\Controller\\TickController::edit'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'id', true], ['text', '/trick']], [], []],
     'showdetail' => [['slug'], ['_controller' => 'App\\Controller\\TickController::show'], [], [['variable', '/', '[^/]++', 'slug', true], ['text', '/trick']], [], []],
 ];

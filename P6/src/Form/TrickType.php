@@ -9,6 +9,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\UrlType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
@@ -41,7 +42,7 @@ class TrickType extends AbstractType
             ->add('description', TextareaType::class, $this->getConfig("Description", "Enter the trick description"))
             //->add('create_date')
             ->add('cover', FileType::class, $this->getConfig("Url Image", "Select your main image"))
-            ->add('slug', TextType::class, $this->getConfig("Entre ", "Taper une chose"))
+            ->add('slug', TextType::class, $this -> getconfig('Slug', 'This field is automatically filled', ['required' => false]))
             ->add('category', EntityType::class, [
                 'class' => Category::class,
                 'choice_label' => 'name',
@@ -51,7 +52,8 @@ class TrickType extends AbstractType
 
             ->add('media', CollectionType::class, [
                 'entry_type' => MediaType::class,
-                'allow_add' => true
+                'allow_add' => true,
+                'allow_delete' => true
             ])
 
 

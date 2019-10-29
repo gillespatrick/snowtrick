@@ -4,7 +4,6 @@ namespace App\Entity;
 
 use App\Entity\Media;
 use App\Entity\Comment;
-use Cocur\Slugify\Slugify;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Doctrine\Common\Collections\Collection;
@@ -15,6 +14,7 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\TrickRepository")
+ * 
  * @UniqueEntity(
  *   fields = {"name"},
  *   message = "A trick of this name already exists. Please put  a new one!"
@@ -82,6 +82,7 @@ class Trick
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Media", mappedBy="trick")
+     * @Assert\Valid()
      */
     private $media;
 
@@ -199,18 +200,16 @@ class Trick
         return $this;
     }
 
-  /*  public function getSlug(): ?string
+    public function getSlug(): ?string
     {
         return $this->slug;
     }
 
-    public function setSlug(string $slug): self
+    public function setSlug(string $slug): void
     {
         $this->slug = $slug;
-
-        return $this;
     }
-
+/*
 
      /**
      * @ORM\PrePersist
@@ -256,12 +255,14 @@ class Trick
         return $this;
     }
 
+    
+
     /**
      * Get the value of slug
      *
      * @return  string
      */ 
-    public function getSlug()
+  /*  public function getSlug()
     {
         return $this->slug;
     }
@@ -273,10 +274,12 @@ class Trick
      *
      * @return  self
      */ 
-    public function setSlug(string $slug)
+  /*  public function setSlug(string $slug)
     {
         $this->slug = $slug;
 
         return $this;
     }
+
+    */
 }

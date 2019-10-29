@@ -3,7 +3,7 @@
 namespace App\Controller;
 
 
-use DateTime;
+
 use App\Entity\Media;
 use App\Entity\Trick;
 use App\Form\TrickType;
@@ -13,27 +13,37 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
+
 class TickController extends AbstractController
 {
 
 
+
+    
+
+
+
+     
     /**
      * @Route("/addtrick", name="add_trick")
+     * 
      */
-    public function add( Request $request, ObjectManager $manager)
+    public function add( Trick $trick = null, Request $request, ObjectManager $manager)
     {
 
-        $trick = new Trick();
-      
-        
+            $media = new Media();
+            $trick = new Trick();   
+
         $form = $this -> createForm(TrickType::class,$trick); 
         $form -> handleRequest($request);
-
+        
         if ($form -> isSubmitted() && $form -> isValid()) {
+            
 
             foreach ($trick ->getMedia() as $media ) {
-                $media -> setTrick($trick);
-                $manager -> persist($media);
+               
+                $media -> setTrick($trick);        
+                $manager -> persist($media);        
             }
 
            // $image = $trick->getCover();
@@ -42,8 +52,8 @@ class TickController extends AbstractController
             $image->move($this -> getParameter('upload_images'),$fileName);
             $trick -> setCover($fileName);
 
-        
-            
+            // Save 
+          
             if (!$trick -> getId()) {
                 $trick -> setCreateDate(new \DateTime());
             }
@@ -59,32 +69,39 @@ class TickController extends AbstractController
 
 
         return $this->render('home/new_trick.html.twig', [
-            'form' => $form -> createView()
+            'form' => $form -> createView(),
+           
         ]);
     }
 
-
-
-    /**
+/**
      * Display the edition form
      * 
-     * @Route("/trick/{slug}/edit", name = "trick_edit")
+     * @Route("/trick/{id}/edit", name = "trick_edit")
      * 
      * @return Response 
      */
 
-     public function edit(Trick $trick, Request $request){
+ public function edit(Trick $trick, Request $request){
 
-        $form = $this -> createForm(TrickType::class,$trick); 
-        $form -> handleRequest($request);
-
-        dump($form);
-
-        return $this -> render("home/trick_edit.html.twig",[
-            'form' => $form -> createView()
+   
+       // $trick = new Trick();
+ 
+  
+       
+        //$form = $this -> createForm(TrickType::class, $trick); 
+       
+      //  $form -> handleRequest($request);
+        
+       
+        return $this -> render('home/editTrick.html.twig',[
+           // 'form' => $form -> createView()
         ]);
 
      }
+
+
+    
 
 
 
@@ -102,9 +119,23 @@ class TickController extends AbstractController
 
         $trickRepository = $this->getDoctrine()->getRepository(Trick::class);
         $trick = $trickRepository->findOneBySlug($slug);
+        
+        
 
         return $this->render('home/showDetail.html.twig', [
-            'trick' => $trick
+            'trick' => $trick,
+            
+           
         ]);
+        
     }
+
+
+
+
+    
+
+
+     
+    
 }

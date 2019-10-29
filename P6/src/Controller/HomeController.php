@@ -8,7 +8,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class HomeController extends AbstractController
 {
-    /**
+    /** 
      * @Route("/", name="home")
      * @Route("tricks/", name="tricks")
      */
@@ -16,10 +16,15 @@ class HomeController extends AbstractController
     {
         
         $trickRepository = $this -> getDoctrine() -> getRepository(Trick::class);
-        $tricks = $trickRepository->findAll();
+        $tricks = $trickRepository->findBy([],['create_date' => 'DESC'], 12,0);
+
+        //dump($tricks);
+        //die();
         return $this->render('home/home.html.twig', [
             'tricks' => $tricks
         ]);
+
+
     }
 
     

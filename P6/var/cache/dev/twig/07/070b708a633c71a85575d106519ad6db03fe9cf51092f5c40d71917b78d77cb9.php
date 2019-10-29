@@ -108,50 +108,51 @@ class __TwigTemplate_ab9e4ff879ba5deca74104c5fa6e9bbed96ac9d1d88c8d5ff3d603ca9fb
             There are all my snowtrick list
         </h1><br>
 
-        
 
         <div id=\"tricks\" class=\"row\">
 
             ";
-        // line 35
+        // line 34
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["tricks"]) || array_key_exists("tricks", $context) ? $context["tricks"] : (function () { throw new RuntimeError('Variable "tricks" does not exist.', 35, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["tricks"]) || array_key_exists("tricks", $context) ? $context["tricks"] : (function () { throw new RuntimeError('Variable "tricks" does not exist.', 34, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["trick"]) {
-            // line 36
+            // line 35
             echo "                <div class=\"col-md-4\">
-                    <div class=\"card bg-light mb-3\">
+                    <div
+                        class=\"card bg-light mb-3\">
 
-                        <img alt=\"Trick Picture\" src=";
+                        <img alt=\"Trick Picture\" src= \"";
             // line 39
             echo twig_escape_filter($this->env, ("/images/" . twig_get_attribute($this->env, $this->source, $context["trick"], "cover", [], "any", false, false, false, 39)), "html", null, true);
-            echo " style=\"height: 200px ;
-                                                                                                                                                                                                                 width: 100% ; display: block\">
+            echo "\" style=\"height: 200px ;width: 100% ; display: block\"/>
+                        
+
 
                         <div class=\"card-body\">
 
 
                             <a href=\"";
-            // line 45
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("showdetail", ["slug" => twig_get_attribute($this->env, $this->source, $context["trick"], "slug", [], "any", false, false, false, 45)]), "html", null, true);
-            echo "\">
-                            <h4 class=\"card-title\">";
             // line 46
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["trick"], "name", [], "any", false, false, false, 46), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("showdetail", ["slug" => twig_get_attribute($this->env, $this->source, $context["trick"], "slug", [], "any", false, false, false, 46)]), "html", null, true);
+            echo "\">
+                                <h4 class=\"card-title\">";
+            // line 47
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["trick"], "name", [], "any", false, false, false, 47), "html", null, true);
             echo "</h4>
                             </a>
 
                             <p class=\"card-text\">
                                 ";
-            // line 50
-            echo twig_slice($this->env, twig_get_attribute($this->env, $this->source, $context["trick"], "description", [], "any", false, false, false, 50), 0, 30);
+            // line 51
+            echo twig_slice($this->env, twig_get_attribute($this->env, $this->source, $context["trick"], "description", [], "any", false, false, false, 51), 0, 30);
             echo "
                             </p>
                         </div>
 
-              <a class=\"btn btn-secondary\" href=\"";
-            // line 54
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("showdetail", ["slug" => twig_get_attribute($this->env, $this->source, $context["trick"], "slug", [], "any", false, false, false, 54)]), "html", null, true);
-            echo "\">More details</a>        
+                        <a class=\"btn btn-secondary\" href=\"";
+            // line 55
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("showdetail", ["slug" => twig_get_attribute($this->env, $this->source, $context["trick"], "slug", [], "any", false, false, false, 55)]), "html", null, true);
+            echo "\">More details</a>
                     </div>
 
 
@@ -162,7 +163,7 @@ class __TwigTemplate_ab9e4ff879ba5deca74104c5fa6e9bbed96ac9d1d88c8d5ff3d603ca9fb
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['trick'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 61
+        // line 62
         echo "
 
         </div>
@@ -231,7 +232,7 @@ class __TwigTemplate_ab9e4ff879ba5deca74104c5fa6e9bbed96ac9d1d88c8d5ff3d603ca9fb
 
     public function getDebugInfo()
     {
-        return array (  213 => 20,  204 => 17,  201 => 16,  196 => 15,  186 => 14,  166 => 61,  153 => 54,  146 => 50,  139 => 46,  135 => 45,  126 => 39,  121 => 36,  117 => 35,  101 => 21,  99 => 14,  90 => 7,  80 => 6,  60 => 3,  37 => 1,);
+        return array (  214 => 20,  205 => 17,  202 => 16,  197 => 15,  187 => 14,  167 => 62,  154 => 55,  147 => 51,  140 => 47,  136 => 46,  126 => 39,  120 => 35,  116 => 34,  101 => 21,  99 => 14,  90 => 7,  80 => 6,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -266,22 +267,23 @@ class __TwigTemplate_ab9e4ff879ba5deca74104c5fa6e9bbed96ac9d1d88c8d5ff3d603ca9fb
             There are all my snowtrick list
         </h1><br>
 
-        
 
         <div id=\"tricks\" class=\"row\">
 
             {% for trick in tricks %}
                 <div class=\"col-md-4\">
-                    <div class=\"card bg-light mb-3\">
+                    <div
+                        class=\"card bg-light mb-3\">
 
-                        <img alt=\"Trick Picture\" src={{ '/images/'~ trick.cover }} style=\"height: 200px ;
-                                                                                                                                                                                                                 width: 100% ; display: block\">
+                        <img alt=\"Trick Picture\" src= \"{{ '/images/'~ trick.cover }}\" style=\"height: 200px ;width: 100% ; display: block\"/>
+                        
+
 
                         <div class=\"card-body\">
 
 
                             <a href=\"{{ path ('showdetail', {'slug': trick.slug}) }}\">
-                            <h4 class=\"card-title\">{{trick.name}}</h4>
+                                <h4 class=\"card-title\">{{trick.name}}</h4>
                             </a>
 
                             <p class=\"card-text\">
@@ -289,7 +291,7 @@ class __TwigTemplate_ab9e4ff879ba5deca74104c5fa6e9bbed96ac9d1d88c8d5ff3d603ca9fb
                             </p>
                         </div>
 
-              <a class=\"btn btn-secondary\" href=\"{{ path ('showdetail', {'slug': trick.slug}) }}\">More details</a>        
+                        <a class=\"btn btn-secondary\" href=\"{{ path ('showdetail', {'slug': trick.slug}) }}\">More details</a>
                     </div>
 
 

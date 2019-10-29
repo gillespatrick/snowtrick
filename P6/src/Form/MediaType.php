@@ -35,7 +35,7 @@ class MediaType extends AbstractType
             ->add('urlVideo', UrlType::class, $this -> config('Url Video','Enter url video' ))
             
 
-            ->add('picture',FileType::class,  $this -> config('Picture','Enter trick picture'))
+            ->add('picture',urlType::class,  $this -> config('Picture','Enter url picture'))
         ;
     }
 

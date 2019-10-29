@@ -90,8 +90,8 @@ class __TwigTemplate_cba735108c28ea24742e361071718ff55f92ddbc90aff4b02235896af0d
 
         // line 9
         echo "
-    <div class=\"container mt-3\">
-        <header class=\"masthead bg-primary text-white text-center \" style=\"background-image: url( ";
+    <div class=\"container mt-3 \">
+        <header class=\"masthead text-white text-center \" width=\"100%\" height=\"100px\" style=\"background-image: url( ";
         // line 11
         echo twig_escape_filter($this->env, ("/images/" . twig_get_attribute($this->env, $this->source, (isset($context["trick"]) || array_key_exists("trick", $context) ? $context["trick"] : (function () { throw new RuntimeError('Variable "trick" does not exist.', 11, $this->source); })()), "cover", [], "any", false, false, false, 11)), "html", null, true);
         echo " ) \"></header><br>
@@ -114,30 +114,72 @@ class __TwigTemplate_cba735108c28ea24742e361071718ff55f92ddbc90aff4b02235896af0d
         echo "</small>
         </h5><br>
 
-
         <p class=\" justify-content-center\">
             ";
-        // line 24
-        echo twig_get_attribute($this->env, $this->source, (isset($context["trick"]) || array_key_exists("trick", $context) ? $context["trick"] : (function () { throw new RuntimeError('Variable "trick" does not exist.', 24, $this->source); })()), "description", [], "any", false, false, false, 24);
+        // line 23
+        echo twig_get_attribute($this->env, $this->source, (isset($context["trick"]) || array_key_exists("trick", $context) ? $context["trick"] : (function () { throw new RuntimeError('Variable "trick" does not exist.', 23, $this->source); })()), "description", [], "any", false, false, false, 23);
         echo "</p><br>
 
-        <div class=\"col-md-4\">
-            <div class=\"card bg-light mb-3\">
-
-                <img alt=\"Trick Picture\" src=";
-        // line 29
-        echo twig_escape_filter($this->env, ("/images/" . twig_get_attribute($this->env, $this->source, (isset($context["trick"]) || array_key_exists("trick", $context) ? $context["trick"] : (function () { throw new RuntimeError('Variable "trick" does not exist.', 29, $this->source); })()), "cover", [], "any", false, false, false, 29)), "html", null, true);
-        echo " target= \" _blank \" style=\"height: 200px ;
-                     width: 100% ; display: block\">
-
-
+        <div class=\"row\">
+            <div class=\"col-md-4\">
+                <div class=\"card bg-light mb-3\">
+                    <img alt=\"Trick Picture\" src=";
+        // line 28
+        echo twig_escape_filter($this->env, ("/images/" . twig_get_attribute($this->env, $this->source, (isset($context["trick"]) || array_key_exists("trick", $context) ? $context["trick"] : (function () { throw new RuntimeError('Variable "trick" does not exist.', 28, $this->source); })()), "cover", [], "any", false, false, false, 28)), "html", null, true);
+        echo " target=\" _blank \" style=\"height: 200px ;
+                                                                                                                             width: 100% ; display: block\">
+                </div>
 
             </div>
+
+            ";
+        // line 34
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["trick"]) || array_key_exists("trick", $context) ? $context["trick"] : (function () { throw new RuntimeError('Variable "trick" does not exist.', 34, $this->source); })()), "media", [], "any", false, false, false, 34));
+        foreach ($context['_seq'] as $context["_key"] => $context["videos"]) {
+            // line 35
+            echo "                <div class=\"col-md-4\">
+                    <div class=\"card bg-light mb-3\">
+                        <iframe   width=\"100\" height=\"200\"   src = ";
+            // line 37
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["videos"], "urlVideo", [], "any", false, false, false, 37), "html", null, true);
+            echo "
+                        frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" 
+                        allowfullscreen></iframe>
+                        
+                    </div>
+
+                </div>
+                
+            ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['videos'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 46
+        echo "            ";
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["trick"]) || array_key_exists("trick", $context) ? $context["trick"] : (function () { throw new RuntimeError('Variable "trick" does not exist.', 46, $this->source); })()), "media", [], "any", false, false, false, 46));
+        foreach ($context['_seq'] as $context["_key"] => $context["pictures"]) {
+            // line 47
+            echo "               
+                <div class=\"col-md-4\">
+                    <div class=\"card bg-light mb-3\">
+                        <img alt=\"Trick Picture\" src= ";
+            // line 50
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(twig_get_attribute($this->env, $this->source, $context["pictures"], "picture", [], "any", false, false, false, 50)), "html", null, true);
+            echo " target=\" _blank \" style=\"height: 200px ;
+                                                         width: 100% ; display: block\">
+                    </div>
+                </div>
+            ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['pictures'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 55
+        echo "
         </div>
-
-
-
-
     </div>
 
 
@@ -162,7 +204,7 @@ class __TwigTemplate_cba735108c28ea24742e361071718ff55f92ddbc90aff4b02235896af0d
 
     public function getDebugInfo()
     {
-        return array (  129 => 29,  121 => 24,  113 => 19,  108 => 17,  101 => 13,  96 => 11,  92 => 9,  82 => 8,  69 => 4,  59 => 3,  36 => 1,);
+        return array (  181 => 55,  170 => 50,  165 => 47,  160 => 46,  145 => 37,  141 => 35,  137 => 34,  128 => 28,  120 => 23,  113 => 19,  108 => 17,  101 => 13,  96 => 11,  92 => 9,  82 => 8,  69 => 4,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -176,8 +218,8 @@ class __TwigTemplate_cba735108c28ea24742e361071718ff55f92ddbc90aff4b02235896af0d
 
 {% block body %}
 
-    <div class=\"container mt-3\">
-        <header class=\"masthead bg-primary text-white text-center \" style=\"background-image: url( {{ '/images/'~ trick.cover }} ) \"></header><br>
+    <div class=\"container mt-3 \">
+        <header class=\"masthead text-white text-center \" width=\"100%\" height=\"100px\" style=\"background-image: url( {{ '/images/'~ trick.cover }} ) \"></header><br>
 
         <h1>{{trick.name}}</h1>
 
@@ -188,28 +230,47 @@ class __TwigTemplate_cba735108c28ea24742e361071718ff55f92ddbc90aff4b02235896af0d
                 {{trick.category.name}}</small>
         </h5><br>
 
-
         <p class=\" justify-content-center\">
             {{trick.description | raw }}</p><br>
 
-        <div class=\"col-md-4\">
-            <div class=\"card bg-light mb-3\">
-
-                <img alt=\"Trick Picture\" src={{ '/images/'~ trick.cover }} target= \" _blank \" style=\"height: 200px ;
-                     width: 100% ; display: block\">
-
-
+        <div class=\"row\">
+            <div class=\"col-md-4\">
+                <div class=\"card bg-light mb-3\">
+                    <img alt=\"Trick Picture\" src={{ '/images/'~ trick.cover }} target=\" _blank \" style=\"height: 200px ;
+                                                                                                                             width: 100% ; display: block\">
+                </div>
 
             </div>
+
+            {% for videos in trick.media %}
+                <div class=\"col-md-4\">
+                    <div class=\"card bg-light mb-3\">
+                        <iframe   width=\"100\" height=\"200\"   src = {{  videos.urlVideo }}
+                        frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" 
+                        allowfullscreen></iframe>
+                        
+                    </div>
+
+                </div>
+                
+            {% endfor %}
+            {% for pictures in trick.media %}
+               
+                <div class=\"col-md-4\">
+                    <div class=\"card bg-light mb-3\">
+                        <img alt=\"Trick Picture\" src= {{  asset (pictures.picture ) }} target=\" _blank \" style=\"height: 200px ;
+                                                         width: 100% ; display: block\">
+                    </div>
+                </div>
+            {% endfor %}
+
         </div>
-
-
-
-
     </div>
 
 
 {% endblock %}
+
+
 ", "home/showDetail.html.twig", "/home/gilles/DEV/snowtrick/P6/templates/home/showDetail.html.twig");
     }
 }
