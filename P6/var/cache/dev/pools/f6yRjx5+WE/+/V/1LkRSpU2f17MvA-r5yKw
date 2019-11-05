@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 <?php return [PHP_INT_MAX, 1572922280];
+=======
+<?php return [PHP_INT_MAX, 1570695418];
+>>>>>>> trick

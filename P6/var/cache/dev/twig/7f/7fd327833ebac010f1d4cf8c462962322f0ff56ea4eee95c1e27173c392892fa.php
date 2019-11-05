@@ -47,25 +47,54 @@ class __TwigTemplate_0b5c35090fe633f34af78715b4f73e93218fa1e1dc6b15c754dcadb3bfa
         echo "<!DOCTYPE html>
 <html>
     <head>
-        <meta charset=\"UTF-8\">
-        <title>";
-        // line 5
+        <meta charset=\"utf-8\">
+        <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">
+        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">
+        <meta name=\"description\" content=\"\">
+        <meta name=\"author\" content=\"\">
+        <title>
+            SNOWMASS-
+            ";
+        // line 11
         $this->displayBlock('title', $context, $blocks);
-        echo "</title>
+        // line 12
+        echo "        </title>
+
+
         ";
-        // line 6
+        // line 15
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 7
-        echo "    </head>
+        // line 24
+        echo " </head> <body id=\"page-top\"> 
+
+        
+    </head>
+
+    
     <body>
+    ";
+        // line 31
+        $this->loadTemplate("part/header.html.twig", "base.html.twig", 31)->display($context);
+        // line 32
+        echo "    
+
         ";
-        // line 9
+        // line 34
         $this->displayBlock('body', $context, $blocks);
-        // line 10
+        // line 35
         echo "        ";
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 11
-        echo "    </body>
+        // line 36
+        echo "
+        ";
+        // line 37
+        $this->loadTemplate("part/footer.html.twig", "base.html.twig", 37)->display($context);
+        // line 38
+        echo "
+
+
+        
+    </body>
 </html>
 ";
         
@@ -76,7 +105,7 @@ class __TwigTemplate_0b5c35090fe633f34af78715b4f73e93218fa1e1dc6b15c754dcadb3bfa
 
     }
 
-    // line 5
+    // line 11
     public function block_title($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -86,7 +115,6 @@ class __TwigTemplate_0b5c35090fe633f34af78715b4f73e93218fa1e1dc6b15c754dcadb3bfa
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Welcome!";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -95,7 +123,7 @@ class __TwigTemplate_0b5c35090fe633f34af78715b4f73e93218fa1e1dc6b15c754dcadb3bfa
 
     }
 
-    // line 6
+    // line 15
     public function block_stylesheets($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -105,6 +133,30 @@ class __TwigTemplate_0b5c35090fe633f34af78715b4f73e93218fa1e1dc6b15c754dcadb3bfa
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
 
+        // line 16
+        echo "            <link href=\"";
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/css/all.min.css"), "html", null, true);
+        echo "\" rel=\"stylesheet\"/>
+            <script src=\"/js/all.js\"></script>
+            <script src=\"/js/jquery.min.js\"></script>
+        <link href=\"";
+        // line 19
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("https://fonts.googleapis.com/css?family=Montserrat:400,700"), "html", null, true);
+        echo "\" rel=\"stylesheet\" type=\"text/css\">
+        <link
+        href=\"";
+        // line 21
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic"), "html", null, true);
+        echo "\" rel=\"stylesheet\" type=\"text/css\">
+        <!-- Theme CSS -->
+        <link href=\"";
+        // line 23
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/css/freelancer.min.css"), "html", null, true);
+        echo "\" rel=\"stylesheet\">
+        <link href=\"";
+        // line 24
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/css/fontawesome.min.css"), "html", null, true);
+        echo "\" rel=\"stylesheet\" type=\"text/css\" ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -113,7 +165,7 @@ class __TwigTemplate_0b5c35090fe633f34af78715b4f73e93218fa1e1dc6b15c754dcadb3bfa
 
     }
 
-    // line 9
+    // line 34
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -131,7 +183,7 @@ class __TwigTemplate_0b5c35090fe633f34af78715b4f73e93218fa1e1dc6b15c754dcadb3bfa
 
     }
 
-    // line 10
+    // line 35
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -154,9 +206,14 @@ class __TwigTemplate_0b5c35090fe633f34af78715b4f73e93218fa1e1dc6b15c754dcadb3bfa
         return "base.html.twig";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  135 => 10,  117 => 9,  99 => 6,  80 => 5,  68 => 11,  65 => 10,  63 => 9,  59 => 7,  57 => 6,  53 => 5,  47 => 1,);
+        return array (  187 => 35,  169 => 34,  158 => 24,  154 => 23,  149 => 21,  144 => 19,  137 => 16,  127 => 15,  109 => 11,  93 => 38,  91 => 37,  88 => 36,  85 => 35,  83 => 34,  79 => 32,  77 => 31,  68 => 24,  66 => 15,  61 => 12,  59 => 11,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -164,13 +221,44 @@ class __TwigTemplate_0b5c35090fe633f34af78715b4f73e93218fa1e1dc6b15c754dcadb3bfa
         return new Source("<!DOCTYPE html>
 <html>
     <head>
-        <meta charset=\"UTF-8\">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        <meta charset=\"utf-8\">
+        <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">
+        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">
+        <meta name=\"description\" content=\"\">
+        <meta name=\"author\" content=\"\">
+        <title>
+            SNOWMASS-
+            {% block title %}{% endblock %}
+        </title>
+
+
+        {% block stylesheets %}
+            <link href=\"{{ asset ('/css/all.min.css') }}\" rel=\"stylesheet\"/>
+            <script src=\"/js/all.js\"></script>
+            <script src=\"/js/jquery.min.js\"></script>
+        <link href=\"{{ asset ('https://fonts.googleapis.com/css?family=Montserrat:400,700')}}\" rel=\"stylesheet\" type=\"text/css\">
+        <link
+        href=\"{{ asset('https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic')}}\" rel=\"stylesheet\" type=\"text/css\">
+        <!-- Theme CSS -->
+        <link href=\"{{ asset ('/css/freelancer.min.css')}}\" rel=\"stylesheet\">
+        <link href=\"{{ asset ('/css/fontawesome.min.css')}}\" rel=\"stylesheet\" type=\"text/css\" {% endblock %} </head> <body id=\"page-top\"> 
+
+        
     </head>
+
+    
     <body>
+    {% include \"part/header.html.twig\" %}
+    
+
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
+
+        {% include \"part/footer.html.twig\" %}
+
+
+
+        
     </body>
 </html>
 ", "base.html.twig", "/home/gilles/DEV/snowtrick/P6/templates/base.html.twig");

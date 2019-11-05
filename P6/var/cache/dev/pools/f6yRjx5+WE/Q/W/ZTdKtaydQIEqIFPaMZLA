@@ -10,7 +10,11 @@ return $getExpiry ? PHP_INT_MAX : Hydrator::hydrate(
     [
         'Symfony\\Component\\Routing\\Annotation\\Route' => [
             'path' => [
+<<<<<<< HEAD
                 'trick/{name}',
+=======
+                '/trick/{slug}',
+>>>>>>> trick
             ],
             'name' => [
                 'showdetail',

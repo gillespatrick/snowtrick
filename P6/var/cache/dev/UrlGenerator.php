@@ -15,4 +15,11 @@ return [
     '_profiler_router' => [['token'], ['_controller' => 'web_profiler.controller.router::panelAction'], [], [['text', '/router'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
     '_profiler_exception' => [['token'], ['_controller' => 'web_profiler.controller.exception::showAction'], [], [['text', '/exception'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
     '_profiler_exception_css' => [['token'], ['_controller' => 'web_profiler.controller.exception::cssAction'], [], [['text', '/exception.css'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
+    'home' => [[], ['_controller' => 'App\\Controller\\HomeController::index'], [], [['text', '/']], [], []],
+    'tricks' => [[], ['_controller' => 'App\\Controller\\HomeController::index'], [], [['text', '/tricks/']], [], []],
+    'add_trick' => [[], ['_controller' => 'App\\Controller\\TickController::add'], [], [['text', '/addtrick']], [], []],
+    'trick_edit' => [['id'], ['_controller' => 'App\\Controller\\TickController::edit'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'id', true], ['text', '/trick']], [], []],
+    'showdetail' => [['slug'], ['_controller' => 'App\\Controller\\TickController::show'], [], [['variable', '/', '[^/]++', 'slug', true], ['text', '/trick']], [], []],
+    'user_account' => [[], ['_controller' => 'App\\Controller\\UserAccountController::login'], [], [['text', '/login']], [], []],
+    'user_account_logout' => [[], ['_controller' => 'App\\Controller\\UserAccountController::logout'], [], [['text', '/logout']], [], []],
 ];
