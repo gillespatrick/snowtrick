@@ -131,7 +131,7 @@ class __TwigTemplate_cba735108c28ea24742e361071718ff55f92ddbc90aff4b02235896af0d
                 </div>
 
             </div>
-
+            
             ";
         // line 34
         $context['_parent'] = $context;
@@ -140,7 +140,7 @@ class __TwigTemplate_cba735108c28ea24742e361071718ff55f92ddbc90aff4b02235896af0d
             // line 35
             echo "                <div class=\"col-md-4\">
                     <div class=\"card bg-light mb-3\">
-                        <iframe   width=\"100\" height=\"200\"   src = ";
+                        <iframe   width=\"100%\" height=\"200px\"   src = ";
             // line 37
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["videos"], "urlVideo", [], "any", false, false, false, 37), "html", null, true);
             echo "
@@ -241,11 +241,11 @@ class __TwigTemplate_cba735108c28ea24742e361071718ff55f92ddbc90aff4b02235896af0d
                 </div>
 
             </div>
-
+            
             {% for videos in trick.media %}
                 <div class=\"col-md-4\">
                     <div class=\"card bg-light mb-3\">
-                        <iframe   width=\"100\" height=\"200\"   src = {{  videos.urlVideo }}
+                        <iframe   width=\"100%\" height=\"200px\"   src = {{  videos.urlVideo }}
                         frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" 
                         allowfullscreen></iframe>
                         
@@ -269,6 +269,8 @@ class __TwigTemplate_cba735108c28ea24742e361071718ff55f92ddbc90aff4b02235896af0d
 
 
 {% endblock %}
+
+
 
 
 ", "home/showDetail.html.twig", "/home/gilles/DEV/snowtrick/P6/templates/home/showDetail.html.twig");

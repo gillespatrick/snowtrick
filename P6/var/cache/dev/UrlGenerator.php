@@ -20,4 +20,6 @@ return [
     'add_trick' => [[], ['_controller' => 'App\\Controller\\TickController::add'], [], [['text', '/addtrick']], [], []],
     'trick_edit' => [['id'], ['_controller' => 'App\\Controller\\TickController::edit'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'id', true], ['text', '/trick']], [], []],
     'showdetail' => [['slug'], ['_controller' => 'App\\Controller\\TickController::show'], [], [['variable', '/', '[^/]++', 'slug', true], ['text', '/trick']], [], []],
+    'user_account' => [[], ['_controller' => 'App\\Controller\\UserAccountController::login'], [], [['text', '/login']], [], []],
+    'user_account_logout' => [[], ['_controller' => 'App\\Controller\\UserAccountController::logout'], [], [['text', '/logout']], [], []],
 ];
