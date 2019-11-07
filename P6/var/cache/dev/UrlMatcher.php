@@ -18,6 +18,7 @@ return [
         '/addtrick' => [[['_route' => 'add_trick', '_controller' => 'App\\Controller\\TickController::add'], null, null, null, false, false, null]],
         '/login' => [[['_route' => 'user_account', '_controller' => 'App\\Controller\\UserAccountController::login'], null, null, null, false, false, null]],
         '/logout' => [[['_route' => 'user_account_logout', '_controller' => 'App\\Controller\\UserAccountController::logout'], null, null, null, false, false, null]],
+        '/register' => [[['_route' => 'user_account_register', '_controller' => 'App\\Controller\\UserAccountController::register'], null, null, null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'

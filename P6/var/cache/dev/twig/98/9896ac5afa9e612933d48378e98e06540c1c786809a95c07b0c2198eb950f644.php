@@ -81,11 +81,17 @@ class __TwigTemplate_f214c0f413623c85242e2257693619b7c86bde545104ab5e77f53dc5585
                 </li>
 
                 <li class=\"nav-item\">
-                    <a class=\"nav-link\" href=\"#\">SIGNIN</a>
+                    <a class=\"nav-link\" href=\"";
+        // line 30
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_account");
+        echo "\">SIGNIN</a>
                 </li>
 
                 <li class=\"nav-item\">
-                    <a class=\"nav-link\" href=\"#\">SIGNUP</a>
+                    <a class=\"nav-link\" href=\"";
+        // line 34
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_account_register");
+        echo "\">SIGNUP</a>
                 </li>
 
             </ul>
@@ -115,7 +121,7 @@ class __TwigTemplate_f214c0f413623c85242e2257693619b7c86bde545104ab5e77f53dc5585
 
     public function getDebugInfo()
     {
-        return array (  79 => 26,  72 => 22,  57 => 10,  46 => 2,  43 => 1,);
+        return array (  93 => 34,  86 => 30,  79 => 26,  72 => 22,  57 => 10,  46 => 2,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -149,11 +155,11 @@ class __TwigTemplate_f214c0f413623c85242e2257693619b7c86bde545104ab5e77f53dc5585
                 </li>
 
                 <li class=\"nav-item\">
-                    <a class=\"nav-link\" href=\"#\">SIGNIN</a>
+                    <a class=\"nav-link\" href=\"{{path ('user_account')}}\">SIGNIN</a>
                 </li>
 
                 <li class=\"nav-item\">
-                    <a class=\"nav-link\" href=\"#\">SIGNUP</a>
+                    <a class=\"nav-link\" href=\"{{path ('user_account_register')}}\">SIGNUP</a>
                 </li>
 
             </ul>

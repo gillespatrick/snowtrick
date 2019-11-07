@@ -22,4 +22,5 @@ return [
     'showdetail' => [['slug'], ['_controller' => 'App\\Controller\\TickController::show'], [], [['variable', '/', '[^/]++', 'slug', true], ['text', '/trick']], [], []],
     'user_account' => [[], ['_controller' => 'App\\Controller\\UserAccountController::login'], [], [['text', '/login']], [], []],
     'user_account_logout' => [[], ['_controller' => 'App\\Controller\\UserAccountController::logout'], [], [['text', '/logout']], [], []],
+    'user_account_register' => [[], ['_controller' => 'App\\Controller\\UserAccountController::register'], [], [['text', '/register']], [], []],
 ];
