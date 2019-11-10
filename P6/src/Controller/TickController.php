@@ -52,7 +52,7 @@ class TickController extends AbstractController
             $image->move($this -> getParameter('upload_images'),$fileName);
             $trick -> setCover($fileName);
 
-            // Save 
+            $trick -> setUser ( $this -> getUser());
           
             if (!$trick -> getId()) {
                 $trick -> setCreateDate(new \DateTime());

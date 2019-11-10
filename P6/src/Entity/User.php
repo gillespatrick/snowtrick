@@ -5,10 +5,17 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
+
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
+ * @UniqueEntity(
+ *      fields = {"email"},
+ *      message = " This email already exist "
+ * )
  */
 class User implements UserInterface
 {
@@ -21,11 +28,13 @@ class User implements UserInterface
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank( message = " Please enter  your username ")
      */
     private $username;
 
     /**
      * @ORM\Column(type="string", length=255, unique=true)
+     * @Assert\Email( message =" Put an valid email ")
      */
     private $email;
 
@@ -33,6 +42,13 @@ class User implements UserInterface
      * @ORM\Column(type="string", length=255)
      */
     private $password;
+
+
+    /**
+     * @Assert\EqualTo(propertyPath ="password", 
+     *      message = " Your password isn't the same ! ")
+     */
+    public $passwordConfirm;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
@@ -171,17 +187,17 @@ class User implements UserInterface
     }
 
 
-    public function getRoles(){
-        return['ROLE_USER'];
+    public function getRoles()
+    {
+        return ['ROLE_USER'];
     }
 
 
-   
-    public function getSalt(){
 
-    }
+    public function getSalt()
+    { }
 
- 
+
 
     /**
      * Removes sensitive data from the user.
@@ -189,9 +205,6 @@ class User implements UserInterface
      * This is important if, at any given point, sensitive information like
      * the plain-text password is stored on this object.
      */
-    public function eraseCredentials(){
-
-    }
+    public function eraseCredentials()
+    { }
 }
-
-

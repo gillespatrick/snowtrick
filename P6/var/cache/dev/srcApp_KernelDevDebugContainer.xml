@@ -440,6 +440,9 @@
     <service id="App\Form\ConfigType" class="App\Form\ConfigType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
+    <service id="App\Form\ConfigurationType" class="App\Form\ConfigurationType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
     <service id="App\Form\MediaType" class="App\Form\MediaType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
@@ -801,6 +804,7 @@
       </argument>
       <argument type="collection">
         <argument>App\Form\ConfigType</argument>
+        <argument>App\Form\ConfigurationType</argument>
         <argument>App\Form\MediaType</argument>
         <argument>App\Form\RegistrationType</argument>
         <argument>App\Form\TrickType</argument>
@@ -1069,7 +1073,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension" public="false">
-      <argument type="service" id=".service_locator.ti1cpfI"/>
+      <argument type="service" id=".service_locator.cZmuN.w"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -4737,6 +4741,8 @@
     <service id=".abstract.instanceof.App\DataFixtures\TrickFixtures" class="App\DataFixtures\TrickFixtures" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ConfigType" class="App\Form\ConfigType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\ConfigType" class="App\Form\ConfigType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ConfigurationType" class="App\Form\ConfigurationType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\ConfigurationType" class="App\Form\ConfigurationType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\MediaType" class="App\Form\MediaType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\MediaType" class="App\Form\MediaType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\RegistrationType" class="App\Form\RegistrationType" autowire="true" abstract="true"/>
@@ -4933,15 +4939,24 @@
         <argument key="auth" type="service" id="security.authentication_utils"/>
       </argument>
     </service>
-    <service id=".service_locator.vnfTYKf" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.czKK4py" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="encoder" type="service" id="security.user_password_encoder.generic"/>
+        <argument key="manager" type="service" id="doctrine.orm.default_entity_manager"/>
+      </argument>
+    </service>
+    <service id=".service_locator.OuHpC8V" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\TickController::add" type="service" id=".service_locator.ExHSIqn"/>
         <argument key="App\Controller\TickController::edit" type="service" id=".service_locator.Li7T3xG"/>
         <argument key="App\Controller\UserAccountController::login" type="service" id=".service_locator.FIoyO0m"/>
+        <argument key="App\Controller\UserAccountController::register" type="service" id=".service_locator.czKK4py"/>
         <argument key="App\Controller\TickController:add" type="service" id=".service_locator.ExHSIqn"/>
         <argument key="App\Controller\TickController:edit" type="service" id=".service_locator.Li7T3xG"/>
         <argument key="App\Controller\UserAccountController:login" type="service" id=".service_locator.FIoyO0m"/>
+        <argument key="App\Controller\UserAccountController:register" type="service" id=".service_locator.czKK4py"/>
       </argument>
     </service>
     <service id=".service_locator.LtnrEkg" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
@@ -5003,10 +5018,11 @@
       <argument type="service" id="debug.argument_resolver.not_tagged_controller.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.ti1cpfI" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.cZmuN.w" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Form\ConfigType" type="service" id="App\Form\ConfigType"/>
+        <argument key="App\Form\ConfigurationType" type="service" id="App\Form\ConfigurationType"/>
         <argument key="App\Form\MediaType" type="service" id="App\Form\MediaType"/>
         <argument key="App\Form\RegistrationType" type="service" id="App\Form\RegistrationType"/>
         <argument key="App\Form\TrickType" type="service" id="App\Form\TrickType"/>
@@ -5339,12 +5355,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.vnfTYKf"/>
+      <argument type="service" id=".service_locator.OuHpC8V"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver" public="false">
-      <argument type="service" id=".service_locator.vnfTYKf"/>
+      <argument type="service" id=".service_locator.OuHpC8V"/>
     </service>
     <service id=".service_locator.UwRI0uT" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
@@ -5720,7 +5736,7 @@
     <service id="Twig\Environment" alias="twig" public="false"/>
     <service id="logger" alias="monolog.logger"/>
     <service id="Psr\Log\LoggerInterface" alias="monolog.logger" public="false"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.vnfTYKf"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.OuHpC8V"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="validator" alias="debug.validator" public="true"/>

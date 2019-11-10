@@ -50,49 +50,61 @@ class __TwigTemplate_f214c0f413623c85242e2257693619b7c86bde545104ab5e77f53dc5585
     </button>
 
     <div class=\"collapse navbar-collapse\" id=\"navbarColor03\">
-        <ul class=\"navbar-nav mr-auto\">
-            <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"";
-        // line 10
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("add_trick");
-        echo "\">ADD TRICK
-                </a>
-            </li>
-            <li class=\"dropdown\">
-                <a class=\"nav-link\" href=\"#\">ADD CATEGORY</a>
-
-            </li>
-        </ul>
+        <ul class=\"navbar-nav mr-auto\"></ul>
         <form class=\"form-inline my-2 my-lg-0\">
             <ul class=\"navbar-nav mr-auto\">
 
                 <li class=\"nav-item\">
                     <a class=\"nav-link\" href=\"";
-        // line 22
+        // line 13
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
         echo "\">HOME</a>
                 </li>
 
                 <li class=\"nav-item\">
                     <a class=\"nav-link\" href=\"";
-        // line 26
+        // line 17
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("tricks");
         echo "\">TRICKS</a>
                 </li>
 
-                <li class=\"nav-item\">
-                    <a class=\"nav-link\" href=\"";
-        // line 30
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_account");
-        echo "\">SIGNIN</a>
-                </li>
+                ";
+        // line 20
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 20, $this->source); })()), "user", [], "any", false, false, false, 20)) {
+            // line 21
+            echo "                    <li class=\"nav-item\">
+                        <a class=\"nav-link\" href=\"";
+            // line 22
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("add_trick");
+            echo "\">ADD TRICK
+                        </a>
+                    </li>
+                    <li class=\"nav-item\">
+                        <a class=\"nav-link\" href=\"";
+            // line 26
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_account_logout");
+            echo "\">LOGOUT</a>
+                    </li>
+                ";
+        } else {
+            // line 29
+            echo "                    <li class=\"nav-item\">
+                        <a class=\"nav-link\" href=\"";
+            // line 30
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_account");
+            echo "\">SIGNIN</a>
+                    </li>
 
-                <li class=\"nav-item\">
-                    <a class=\"nav-link\" href=\"";
-        // line 34
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_account_register");
-        echo "\">SIGNUP</a>
-                </li>
+                    <li class=\"nav-item\">
+                        <a class=\"nav-link\" href=\"";
+            // line 34
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_account_register");
+            echo "\">SIGNUP</a>
+                    </li>
+                ";
+        }
+        // line 37
+        echo "
 
             </ul>
         </form>
@@ -121,7 +133,7 @@ class __TwigTemplate_f214c0f413623c85242e2257693619b7c86bde545104ab5e77f53dc5585
 
     public function getDebugInfo()
     {
-        return array (  93 => 34,  86 => 30,  79 => 26,  72 => 22,  57 => 10,  46 => 2,  43 => 1,);
+        return array (  107 => 37,  101 => 34,  94 => 30,  91 => 29,  85 => 26,  78 => 22,  75 => 21,  73 => 20,  67 => 17,  60 => 13,  46 => 2,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -133,16 +145,7 @@ class __TwigTemplate_f214c0f413623c85242e2257693619b7c86bde545104ab5e77f53dc5585
     </button>
 
     <div class=\"collapse navbar-collapse\" id=\"navbarColor03\">
-        <ul class=\"navbar-nav mr-auto\">
-            <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"{{path('add_trick')}}\">ADD TRICK
-                </a>
-            </li>
-            <li class=\"dropdown\">
-                <a class=\"nav-link\" href=\"#\">ADD CATEGORY</a>
-
-            </li>
-        </ul>
+        <ul class=\"navbar-nav mr-auto\"></ul>
         <form class=\"form-inline my-2 my-lg-0\">
             <ul class=\"navbar-nav mr-auto\">
 
@@ -154,13 +157,24 @@ class __TwigTemplate_f214c0f413623c85242e2257693619b7c86bde545104ab5e77f53dc5585
                     <a class=\"nav-link\" href=\"{{path('tricks')}}\">TRICKS</a>
                 </li>
 
-                <li class=\"nav-item\">
-                    <a class=\"nav-link\" href=\"{{path ('user_account')}}\">SIGNIN</a>
-                </li>
+                {% if app.user %}
+                    <li class=\"nav-item\">
+                        <a class=\"nav-link\" href=\"{{path('add_trick')}}\">ADD TRICK
+                        </a>
+                    </li>
+                    <li class=\"nav-item\">
+                        <a class=\"nav-link\" href=\"{{path ('user_account_logout')}}\">LOGOUT</a>
+                    </li>
+                {% else %}
+                    <li class=\"nav-item\">
+                        <a class=\"nav-link\" href=\"{{path ('user_account')}}\">SIGNIN</a>
+                    </li>
 
-                <li class=\"nav-item\">
-                    <a class=\"nav-link\" href=\"{{path ('user_account_register')}}\">SIGNUP</a>
-                </li>
+                    <li class=\"nav-item\">
+                        <a class=\"nav-link\" href=\"{{path ('user_account_register')}}\">SIGNUP</a>
+                    </li>
+                {% endif %}
+
 
             </ul>
         </form>

@@ -12,7 +12,14 @@
             <h1 class="display-3 text-white">Sign in to your account</h1>
             <p class="lead text-warning"></p>
 
-        </div>
+        </div><br>
+         {% block flash_message %}
+            {% for message in app.flashes('notice') %}
+                <div class="alert alert-dismissible alert-success">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endblock %}
 
         <div class="row">
             <div class="col-md-3">&nbsp;</div>
@@ -57,7 +64,7 @@
                             
 
                                     <a href ="#" > Forgot password ?</a><br>
-                                    <a href ="#" > Create an account !</a>
+                                    <a href ="{{ path ('user_account_register')}}" > Create an account !</a>
 
                             </div></center>
                             </form>

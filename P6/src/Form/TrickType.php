@@ -5,7 +5,7 @@ namespace App\Form;
 use App\Entity\Trick;
 use App\Form\MediaType;
 use App\Entity\Category;
-use Symfony\Component\Form\AbstractType;
+use App\Form\ConfigurationType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -15,24 +15,9 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 
-class TrickType extends AbstractType
+class TrickType extends ConfigurationType
 {
-    /**
-     *
-     * @param string $label
-     * @param string $placeholder
-     * @param array $options
-     * @return array
-     */
-    protected function getConfig($label, $placeholder, $options = [])
-    {
-        return array_merge([
-            'label' => $label,
-            'attr'  => [
-                'placeholder' => $placeholder
-            ]
-        ], $options);
-    }
+  
 
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
