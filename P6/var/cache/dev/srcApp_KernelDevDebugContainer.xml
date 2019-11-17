@@ -446,6 +446,12 @@
     <service id="App\Form\MediaType" class="App\Form\MediaType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
+    <service id="App\Form\PasswordUpdateType" class="App\Form\PasswordUpdateType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\ProfileType" class="App\Form\ProfileType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
     <service id="App\Form\RegistrationType" class="App\Form\RegistrationType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
@@ -465,6 +471,10 @@
       <argument type="service" id="doctrine"/>
     </service>
     <service id="App\Repository\TrickRepository" class="App\Repository\TrickRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\UpdatePasswordRepository" class="App\Repository\UpdatePasswordRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
@@ -806,6 +816,8 @@
         <argument>App\Form\ConfigType</argument>
         <argument>App\Form\ConfigurationType</argument>
         <argument>App\Form\MediaType</argument>
+        <argument>App\Form\PasswordUpdateType</argument>
+        <argument>App\Form\ProfileType</argument>
         <argument>App\Form\RegistrationType</argument>
         <argument>App\Form\TrickType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\FormType</argument>
@@ -1073,7 +1085,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension" public="false">
-      <argument type="service" id=".service_locator.cZmuN.w"/>
+      <argument type="service" id=".service_locator.bd7PlJG"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -3013,7 +3025,7 @@
       <factory class="Doctrine\ORM\EntityManager" method="create"/>
     </service>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory" public="false">
-      <argument type="service" id=".service_locator.Tx3yDyE"/>
+      <argument type="service" id=".service_locator.0QYcW_A"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -4745,6 +4757,10 @@
     <service id=".abstract.instanceof.App\Form\ConfigurationType" class="App\Form\ConfigurationType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\MediaType" class="App\Form\MediaType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\MediaType" class="App\Form\MediaType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\PasswordUpdateType" class="App\Form\PasswordUpdateType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\PasswordUpdateType" class="App\Form\PasswordUpdateType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ProfileType" class="App\Form\ProfileType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\ProfileType" class="App\Form\ProfileType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\RegistrationType" class="App\Form\RegistrationType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\RegistrationType" class="App\Form\RegistrationType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\TrickType" class="App\Form\TrickType" autowire="true" abstract="true"/>
@@ -4757,6 +4773,8 @@
     <service id=".abstract.instanceof.App\Repository\MediaRepository" class="App\Repository\MediaRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\TrickRepository" class="App\Repository\TrickRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\TrickRepository" class="App\Repository\TrickRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\UpdatePasswordRepository" class="App\Repository\UpdatePasswordRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\UpdatePasswordRepository" class="App\Repository\UpdatePasswordRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\UserRepository" class="App\Repository\UserRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\UserRepository" class="App\Repository\UserRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id="maker.auto_command.make_auth" class="Symfony\Bundle\MakerBundle\Command\MakerCommand" public="false">
@@ -4946,17 +4964,27 @@
         <argument key="manager" type="service" id="doctrine.orm.default_entity_manager"/>
       </argument>
     </service>
-    <service id=".service_locator.OuHpC8V" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.Txvqv4R" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="manager" type="service" id="doctrine.orm.default_entity_manager"/>
+      </argument>
+    </service>
+    <service id=".service_locator.l1OZTn1" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\TickController::add" type="service" id=".service_locator.ExHSIqn"/>
         <argument key="App\Controller\TickController::edit" type="service" id=".service_locator.Li7T3xG"/>
         <argument key="App\Controller\UserAccountController::login" type="service" id=".service_locator.FIoyO0m"/>
+        <argument key="App\Controller\UserAccountController::profile" type="service" id=".service_locator.Txvqv4R"/>
         <argument key="App\Controller\UserAccountController::register" type="service" id=".service_locator.czKK4py"/>
+        <argument key="App\Controller\UserAccountController::updatePassword" type="service" id=".service_locator.czKK4py"/>
         <argument key="App\Controller\TickController:add" type="service" id=".service_locator.ExHSIqn"/>
         <argument key="App\Controller\TickController:edit" type="service" id=".service_locator.Li7T3xG"/>
         <argument key="App\Controller\UserAccountController:login" type="service" id=".service_locator.FIoyO0m"/>
+        <argument key="App\Controller\UserAccountController:profile" type="service" id=".service_locator.Txvqv4R"/>
         <argument key="App\Controller\UserAccountController:register" type="service" id=".service_locator.czKK4py"/>
+        <argument key="App\Controller\UserAccountController:updatePassword" type="service" id=".service_locator.czKK4py"/>
       </argument>
     </service>
     <service id=".service_locator.LtnrEkg" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
@@ -5018,12 +5046,14 @@
       <argument type="service" id="debug.argument_resolver.not_tagged_controller.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.cZmuN.w" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.bd7PlJG" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Form\ConfigType" type="service" id="App\Form\ConfigType"/>
         <argument key="App\Form\ConfigurationType" type="service" id="App\Form\ConfigurationType"/>
         <argument key="App\Form\MediaType" type="service" id="App\Form\MediaType"/>
+        <argument key="App\Form\PasswordUpdateType" type="service" id="App\Form\PasswordUpdateType"/>
+        <argument key="App\Form\ProfileType" type="service" id="App\Form\ProfileType"/>
         <argument key="App\Form\RegistrationType" type="service" id="App\Form\RegistrationType"/>
         <argument key="App\Form\TrickType" type="service" id="App\Form\TrickType"/>
         <argument key="Symfony\Bridge\Doctrine\Form\Type\EntityType" type="service" id="form.type.entity"/>
@@ -5038,13 +5068,14 @@
         <argument key="doctrine.orm.default_listeners.attach_entity_listeners" type="service" id="doctrine.orm.default_listeners.attach_entity_listeners"/>
       </argument>
     </service>
-    <service id=".service_locator.Tx3yDyE" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.0QYcW_A" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Repository\CategoryRepository" type="service" id="App\Repository\CategoryRepository"/>
         <argument key="App\Repository\CommentRepository" type="service" id="App\Repository\CommentRepository"/>
         <argument key="App\Repository\MediaRepository" type="service" id="App\Repository\MediaRepository"/>
         <argument key="App\Repository\TrickRepository" type="service" id="App\Repository\TrickRepository"/>
+        <argument key="App\Repository\UpdatePasswordRepository" type="service" id="App\Repository\UpdatePasswordRepository"/>
         <argument key="App\Repository\UserRepository" type="service" id="App\Repository\UserRepository"/>
       </argument>
     </service>
@@ -5355,12 +5386,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.OuHpC8V"/>
+      <argument type="service" id=".service_locator.l1OZTn1"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver" public="false">
-      <argument type="service" id=".service_locator.OuHpC8V"/>
+      <argument type="service" id=".service_locator.l1OZTn1"/>
     </service>
     <service id=".service_locator.UwRI0uT" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
@@ -5736,7 +5767,7 @@
     <service id="Twig\Environment" alias="twig" public="false"/>
     <service id="logger" alias="monolog.logger"/>
     <service id="Psr\Log\LoggerInterface" alias="monolog.logger" public="false"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.OuHpC8V"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.l1OZTn1"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="validator" alias="debug.validator" public="true"/>

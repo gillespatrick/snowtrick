@@ -40,6 +40,7 @@ class User implements UserInterface
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Length(min = 8, minMessage = "Your password must do 8 characters minimum !" )
      */
     private $password;
 

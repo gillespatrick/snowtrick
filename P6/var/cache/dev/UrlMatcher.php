@@ -19,6 +19,8 @@ return [
         '/login' => [[['_route' => 'user_account', '_controller' => 'App\\Controller\\UserAccountController::login'], null, null, null, false, false, null]],
         '/logout' => [[['_route' => 'user_account_logout', '_controller' => 'App\\Controller\\UserAccountController::logout'], null, null, null, false, false, null]],
         '/register' => [[['_route' => 'user_account_register', '_controller' => 'App\\Controller\\UserAccountController::register'], null, null, null, false, false, null]],
+        '/account/profile' => [[['_route' => ' user_account_profile ', '_controller' => 'App\\Controller\\UserAccountController::profile'], null, null, null, false, false, null]],
+        '/account/updatepassword' => [[['_route' => ' user_account_updatepassword', '_controller' => 'App\\Controller\\UserAccountController::updatePassword'], null, null, null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'

@@ -111,7 +111,7 @@ class __TwigTemplate_cba735108c28ea24742e361071718ff55f92ddbc90aff4b02235896af0d
                 ";
         // line 19
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["trick"]) || array_key_exists("trick", $context) ? $context["trick"] : (function () { throw new RuntimeError('Variable "trick" does not exist.', 19, $this->source); })()), "user", [], "any", false, false, false, 19), "username", [], "any", false, false, false, 19), "html", null, true);
-        echo "</small>
+        echo " </small>
         </h5><br>
 
         <p class=\" justify-content-center\">
@@ -227,7 +227,7 @@ class __TwigTemplate_cba735108c28ea24742e361071718ff55f92ddbc90aff4b02235896af0d
             <small>the
                 {{trick.name}}
                 was created by
-                {{trick.user.username}}</small>
+                {{trick.user.username}} </small>
         </h5><br>
 
         <p class=\" justify-content-center\">
