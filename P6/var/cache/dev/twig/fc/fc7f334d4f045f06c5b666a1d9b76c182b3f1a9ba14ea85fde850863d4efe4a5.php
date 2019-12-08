@@ -94,48 +94,43 @@ class __TwigTemplate_1a7c248684c3dd44e39c0510a79864a87c920afcc2fdd84639183d7c303
 
         // line 9
         echo "
-    <div class=\"container \">
+\t<div class=\"container \">
 
-        <header class=\"masthead bg-primary text-white text-center \" style=\"background-image: url(images/create.jpg)\"></header><br><br>
+\t\t<header class=\"masthead bg-primary text-white text-center \" style=\"background-image: url(images/create.jpg)\"></header><br><br>
 
- 
-            <i>
-                <center>
-                    <h1>
-                        Add New Trick
-                    </h1>
-                </center>
-            </i><hr><br>
-            ";
+
+\t\t<i>
+\t\t\t<center>
+\t\t\t\t<h1>
+\t\t\t\t\tAdd New Trick
+\t\t\t\t</h1>
+\t\t\t</center>
+\t\t</i><hr><br>
+\t\t";
         // line 22
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 22, $this->source); })()), 'form_start');
         echo "
 
-            ";
+\t\t";
         // line 24
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 24, $this->source); })()), 'widget');
         echo "
-            <button type=\"submit\" class=\"btn btn-success btn-lg\">
-                
-               
-                     <i class=\"fas fa-save\"></i>
-                        Save...
-                
+\t\t<button type=\"submit\" class=\"btn btn-success btn-lg\">
 
 
+\t\t\t<i class=\"fas fa-save\"></i>
+\t\t\tSave...
 
-                
-            </button>
 
-            ";
-        // line 37
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 37, $this->source); })()), 'form_end');
+\t\t</button>
+
+\t\t";
+        // line 34
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 34, $this->source); })()), 'form_end');
         echo "
 
-        
 
-
-    </div>
+\t</div>
 
 ";
         
@@ -146,7 +141,7 @@ class __TwigTemplate_1a7c248684c3dd44e39c0510a79864a87c920afcc2fdd84639183d7c303
 
     }
 
-    // line 46
+    // line 41
     public function block__trick_media_widget($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -156,21 +151,21 @@ class __TwigTemplate_1a7c248684c3dd44e39c0510a79864a87c920afcc2fdd84639183d7c303
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "_trick_media_widget"));
 
-        // line 47
-        echo "    <p>
-        There you most add your own pictures</p>
+        // line 42
+        echo "\t<p>
+\t\tThere you most add your own pictures</p>
 
-    ";
-        // line 50
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 50, $this->source); })()), 'widget');
+\t";
+        // line 45
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 45, $this->source); })()), 'widget');
         echo "
 
-    <input type=\"hidden\" id=\"widgets-counter\" value=\"0\">
-    <div class=\"form-group\">
-        <button type=\"button\" id=\"add_media\" class=\"btn btn-primary \">
-            <i class=\"fas fa-plus-square\"></i>
-        </button>
-    </div>
+\t<input type=\"hidden\" id=\"widgets-counter\" value=\"0\">
+\t<div class=\"form-group\">
+\t\t<button type=\"button\" id=\"add_media\" class=\"btn btn-primary \">
+\t\t\t<i class=\"fas fa-plus-square\"></i>
+\t\t</button>
+\t</div>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -180,7 +175,7 @@ class __TwigTemplate_1a7c248684c3dd44e39c0510a79864a87c920afcc2fdd84639183d7c303
 
     }
 
-    // line 61
+    // line 56
     public function block__trick_media_entry_row($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -190,9 +185,9 @@ class __TwigTemplate_1a7c248684c3dd44e39c0510a79864a87c920afcc2fdd84639183d7c303
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "_trick_media_entry_row"));
 
-        // line 62
-        echo "    ";
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 62, $this->source); })()), 'widget');
+        // line 57
+        echo "\t";
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 57, $this->source); })()), 'widget');
         echo "
 
 ";
@@ -204,7 +199,7 @@ class __TwigTemplate_1a7c248684c3dd44e39c0510a79864a87c920afcc2fdd84639183d7c303
 
     }
 
-    // line 68
+    // line 63
     public function block__trick_media_entry_widget($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -214,52 +209,52 @@ class __TwigTemplate_1a7c248684c3dd44e39c0510a79864a87c920afcc2fdd84639183d7c303
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "_trick_media_entry_widget"));
 
-        // line 69
+        // line 64
         echo "
-    <div class=\"form-group\" id=\"block_";
-        // line 70
-        echo twig_escape_filter($this->env, (isset($context["id"]) || array_key_exists("id", $context) ? $context["id"] : (function () { throw new RuntimeError('Variable "id" does not exist.', 70, $this->source); })()), "html", null, true);
+\t<div class=\"form-group\" id=\"block_";
+        // line 65
+        echo twig_escape_filter($this->env, (isset($context["id"]) || array_key_exists("id", $context) ? $context["id"] : (function () { throw new RuntimeError('Variable "id" does not exist.', 65, $this->source); })()), "html", null, true);
         echo "\">
 
 
-        <div class=\"row\">
-            <div class=\"col-10\">
-                <div class=\"row\">
-                    <div class=\"col\">
-                        ";
-        // line 77
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 77, $this->source); })()), "urlVideo", [], "any", false, false, false, 77), 'widget');
+\t\t<div class=\"row\">
+\t\t\t<div class=\"col-10\">
+\t\t\t\t<div class=\"row\">
+\t\t\t\t\t<div class=\"col\">
+\t\t\t\t\t\t";
+        // line 72
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 72, $this->source); })()), "urlVideo", [], "any", false, false, false, 72), 'widget');
         echo "
-                        ";
+\t\t\t\t\t\t";
+        // line 73
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 73, $this->source); })()), "urlVideo", [], "any", false, false, false, 73), 'errors');
+        echo "</div>
+
+\t\t\t\t\t<div class=\"col\">";
+        // line 75
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 75, $this->source); })()), "picture", [], "any", false, false, false, 75), 'widget');
+        echo "
+\t\t\t\t\t\t";
+        // line 76
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 76, $this->source); })()), "picture", [], "any", false, false, false, 76), 'errors');
+        echo "</div>
+\t\t\t\t\t<div class=\"col-2\">
+\t\t\t\t\t\t<button type=\"button\" data-action=\"delete\" data-target=\"#block_";
         // line 78
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 78, $this->source); })()), "urlVideo", [], "any", false, false, false, 78), 'errors');
-        echo "</div>
-
-                    <div class=\"col\">";
-        // line 80
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 80, $this->source); })()), "picture", [], "any", false, false, false, 80), 'widget');
-        echo "
-                        ";
-        // line 81
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 81, $this->source); })()), "picture", [], "any", false, false, false, 81), 'errors');
-        echo "</div>
-                    <div class=\"col-2\">
-                        <button type=\"button\" data-action=\"delete\" data-target=\"#block_";
-        // line 83
-        echo twig_escape_filter($this->env, (isset($context["id"]) || array_key_exists("id", $context) ? $context["id"] : (function () { throw new RuntimeError('Variable "id" does not exist.', 83, $this->source); })()), "html", null, true);
+        echo twig_escape_filter($this->env, (isset($context["id"]) || array_key_exists("id", $context) ? $context["id"] : (function () { throw new RuntimeError('Variable "id" does not exist.', 78, $this->source); })()), "html", null, true);
         echo "\" id=\"add_media\" class=\"btn btn-danger \">
-                            <i class=\"far fa-trash-alt\"></i>
-                        </button>
-                    </div>
-                </div>
+\t\t\t\t\t\t\t<i class=\"far fa-trash-alt\"></i>
+\t\t\t\t\t\t</button>
+\t\t\t\t\t</div>
+\t\t\t\t</div>
 
-            </div>
-
-
-        </div>
+\t\t\t</div>
 
 
-    </div>
+\t\t</div>
+
+
+\t</div>
 
 ";
         
@@ -270,7 +265,7 @@ class __TwigTemplate_1a7c248684c3dd44e39c0510a79864a87c920afcc2fdd84639183d7c303
 
     }
 
-    // line 99
+    // line 94
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -280,30 +275,30 @@ class __TwigTemplate_1a7c248684c3dd44e39c0510a79864a87c920afcc2fdd84639183d7c303
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 100
+        // line 95
         echo "
-    <script>
-        \$('#add_media').click(function () { // const index = \$('#trick_media div.form-group').length;
-            const index = + \$('#widgets-counter').val();
+\t<script>
+\t\t\$('#add_media').click(function () { // const index = \$('#trick_media div.form-group').length;
+const index = + \$('#widgets-counter').val();
 
 
-            const temp = \$('#trick_media').data('prototype').replace(/__name__/g, index);
-            \$('#trick_media').append(temp);
-            \$('#widgets-counter').val(index + 1);
+const temp = \$('#trick_media').data('prototype').replace(/__name__/g, index);
+\$('#trick_media').append(temp);
+\$('#widgets-counter').val(index + 1);
 
-            // Manage delete Button
-            handleDeleteButton();
-        });
+// Manage delete Button
+handleDeleteButton();
+});
 
 
-        function handleDeleteButton() {
-            \$('button[data-action= \"delete\"]').click(function () {
-                const target = this.dataset.target;
-                \$(target).remove();
-            });
-        }
-        handleDeleteButton();
-    </script>
+function handleDeleteButton() {
+\$('button[data-action= \"delete\"]').click(function () {
+const target = this.dataset.target;
+\$(target).remove();
+});
+}
+handleDeleteButton();
+\t</script>
 
 ";
         
@@ -326,7 +321,7 @@ class __TwigTemplate_1a7c248684c3dd44e39c0510a79864a87c920afcc2fdd84639183d7c303
 
     public function getDebugInfo()
     {
-        return array (  284 => 100,  274 => 99,  249 => 83,  244 => 81,  240 => 80,  235 => 78,  231 => 77,  221 => 70,  218 => 69,  208 => 68,  194 => 62,  184 => 61,  165 => 50,  160 => 47,  150 => 46,  132 => 37,  116 => 24,  111 => 22,  96 => 9,  86 => 8,  66 => 3,  55 => 1,  53 => 6,  40 => 1,);
+        return array (  279 => 95,  269 => 94,  244 => 78,  239 => 76,  235 => 75,  230 => 73,  226 => 72,  216 => 65,  213 => 64,  203 => 63,  189 => 57,  179 => 56,  160 => 45,  155 => 42,  145 => 41,  129 => 34,  116 => 24,  111 => 22,  96 => 9,  86 => 8,  66 => 3,  55 => 1,  53 => 6,  40 => 1,);
     }
 
     public function getSourceContext()
@@ -340,59 +335,54 @@ class __TwigTemplate_1a7c248684c3dd44e39c0510a79864a87c920afcc2fdd84639183d7c303
 
 {% block body %}
 
-    <div class=\"container \">
+\t<div class=\"container \">
 
-        <header class=\"masthead bg-primary text-white text-center \" style=\"background-image: url(images/create.jpg)\"></header><br><br>
-
- 
-            <i>
-                <center>
-                    <h1>
-                        Add New Trick
-                    </h1>
-                </center>
-            </i><hr><br>
-            {{ form_start(form)}}
-
-            {{ form_widget(form)}}
-            <button type=\"submit\" class=\"btn btn-success btn-lg\">
-                
-               
-                     <i class=\"fas fa-save\"></i>
-                        Save...
-                
+\t\t<header class=\"masthead bg-primary text-white text-center \" style=\"background-image: url(images/create.jpg)\"></header><br><br>
 
 
+\t\t<i>
+\t\t\t<center>
+\t\t\t\t<h1>
+\t\t\t\t\tAdd New Trick
+\t\t\t\t</h1>
+\t\t\t</center>
+\t\t</i><hr><br>
+\t\t{{ form_start(form)}}
 
-                
-            </button>
-
-            {{ form_end(form)}}
-
-        
+\t\t{{ form_widget(form)}}
+\t\t<button type=\"submit\" class=\"btn btn-success btn-lg\">
 
 
-    </div>
+\t\t\t<i class=\"fas fa-save\"></i>
+\t\t\tSave...
+
+
+\t\t</button>
+
+\t\t{{ form_end(form)}}
+
+
+\t</div>
 
 {% endblock %}
 
 {% block _trick_media_widget %}
-    <p>
-        There you most add your own pictures</p>
+\t<p>
+\t\tThere you most add your own pictures</p>
 
-    {{form_widget(form)}}
+\t{{form_widget(form)}}
 
-    <input type=\"hidden\" id=\"widgets-counter\" value=\"0\">
-    <div class=\"form-group\">
-        <button type=\"button\" id=\"add_media\" class=\"btn btn-primary \">
-            <i class=\"fas fa-plus-square\"></i>
-        </button>
-    </div>
+\t<input type=\"hidden\" id=\"widgets-counter\" value=\"0\">
+\t<div class=\"form-group\">
+\t\t<button type=\"button\" id=\"add_media\" class=\"btn btn-primary \">
+\t\t\t<i class=\"fas fa-plus-square\"></i>
+\t\t</button>
+\t</div>
 {% endblock %}
 
 
 {% block _trick_media_entry_row %}
-    {{ form_widget(form)}}
+\t{{ form_widget(form)}}
 
 {% endblock %}
 
@@ -400,59 +390,59 @@ class __TwigTemplate_1a7c248684c3dd44e39c0510a79864a87c920afcc2fdd84639183d7c303
 
 {% block _trick_media_entry_widget %}
 
-    <div class=\"form-group\" id=\"block_{{id}}\">
+\t<div class=\"form-group\" id=\"block_{{id}}\">
 
 
-        <div class=\"row\">
-            <div class=\"col-10\">
-                <div class=\"row\">
-                    <div class=\"col\">
-                        {{ form_widget(form.urlVideo)}}
-                        {{ form_errors(form.urlVideo)}}</div>
+\t\t<div class=\"row\">
+\t\t\t<div class=\"col-10\">
+\t\t\t\t<div class=\"row\">
+\t\t\t\t\t<div class=\"col\">
+\t\t\t\t\t\t{{ form_widget(form.urlVideo)}}
+\t\t\t\t\t\t{{ form_errors(form.urlVideo)}}</div>
 
-                    <div class=\"col\">{{ form_widget(form.picture)}}
-                        {{ form_errors(form.picture)}}</div>
-                    <div class=\"col-2\">
-                        <button type=\"button\" data-action=\"delete\" data-target=\"#block_{{id}}\" id=\"add_media\" class=\"btn btn-danger \">
-                            <i class=\"far fa-trash-alt\"></i>
-                        </button>
-                    </div>
-                </div>
+\t\t\t\t\t<div class=\"col\">{{ form_widget(form.picture)}}
+\t\t\t\t\t\t{{ form_errors(form.picture)}}</div>
+\t\t\t\t\t<div class=\"col-2\">
+\t\t\t\t\t\t<button type=\"button\" data-action=\"delete\" data-target=\"#block_{{id}}\" id=\"add_media\" class=\"btn btn-danger \">
+\t\t\t\t\t\t\t<i class=\"far fa-trash-alt\"></i>
+\t\t\t\t\t\t</button>
+\t\t\t\t\t</div>
+\t\t\t\t</div>
 
-            </div>
-
-
-        </div>
+\t\t\t</div>
 
 
-    </div>
+\t\t</div>
+
+
+\t</div>
 
 {% endblock %}
 
 {% block javascripts %}
 
-    <script>
-        \$('#add_media').click(function () { // const index = \$('#trick_media div.form-group').length;
-            const index = + \$('#widgets-counter').val();
+\t<script>
+\t\t\$('#add_media').click(function () { // const index = \$('#trick_media div.form-group').length;
+const index = + \$('#widgets-counter').val();
 
 
-            const temp = \$('#trick_media').data('prototype').replace(/__name__/g, index);
-            \$('#trick_media').append(temp);
-            \$('#widgets-counter').val(index + 1);
+const temp = \$('#trick_media').data('prototype').replace(/__name__/g, index);
+\$('#trick_media').append(temp);
+\$('#widgets-counter').val(index + 1);
 
-            // Manage delete Button
-            handleDeleteButton();
-        });
+// Manage delete Button
+handleDeleteButton();
+});
 
 
-        function handleDeleteButton() {
-            \$('button[data-action= \"delete\"]').click(function () {
-                const target = this.dataset.target;
-                \$(target).remove();
-            });
-        }
-        handleDeleteButton();
-    </script>
+function handleDeleteButton() {
+\$('button[data-action= \"delete\"]').click(function () {
+const target = this.dataset.target;
+\$(target).remove();
+});
+}
+handleDeleteButton();
+\t</script>
 
 {% endblock %}
 ", "home/new_trick.html.twig", "/home/gilles/DEV/snowtrick/P6/templates/home/new_trick.html.twig");

@@ -41,74 +41,100 @@ class __TwigTemplate_f214c0f413623c85242e2257693619b7c86bde545104ab5e77f53dc5585
 
         // line 1
         echo "<nav class=\"navbar navbar-expand-lg navbar-light bg-light\">
-    <a class=\"navbar-brand\" href=\"";
+\t<a class=\"navbar-brand\" href=\"";
         // line 2
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
         echo "\">SNOWMASS</a>
-    <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarColor03\" aria-controls=\"navbarColor03\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
-        <span class=\"navbar-toggler-icon\"></span>
-    </button>
+\t<button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarColor03\" aria-controls=\"navbarColor03\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
+\t\t<span class=\"navbar-toggler-icon\"></span>
+\t</button>
 
-    <div class=\"collapse navbar-collapse\" id=\"navbarColor03\">
-        <ul class=\"navbar-nav mr-auto\"></ul>
-        <form class=\"form-inline my-2 my-lg-0\">
-            <ul class=\"navbar-nav mr-auto\">
+\t<div class=\"collapse navbar-collapse\" id=\"navbarColor03\">
+\t\t<ul class=\"navbar-nav mr-auto\">
 
-                <li class=\"nav-item\">
-                    <a class=\"nav-link\" href=\"";
-        // line 13
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
-        echo "\">HOME</a>
-                </li>
 
-                <li class=\"nav-item\">
-                    <a class=\"nav-link\" href=\"";
+
+\t\t</ul>
+\t\t<form class=\"form-inline my-2 my-lg-0\">
+\t\t\t<ul class=\"navbar-nav mr-auto \">
+
+\t\t\t\t<li class=\"nav-item\">
+\t\t\t\t\t<a class=\"nav-link\" href=\"";
         // line 17
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("tricks");
-        echo "\">TRICKS</a>
-                </li>
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
+        echo "\">Home</a>
+\t\t\t\t</li>
 
-                ";
-        // line 20
-        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 20, $this->source); })()), "user", [], "any", false, false, false, 20)) {
-            // line 21
-            echo "                    <li class=\"nav-item\">
-                        <a class=\"nav-link\" href=\"";
-            // line 22
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("add_trick");
-            echo "\">ADD TRICK
-                        </a>
-                    </li>
-                    <li class=\"nav-item\">
-                        <a class=\"nav-link\" href=\"";
-            // line 26
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_account_logout");
-            echo "\">LOGOUT</a>
-                    </li>
-                ";
-        } else {
-            // line 29
-            echo "                    <li class=\"nav-item\">
-                        <a class=\"nav-link\" href=\"";
-            // line 30
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_account");
-            echo "\">SIGNIN</a>
-                    </li>
+\t\t\t\t<li class=\"nav-item\">
+\t\t\t\t\t<a class=\"nav-link\" href=\"";
+        // line 21
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
+        echo "\"> Tricks
+\t\t\t\t\t</a>
+\t\t\t\t</li>
 
-                    <li class=\"nav-item\">
-                        <a class=\"nav-link\" href=\"";
+
+
+\t\t\t\t";
+        // line 27
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 27, $this->source); })()), "user", [], "any", false, false, false, 27)) {
+            // line 28
+            echo "
+\t\t\t\t\t
+
+
+
+\t\t\t\t\t<li class=\"nav-item\">
+\t\t\t\t\t\t<a class=\"nav-link\" href=\"";
             // line 34
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user");
+            echo "\"> My Profile
+\t\t\t\t\t\t</a>
+\t\t\t\t\t</li>
+
+\t\t\t\t\t<li class=\"nav-item\">
+\t\t\t\t\t\t<a class=\"nav-link\" href=\"";
+            // line 39
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_account_logout");
+            echo "\">Logout</a>
+\t\t\t\t\t</li>
+
+
+
+
+\t\t\t\t";
+        } else {
+            // line 46
+            echo "\t\t\t\t\t<li class=\"nav-item\">
+\t\t\t\t\t\t<a class=\"nav-link\" href=\"";
+            // line 47
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_account");
+            echo "\">Signin</a>
+\t\t\t\t\t</li>
+
+\t\t\t\t\t<li class=\"nav-item\">
+\t\t\t\t\t\t<a class=\"nav-link\" href=\"";
+            // line 51
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("user_account_register");
-            echo "\">SIGNUP</a>
-                    </li>
-                ";
+            echo "\">Signup</a>
+\t\t\t\t\t</li>
+
+\t\t\t\t\t";
+            // line 55
+            echo "
+\t\t\t\t\t
+
+
+\t\t\t\t\t";
+            // line 60
+            echo "\t\t\t\t";
         }
-        // line 37
+        // line 61
         echo "
 
-            </ul>
-        </form>
-    </div>
+\t\t\t</ul>
+\t\t</form>
+\t</div>
 </nav>
 
 
@@ -133,52 +159,76 @@ class __TwigTemplate_f214c0f413623c85242e2257693619b7c86bde545104ab5e77f53dc5585
 
     public function getDebugInfo()
     {
-        return array (  107 => 37,  101 => 34,  94 => 30,  91 => 29,  85 => 26,  78 => 22,  75 => 21,  73 => 20,  67 => 17,  60 => 13,  46 => 2,  43 => 1,);
+        return array (  133 => 61,  130 => 60,  124 => 55,  118 => 51,  111 => 47,  108 => 46,  98 => 39,  90 => 34,  82 => 28,  80 => 27,  71 => 21,  64 => 17,  46 => 2,  43 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("<nav class=\"navbar navbar-expand-lg navbar-light bg-light\">
-    <a class=\"navbar-brand\" href=\"{{path('home')}}\">SNOWMASS</a>
-    <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarColor03\" aria-controls=\"navbarColor03\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
-        <span class=\"navbar-toggler-icon\"></span>
-    </button>
+\t<a class=\"navbar-brand\" href=\"{{path('home')}}\">SNOWMASS</a>
+\t<button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarColor03\" aria-controls=\"navbarColor03\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
+\t\t<span class=\"navbar-toggler-icon\"></span>
+\t</button>
 
-    <div class=\"collapse navbar-collapse\" id=\"navbarColor03\">
-        <ul class=\"navbar-nav mr-auto\"></ul>
-        <form class=\"form-inline my-2 my-lg-0\">
-            <ul class=\"navbar-nav mr-auto\">
-
-                <li class=\"nav-item\">
-                    <a class=\"nav-link\" href=\"{{path('home')}}\">HOME</a>
-                </li>
-
-                <li class=\"nav-item\">
-                    <a class=\"nav-link\" href=\"{{path('tricks')}}\">TRICKS</a>
-                </li>
-
-                {% if app.user %}
-                    <li class=\"nav-item\">
-                        <a class=\"nav-link\" href=\"{{path('add_trick')}}\">ADD TRICK
-                        </a>
-                    </li>
-                    <li class=\"nav-item\">
-                        <a class=\"nav-link\" href=\"{{path ('user_account_logout')}}\">LOGOUT</a>
-                    </li>
-                {% else %}
-                    <li class=\"nav-item\">
-                        <a class=\"nav-link\" href=\"{{path ('user_account')}}\">SIGNIN</a>
-                    </li>
-
-                    <li class=\"nav-item\">
-                        <a class=\"nav-link\" href=\"{{path ('user_account_register')}}\">SIGNUP</a>
-                    </li>
-                {% endif %}
+\t<div class=\"collapse navbar-collapse\" id=\"navbarColor03\">
+\t\t<ul class=\"navbar-nav mr-auto\">
 
 
-            </ul>
-        </form>
-    </div>
+
+\t\t</ul>
+\t\t<form class=\"form-inline my-2 my-lg-0\">
+\t\t\t<ul class=\"navbar-nav mr-auto \">
+
+\t\t\t\t<li class=\"nav-item\">
+\t\t\t\t\t<a class=\"nav-link\" href=\"{{path('home')}}\">Home</a>
+\t\t\t\t</li>
+
+\t\t\t\t<li class=\"nav-item\">
+\t\t\t\t\t<a class=\"nav-link\" href=\"{{ path ('home') }}\"> Tricks
+\t\t\t\t\t</a>
+\t\t\t\t</li>
+
+
+
+\t\t\t\t{% if app.user %}
+
+\t\t\t\t\t
+
+
+
+\t\t\t\t\t<li class=\"nav-item\">
+\t\t\t\t\t\t<a class=\"nav-link\" href=\"{{ path ('user')}}\"> My Profile
+\t\t\t\t\t\t</a>
+\t\t\t\t\t</li>
+
+\t\t\t\t\t<li class=\"nav-item\">
+\t\t\t\t\t\t<a class=\"nav-link\" href=\"{{path('user_account_logout')}}\">Logout</a>
+\t\t\t\t\t</li>
+
+
+
+
+\t\t\t\t{% else %}
+\t\t\t\t\t<li class=\"nav-item\">
+\t\t\t\t\t\t<a class=\"nav-link\" href=\"{{path ('user_account')}}\">Signin</a>
+\t\t\t\t\t</li>
+
+\t\t\t\t\t<li class=\"nav-item\">
+\t\t\t\t\t\t<a class=\"nav-link\" href=\"{{path ('user_account_register')}}\">Signup</a>
+\t\t\t\t\t</li>
+
+\t\t\t\t\t{##}
+
+\t\t\t\t\t
+
+
+\t\t\t\t\t{##}
+\t\t\t\t{% endif %}
+
+
+\t\t\t</ul>
+\t\t</form>
+\t</div>
 </nav>
 
 
@@ -202,6 +252,25 @@ class __TwigTemplate_f214c0f413623c85242e2257693619b7c86bde545104ab5e77f53dc5585
         </div>
 
     </div>
+
+    <a class=\"nav-link\" href=\"{{path ('user_account_logout')}}\">LOGOUT</a>
+
+
+
+     <li class=\"nav-item dropdown\">
+                    <a class=\"nav-link dropdown-toggle\" href=\"#\" data-toggle=\"dropdown\" id=\"accountDropdownLink\" aria-haspopup=\"true\" aria-expanded=\"false\">
+                        <img src=\"#\" class=\"avatar avatar-mini\" >
+                       {{app.user.username}}
+                    </a>
+
+                    <div class=\"btn dropdown-menu dropdown-menu-right\" aria-labelledby=\"accountDropdownLink\">
+                        <a class=\"dropdown-item\" href=\"#\">AAAAA</a>
+                        <div class=\"dropdown-divider\"></div>
+                        <a class=\"dropdown-item\" href=\"#\">BBBBB</a>
+                    </div>
+                </li>
+
+
 
 
 </div>#}

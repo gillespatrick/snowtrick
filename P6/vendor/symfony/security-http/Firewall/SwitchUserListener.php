@@ -82,9 +82,16 @@ class SwitchUserListener implements ListenerInterface
     public function __invoke(RequestEvent $event)
     {
         $request = $event->getRequest();
-        $username = $request->get($this->usernameParameter) ?: $request->headers->get($this->usernameParameter);
 
-        if (!$username) {
+        // usernames can be falsy
+        $username = $request->get($this->usernameParameter);
+
+        if (null === $username || '' === $username) {
+            $username = $request->headers->get($this->usernameParameter);
+        }
+
+        // if it's still "empty", nothing to do.
+        if (null === $username || '' === $username) {
             return;
         }
 
@@ -98,7 +105,8 @@ class SwitchUserListener implements ListenerInterface
             try {
                 $this->tokenStorage->setToken($this->attemptSwitchUser($request, $username));
             } catch (AuthenticationException $e) {
-                throw new \LogicException(sprintf('Switch User failed: "%s"', $e->getMessage()));
+                // Generate 403 in any conditions to prevent user enumeration vulnerabilities
+                throw new AccessDeniedException('Switch User failed: '.$e->getMessage(), $e);
             }
         }
 
@@ -135,7 +143,23 @@ class SwitchUserListener implements ListenerInterface
             throw new \LogicException(sprintf('You are already switched to "%s" user.', $token->getUsername()));
         }
 
-        $user = $this->provider->loadUserByUsername($username);
+        $currentUsername = $token->getUsername();
+        $nonExistentUsername = '_'.md5(random_bytes(8).$username);
+
+        // To protect against user enumeration via timing measurements
+        // we always load both successfully and unsuccessfully
+        try {
+            $user = $this->provider->loadUserByUsername($username);
+
+            try {
+                $this->provider->loadUserByUsername($nonExistentUsername);
+            } catch (AuthenticationException $e) {
+            }
+        } catch (AuthenticationException $e) {
+            $this->provider->loadUserByUsername($currentUsername);
+
+            throw $e;
+        }
 
         if (false === $this->accessDecisionManager->decide($token, [$this->role], $user)) {
             $exception = new AccessDeniedException();

@@ -35,17 +35,18 @@ class CsvEncoder implements EncoderInterface, DecoderInterface
     private $defaultContext = [
         self::DELIMITER_KEY => ',',
         self::ENCLOSURE_KEY => '"',
-        self::ESCAPE_CHAR_KEY => '\\',
+        self::ESCAPE_CHAR_KEY => '',
         self::ESCAPE_FORMULAS_KEY => false,
         self::HEADERS_KEY => [],
         self::KEY_SEPARATOR_KEY => '.',
         self::NO_HEADERS_KEY => false,
+        self::AS_COLLECTION_KEY => false,
     ];
 
     /**
      * @param array $defaultContext
      */
-    public function __construct($defaultContext = [], string $enclosure = '"', string $escapeChar = '\\', string $keySeparator = '.', bool $escapeFormulas = false)
+    public function __construct($defaultContext = [], string $enclosure = '"', string $escapeChar = '', string $keySeparator = '.', bool $escapeFormulas = false)
     {
         if (!\is_array($defaultContext)) {
             @trigger_error('Passing configuration options directly to the constructor is deprecated since Symfony 4.2, use the default context instead.', E_USER_DEPRECATED);
@@ -60,6 +61,10 @@ class CsvEncoder implements EncoderInterface, DecoderInterface
         }
 
         $this->defaultContext = array_merge($this->defaultContext, $defaultContext);
+
+        if (\PHP_VERSION_ID < 70400 && '' === $this->defaultContext[self::ESCAPE_CHAR_KEY]) {
+            $this->defaultContext[self::ESCAPE_CHAR_KEY] = '\\';
+        }
     }
 
     /**
@@ -97,7 +102,7 @@ class CsvEncoder implements EncoderInterface, DecoderInterface
 
         $headers = array_merge(array_values($headers), array_diff($this->extractHeaders($data), $headers));
 
-        if (!($context[self::NO_HEADERS_KEY] ?? false)) {
+        if (!($context[self::NO_HEADERS_KEY] ?? $this->defaultContext[self::NO_HEADERS_KEY])) {
             fputcsv($handle, $headers, $delimiter, $enclosure, $escapeChar);
         }
 
@@ -143,7 +148,7 @@ class CsvEncoder implements EncoderInterface, DecoderInterface
             if (null === $headers) {
                 $nbHeaders = $nbCols;
 
-                if ($context[self::NO_HEADERS_KEY] ?? false) {
+                if ($context[self::NO_HEADERS_KEY] ?? $this->defaultContext[self::NO_HEADERS_KEY]) {
                     for ($i = 0; $i < $nbCols; ++$i) {
                         $headers[] = [$i];
                     }
@@ -183,7 +188,7 @@ class CsvEncoder implements EncoderInterface, DecoderInterface
         }
         fclose($handle);
 
-        if ($context[self::AS_COLLECTION_KEY] ?? false) {
+        if ($context[self::AS_COLLECTION_KEY] ?? $this->defaultContext[self::AS_COLLECTION_KEY]) {
             return $result;
         }
 

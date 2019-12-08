@@ -18,6 +18,25 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class UserAccountController extends AbstractController
 {
+
+/**
+     * @Route("/account/{username}", name="user")
+     */
+    public function index()
+    {
+        $user = new User();
+        return $this->render('user_account/show.html.twig', [
+           'user' => $user
+          //'user' => $this ->getUser()
+        ]);
+    }
+   
+
+
+
+
+
+
     /**
      * @Route("/login", name="user_account")
      * @return Response 
@@ -84,7 +103,9 @@ class UserAccountController extends AbstractController
 
 
     /**
-     * @Route("/account/profile", name = " user_account_profile ")
+     * Allow to update my profile to update my informations
+     * 
+     * @Route("/profile", name = " user_profile ")
      *
      * @return Response
      */
@@ -116,7 +137,7 @@ class UserAccountController extends AbstractController
     }
 
     /**
-     * @Route("/account/updatepassword", name = " user_account_updatepassword")
+     * @Route("/updatepassword", name = " user_account_updatepassword")
      * @return Response
      */
 
@@ -157,7 +178,8 @@ class UserAccountController extends AbstractController
         ]);
      }
 
-
+     
+    
 
      
 

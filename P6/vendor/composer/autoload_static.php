@@ -143,7 +143,6 @@ class ComposerStaticInit97e20edfcdb312121cbc0c6578c4be36
             'Doctrine\\Common\\' => 16,
             'Doctrine\\Bundle\\MigrationsBundle\\' => 33,
             'Doctrine\\Bundle\\FixturesBundle\\' => 31,
-            'Doctrine\\Bundle\\DoctrineCacheBundle\\' => 36,
             'Doctrine\\Bundle\\DoctrineBundle\\' => 31,
         ),
         'C' => 
@@ -430,7 +429,7 @@ class ComposerStaticInit97e20edfcdb312121cbc0c6578c4be36
         ),
         'Sensio\\Bundle\\FrameworkExtraBundle\\' => 
         array (
-            0 => __DIR__ . '/..' . '/sensio/framework-extra-bundle',
+            0 => __DIR__ . '/..' . '/sensio/framework-extra-bundle/src',
         ),
         'Psr\\Log\\' => 
         array (
@@ -534,10 +533,6 @@ class ComposerStaticInit97e20edfcdb312121cbc0c6578c4be36
         'Doctrine\\Bundle\\FixturesBundle\\' => 
         array (
             0 => __DIR__ . '/..' . '/doctrine/doctrine-fixtures-bundle',
-        ),
-        'Doctrine\\Bundle\\DoctrineCacheBundle\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/doctrine/doctrine-cache-bundle',
         ),
         'Doctrine\\Bundle\\DoctrineBundle\\' => 
         array (

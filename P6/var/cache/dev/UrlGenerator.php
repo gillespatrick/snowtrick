@@ -23,6 +23,8 @@ return [
     'user_account' => [[], ['_controller' => 'App\\Controller\\UserAccountController::login'], [], [['text', '/login']], [], []],
     'user_account_logout' => [[], ['_controller' => 'App\\Controller\\UserAccountController::logout'], [], [['text', '/logout']], [], []],
     'user_account_register' => [[], ['_controller' => 'App\\Controller\\UserAccountController::register'], [], [['text', '/register']], [], []],
-    ' user_account_profile ' => [[], ['_controller' => 'App\\Controller\\UserAccountController::profile'], [], [['text', '/account/profile']], [], []],
-    ' user_account_updatepassword' => [[], ['_controller' => 'App\\Controller\\UserAccountController::updatePassword'], [], [['text', '/account/updatepassword']], [], []],
+    ' user_account_updatepassword' => [[], ['_controller' => 'App\\Controller\\UserAccountController::updatePassword'], [], [['text', '/updatepassword']], [], []],
+    'show_user' => [['username'], ['_controller' => 'App\\Controller\\UserController::index'], [], [['variable', '/', '[^/]++', 'username', true], ['text', '/user']], [], []],
+    'user' => [[], ['_controller' => 'App\\Controller\\UserController::myAccount'], [], [['text', '/user']], [], []],
+    ' user_profile ' => [[], ['_controller' => 'App\\Controller\\UserController::profile'], [], [['text', '/user/profile']], [], []],
 ];

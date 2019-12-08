@@ -1,0 +1,23 @@
+<div class="col-md-4">
+	<div class="card bg-light mb-3">
+
+		<img alt="Trick Picture" src="{{ '/images/'~ trick.cover }}" style="height: 200px ;width: 100% ; display: block"/>
+
+
+		<div class="card-body">
+
+
+			<a href="{{ path ('showdetail', {'slug': trick.slug}) }}">
+				<h4 class="card-title">{{trick.name}}</h4>
+			</a>
+
+			<p class="card-text">
+				{{trick.description | slice(0, 30)| raw }}
+			</p>
+		</div>
+
+		<a class="btn btn-secondary" href="{{ path ('showdetail', {'slug': trick.slug}) }}">More details</a>
+	</div>
+
+
+</div>
