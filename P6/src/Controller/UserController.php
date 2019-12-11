@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\User;
+use App\Form\ProfileType;
 use Symfony\Component\HttpFoundation\Request;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\Routing\Annotation\Route;
@@ -11,30 +12,22 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class UserController extends AbstractController
 {
     /**
-     * @Route("/user/{username}", name="show_user")
+     * @Route("/user/{username}/", name="show_user")
      */
     public function index(User $user)
     {
         
         return $this->render('user/user.html.twig', [
-          //  'user' => $user
-          'user' => $this ->getUser()
+           'user' => $user
+          //'user' => $this ->getUser()
         ]);
     }
 
-    /**
-      * display account user
-      *
-      *@Route("/user" , name = "user")
-      */
-      public function myAccount(){
-
-    }
-
+   
     /**
      * Allow to update my profile
      * 
-     * @Route("/user/profile", name = " user_profile ")
+     * @Route("/user/profile", name ="user_profil")
      *
      * @return Response
      */
@@ -60,7 +53,7 @@ class UserController extends AbstractController
 
 
 
-        return $this->render('user/profile.html.twig', [
+        return $this->render('user/profil.html.twig', [
             'form' => $form->createView()
         ]);
     }

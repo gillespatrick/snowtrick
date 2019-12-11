@@ -23,8 +23,8 @@
                 <h1> {{ user.username}}</h1>
 			{% if user is same as (app.user) %}
 					<div class = "mt-3">
-						<a href = "{{ path ('add_trick')}}" class = "btn btn-primary mr-2 mb-2 "> New trick</a>
-						<a href = "{{ path ('user_profile')}}" class = "btn btn-primary mr-2 mb-2 "> Edit your profile</a>
+						<a href = "#"class = "btn btn-primary mr-2 mb-2 "> New trick</a>
+						<a href = "#" class = "btn btn-primary mr-2 mb-2 "> Edit your profile</a>
 						<a href = "#" class = "btn btn-primary mr-2 mb-2 "> Change your password</a>
 					</div>
 
@@ -46,7 +46,7 @@
 		 {% else %}
 		 	<div class = " alert-warning">
 				<p>
-					<strong> {{ user.username}}</strong> doesn't have the
+					<strong> {{ user.username}}</strong> Doesn't have the tricks
 				</p>
 			</div>
 

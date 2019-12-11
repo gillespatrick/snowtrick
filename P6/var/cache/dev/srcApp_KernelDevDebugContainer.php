@@ -16,6 +16,6 @@ if (!\class_exists(srcApp_KernelDevDebugContainer::class, false)) {
 
 return new \ContainerDbbmgJz\srcApp_KernelDevDebugContainer([
     'container.build_hash' => 'DbbmgJz',
-    'container.build_id' => '38ba9ac2',
-    'container.build_time' => 1575840145,
+    'container.build_id' => '84a58d57',
+    'container.build_time' => 1576058133,
 ], __DIR__.\DIRECTORY_SEPARATOR.'ContainerDbbmgJz');

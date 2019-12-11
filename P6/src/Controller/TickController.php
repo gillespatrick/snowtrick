@@ -16,14 +16,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class TickController extends AbstractController
 {
-
-
-
-
-
-
-
-
     /**
      * @Route("/addtrick", name="add_trick")
      * 
@@ -119,7 +111,7 @@ class TickController extends AbstractController
     {
 
         $trickRepository = $this->getDoctrine()->getRepository(Trick::class);
-        $trick = $trickRepository->findOneBySlug($slug);
+        $trick = $trickRepository-> findOneBySlug($slug);
 
 
 
