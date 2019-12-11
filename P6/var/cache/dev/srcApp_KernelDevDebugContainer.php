@@ -16,6 +16,6 @@ if (!\class_exists(srcApp_KernelDevDebugContainer::class, false)) {
 
 return new \Container0aTwTDb\srcApp_KernelDevDebugContainer([
     'container.build_hash' => '0aTwTDb',
-    'container.build_id' => 'a7b9b3a8',
-    'container.build_time' => 1576060948,
+    'container.build_id' => '1c31d5e8',
+    'container.build_time' => 1576062251,
 ], __DIR__.\DIRECTORY_SEPARATOR.'Container0aTwTDb');
