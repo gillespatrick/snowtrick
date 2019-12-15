@@ -25,14 +25,14 @@ class TickController extends AbstractController
 
      
     /**
-     * @Route("/addtrick", name="add_trick")
+     * @Route("/trick/addtrick", name="add_trick")
      * 
      */
     public function add( Trick $trick = null, Request $request, ObjectManager $manager)
     {
 
             $media = new Media();
-            $trick = new Trick();   
+            //$trick = new Trick();   
 
         $form = $this -> createForm(TrickType::class,$trick); 
         $form -> handleRequest($request);
@@ -118,7 +118,7 @@ class TickController extends AbstractController
     {
 
         $trickRepository = $this->getDoctrine()->getRepository(Trick::class);
-        $trick = $trickRepository->findOneBySlug($slug);
+        $trick = $trickRepository -> findOneBySlug($slug);
         
         
 
