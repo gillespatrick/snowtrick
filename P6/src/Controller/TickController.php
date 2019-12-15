@@ -7,8 +7,9 @@ namespace App\Controller;
 use App\Entity\Media;
 use App\Entity\Trick;
 use App\Form\TrickType;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
-use Doctrine\Common\Persistence\ObjectManager;
+//use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -28,7 +29,7 @@ class TickController extends AbstractController
      * @Route("/addtrick", name="add_trick")
      * 
      */
-    public function add( Trick $trick = null, Request $request, ObjectManager $manager)
+    public function add( Trick $trick = null, Request $request, EntityManagerInterface $manager)
     {
 
             $media = new Media();
