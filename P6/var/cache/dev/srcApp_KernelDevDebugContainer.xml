@@ -2211,14 +2211,6 @@
         <argument>2048</argument>
       </call>
       <call method="addListener">
-        <argument>console.command</argument>
-        <argument type="collection">
-          <argument type="service" id="debug.debug_handlers_listener"/>
-          <argument>configure</argument>
-        </argument>
-        <argument>2048</argument>
-      </call>
-      <call method="addListener">
         <argument>kernel.exception</argument>
         <argument type="collection">
           <argument type="service" id="debug.debug_handlers_listener"/>
@@ -4933,10 +4925,10 @@
         <argument>make:migration</argument>
       </call>
     </service>
-    <service id=".service_locator.ExHSIqn" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.DelcpaA" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="manager" type="service" id=".errored..service_locator.ExHSIqn.Doctrine\Common\Persistence\ObjectManager"/>
+        <argument key="manager" type="service" id="doctrine.orm.default_entity_manager"/>
       </argument>
     </service>
     <service id=".service_locator.Li7T3xG" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
@@ -4970,10 +4962,10 @@
         <argument key="user" type="service" id=".errored..service_locator.wypGnUQ.App\Entity\User"/>
       </argument>
     </service>
-    <service id=".service_locator.ulM84uH" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.56q_u31" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="App\Controller\TickController::add" type="service" id=".service_locator.ExHSIqn"/>
+        <argument key="App\Controller\TickController::add" type="service" id=".service_locator.DelcpaA"/>
         <argument key="App\Controller\TickController::edit" type="service" id=".service_locator.Li7T3xG"/>
         <argument key="App\Controller\UserAccountController::login" type="service" id=".service_locator.FIoyO0m"/>
         <argument key="App\Controller\UserAccountController::profile" type="service" id=".service_locator.Txvqv4R"/>
@@ -4981,7 +4973,7 @@
         <argument key="App\Controller\UserAccountController::updatePassword" type="service" id=".service_locator.czKK4py"/>
         <argument key="App\Controller\UserController::index" type="service" id=".service_locator.wypGnUQ"/>
         <argument key="App\Controller\UserController::profile" type="service" id=".service_locator.Txvqv4R"/>
-        <argument key="App\Controller\TickController:add" type="service" id=".service_locator.ExHSIqn"/>
+        <argument key="App\Controller\TickController:add" type="service" id=".service_locator.DelcpaA"/>
         <argument key="App\Controller\TickController:edit" type="service" id=".service_locator.Li7T3xG"/>
         <argument key="App\Controller\UserAccountController:login" type="service" id=".service_locator.FIoyO0m"/>
         <argument key="App\Controller\UserAccountController:profile" type="service" id=".service_locator.Txvqv4R"/>
@@ -5396,12 +5388,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.ulM84uH"/>
+      <argument type="service" id=".service_locator.56q_u31"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver" public="false">
-      <argument type="service" id=".service_locator.ulM84uH"/>
+      <argument type="service" id=".service_locator.56q_u31"/>
     </service>
     <service id=".service_locator.UwRI0uT" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
@@ -5425,7 +5417,6 @@
         <argument key="security.token_storage" type="service" id="security.token_storage"/>
       </argument>
     </service>
-    <service id=".errored..service_locator.ExHSIqn.Doctrine\Common\Persistence\ObjectManager" class="Doctrine\Common\Persistence\ObjectManager"/>
     <service id=".errored..service_locator.Li7T3xG.App\Entity\Trick" class="App\Entity\Trick"/>
     <service id=".errored..service_locator.czKK4py.Doctrine\Common\Persistence\ObjectManager" class="Doctrine\Common\Persistence\ObjectManager"/>
     <service id=".errored..service_locator.Txvqv4R.Doctrine\Common\Persistence\ObjectManager" class="Doctrine\Common\Persistence\ObjectManager"/>
@@ -5800,7 +5791,7 @@
     <service id="Twig\Environment" alias="twig" public="false"/>
     <service id="logger" alias="monolog.logger"/>
     <service id="Psr\Log\LoggerInterface" alias="monolog.logger" public="false"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.ulM84uH"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.56q_u31"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
