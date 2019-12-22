@@ -16,11 +16,16 @@ return [
         '/' => [[['_route' => 'home', '_controller' => 'App\\Controller\\HomeController::index'], null, null, null, false, false, null]],
         '/tricks' => [[['_route' => 'tricks', '_controller' => 'App\\Controller\\HomeController::index'], null, null, null, true, false, null]],
         '/trick/addtrick' => [[['_route' => 'add_trick', '_controller' => 'App\\Controller\\TickController::add'], null, null, null, false, false, null]],
-        '/login' => [[['_route' => 'user_account', '_controller' => 'App\\Controller\\UserAccountController::login'], null, null, null, false, false, null]],
-        '/logout' => [[['_route' => 'user_account_logout', '_controller' => 'App\\Controller\\UserAccountController::logout'], null, null, null, false, false, null]],
+        '/login' => [
+            [['_route' => 'user_account', '_controller' => 'App\\Controller\\UserAccountController::login'], null, null, null, false, false, null],
+            [['_route' => 'login_user', '_controller' => 'App\\Controller\\UserController::login'], null, null, null, false, false, null],
+        ],
         '/register' => [[['_route' => 'user_account_register', '_controller' => 'App\\Controller\\UserAccountController::register'], null, null, null, false, false, null]],
         '/profile' => [[['_route' => ' user_profile ', '_controller' => 'App\\Controller\\UserAccountController::profile'], null, null, null, false, false, null]],
         '/updatepassword' => [[['_route' => ' user_account_updatepassword', '_controller' => 'App\\Controller\\UserAccountController::updatePassword'], null, null, null, false, false, null]],
+        '/user/dashboard' => [[['_route' => 'show_user', '_controller' => 'App\\Controller\\UserController::index'], null, null, null, false, false, null]],
+        '/user/update' => [[['_route' => 'update_profile', '_controller' => 'App\\Controller\\UserController::profile'], null, null, null, true, false, null]],
+        '/logout' => [[['_route' => 'logout', '_controller' => 'App\\Controller\\UserController::logout'], null, null, null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'
@@ -44,10 +49,6 @@ return [
                     .'|(*:200)'
                 .')'
                 .'|/account/([^/]++)(*:226)'
-                .'|/user/(?'
-                    .'|([^/]++)(*:251)'
-                    .'|profile(*:266)'
-                .')'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -58,12 +59,10 @@ return [
         136 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception::showAction'], ['token'], null, null, false, false, null]],
         149 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception::cssAction'], ['token'], null, null, false, false, null]],
         159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
-        192 => [[['_route' => 'trick_edit', '_controller' => 'App\\Controller\\TickController::edit'], ['id'], null, null, false, false, null]],
+        192 => [[['_route' => 'trick_edit', '_controller' => 'App\\Controller\\TickController::edit'], ['slug'], null, null, false, false, null]],
         200 => [[['_route' => 'showdetail', '_controller' => 'App\\Controller\\TickController::show'], ['slug'], null, null, false, true, null]],
-        226 => [[['_route' => 'user', '_controller' => 'App\\Controller\\UserAccountController::index'], ['username'], null, null, false, true, null]],
-        251 => [[['_route' => 'show_user', '_controller' => 'App\\Controller\\UserController::index'], ['username'], null, null, true, true, null]],
-        266 => [
-            [['_route' => 'user_profil', '_controller' => 'App\\Controller\\UserController::profile'], [], null, null, false, false, null],
+        226 => [
+            [['_route' => 'user', '_controller' => 'App\\Controller\\UserAccountController::index'], ['username'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],

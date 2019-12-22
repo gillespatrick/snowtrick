@@ -8,6 +8,7 @@ use App\Entity\UpdatePassword;
 use App\Form\RegistrationType;
 use App\Form\PasswordUpdateType;
 use Symfony\Component\Form\FormError;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\HttpFoundation\Response;
@@ -54,14 +55,7 @@ class UserAccountController extends AbstractController
 
 
 
-    /**
-     * @Route("/logout", name="user_account_logout")
-     * @return void 
-     */
-    public function logout()
-    {
-        //nothing here ...
-    }
+    
 
 
     /**
@@ -71,7 +65,7 @@ class UserAccountController extends AbstractController
      * @return Response
      */
 
-    public function register(Request $request, ObjectManager $manager, UserPasswordEncoderInterface $encoder)
+    public function register(Request $request, EntityManagerInterface $manager, UserPasswordEncoderInterface $encoder)
     {
 
         $user = new User();
@@ -109,7 +103,7 @@ class UserAccountController extends AbstractController
      *
      * @return Response
      */
-    public function profile(Request $request, ObjectManager $manager)
+    public function profile(Request $request, EntityManagerInterface $manager)
     {
 
         $user = $this->getUser();
@@ -141,7 +135,7 @@ class UserAccountController extends AbstractController
      * @return Response
      */
 
-     public function updatePassword(Request $request, UserPasswordEncoderInterface $encoder, ObjectManager $manager){
+     public function updatePassword(Request $request, UserPasswordEncoderInterface $encoder, EntityManagerInterface $manager){
 
         $passwordupdate = new UpdatePassword();
         $user = new User();

@@ -23,7 +23,7 @@ security:
                 login_path: user_account
                 check_path: user_account
             logout:
-                path: user_account_logout
+                path: logout
                 target: tricks
 
             # activate different ways to authenticate

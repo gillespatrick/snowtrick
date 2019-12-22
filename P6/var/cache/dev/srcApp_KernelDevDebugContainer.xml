@@ -415,6 +415,10 @@
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
+    <service id="App\Repository\RoleRepository" class="App\Repository\RoleRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
     <service id="App\Repository\TrickRepository" class="App\Repository\TrickRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
@@ -2996,7 +3000,7 @@
       <factory class="Doctrine\ORM\EntityManager" method="create"/>
     </service>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory" public="false">
-      <argument type="service" id=".service_locator.0QYcW_A"/>
+      <argument type="service" id=".service_locator.fhpCgQy"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -3383,7 +3387,7 @@
       <argument type="service" id="security.token_storage" on-invalid="null"/>
       <call method="registerListener">
         <argument>main</argument>
-        <argument>user_account_logout</argument>
+        <argument>logout</argument>
         <argument>logout</argument>
         <argument>_csrf_token</argument>
         <argument>null</argument>
@@ -3813,7 +3817,7 @@
       <argument type="collection">
         <argument key="csrf_parameter">_csrf_token</argument>
         <argument key="csrf_token_id">logout</argument>
-        <argument key="logout_path">user_account_logout</argument>
+        <argument key="logout_path">logout</argument>
       </argument>
       <call method="addHandler">
         <argument type="service" id="security.logout.handler.csrf_token_clearing"/>
@@ -4757,6 +4761,8 @@
     <service id=".abstract.instanceof.App\Repository\CommentRepository" class="App\Repository\CommentRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\MediaRepository" class="App\Repository\MediaRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\MediaRepository" class="App\Repository\MediaRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\RoleRepository" class="App\Repository\RoleRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\RoleRepository" class="App\Repository\RoleRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\TrickRepository" class="App\Repository\TrickRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\TrickRepository" class="App\Repository\TrickRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\UpdatePasswordRepository" class="App\Repository\UpdatePasswordRepository" autowire="true" abstract="true"/>
@@ -4943,44 +4949,46 @@
         <argument key="auth" type="service" id="security.authentication_utils"/>
       </argument>
     </service>
-    <service id=".service_locator.czKK4py" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.ZCad3U8" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="encoder" type="service" id="security.user_password_encoder.generic"/>
-        <argument key="manager" type="service" id=".errored..service_locator.czKK4py.Doctrine\Common\Persistence\ObjectManager"/>
+        <argument key="manager" type="service" id="doctrine.orm.default_entity_manager"/>
       </argument>
     </service>
-    <service id=".service_locator.Txvqv4R" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.FufKbwa" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="manager" type="service" id=".errored..service_locator.Txvqv4R.Doctrine\Common\Persistence\ObjectManager"/>
+        <argument key="manager" type="service" id="doctrine.orm.default_entity_manager"/>
       </argument>
     </service>
-    <service id=".service_locator.wypGnUQ" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.Eh5YPL1" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="user" type="service" id=".errored..service_locator.wypGnUQ.App\Entity\User"/>
+        <argument key="repo" type="service" id="App\Repository\UserRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.56q_u31" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.lucgzpH" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\TickController::add" type="service" id=".service_locator.DelcpaA"/>
         <argument key="App\Controller\TickController::edit" type="service" id=".service_locator.Li7T3xG"/>
         <argument key="App\Controller\UserAccountController::login" type="service" id=".service_locator.FIoyO0m"/>
-        <argument key="App\Controller\UserAccountController::profile" type="service" id=".service_locator.Txvqv4R"/>
-        <argument key="App\Controller\UserAccountController::register" type="service" id=".service_locator.czKK4py"/>
-        <argument key="App\Controller\UserAccountController::updatePassword" type="service" id=".service_locator.czKK4py"/>
-        <argument key="App\Controller\UserController::index" type="service" id=".service_locator.wypGnUQ"/>
-        <argument key="App\Controller\UserController::profile" type="service" id=".service_locator.Txvqv4R"/>
+        <argument key="App\Controller\UserAccountController::profile" type="service" id=".service_locator.FufKbwa"/>
+        <argument key="App\Controller\UserAccountController::register" type="service" id=".service_locator.ZCad3U8"/>
+        <argument key="App\Controller\UserAccountController::updatePassword" type="service" id=".service_locator.ZCad3U8"/>
+        <argument key="App\Controller\UserController::index" type="service" id=".service_locator.Eh5YPL1"/>
+        <argument key="App\Controller\UserController::login" type="service" id=".service_locator.FIoyO0m"/>
+        <argument key="App\Controller\UserController::profile" type="service" id=".service_locator.FufKbwa"/>
         <argument key="App\Controller\TickController:add" type="service" id=".service_locator.DelcpaA"/>
         <argument key="App\Controller\TickController:edit" type="service" id=".service_locator.Li7T3xG"/>
         <argument key="App\Controller\UserAccountController:login" type="service" id=".service_locator.FIoyO0m"/>
-        <argument key="App\Controller\UserAccountController:profile" type="service" id=".service_locator.Txvqv4R"/>
-        <argument key="App\Controller\UserAccountController:register" type="service" id=".service_locator.czKK4py"/>
-        <argument key="App\Controller\UserAccountController:updatePassword" type="service" id=".service_locator.czKK4py"/>
-        <argument key="App\Controller\UserController:index" type="service" id=".service_locator.wypGnUQ"/>
-        <argument key="App\Controller\UserController:profile" type="service" id=".service_locator.Txvqv4R"/>
+        <argument key="App\Controller\UserAccountController:profile" type="service" id=".service_locator.FufKbwa"/>
+        <argument key="App\Controller\UserAccountController:register" type="service" id=".service_locator.ZCad3U8"/>
+        <argument key="App\Controller\UserAccountController:updatePassword" type="service" id=".service_locator.ZCad3U8"/>
+        <argument key="App\Controller\UserController:index" type="service" id=".service_locator.Eh5YPL1"/>
+        <argument key="App\Controller\UserController:login" type="service" id=".service_locator.FIoyO0m"/>
+        <argument key="App\Controller\UserController:profile" type="service" id=".service_locator.FufKbwa"/>
       </argument>
     </service>
     <service id=".service_locator.LtnrEkg" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
@@ -5064,12 +5072,13 @@
         <argument key="doctrine.orm.default_listeners.attach_entity_listeners" type="service" id="doctrine.orm.default_listeners.attach_entity_listeners"/>
       </argument>
     </service>
-    <service id=".service_locator.0QYcW_A" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.fhpCgQy" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Repository\CategoryRepository" type="service" id="App\Repository\CategoryRepository"/>
         <argument key="App\Repository\CommentRepository" type="service" id="App\Repository\CommentRepository"/>
         <argument key="App\Repository\MediaRepository" type="service" id="App\Repository\MediaRepository"/>
+        <argument key="App\Repository\RoleRepository" type="service" id="App\Repository\RoleRepository"/>
         <argument key="App\Repository\TrickRepository" type="service" id="App\Repository\TrickRepository"/>
         <argument key="App\Repository\UpdatePasswordRepository" type="service" id="App\Repository\UpdatePasswordRepository"/>
         <argument key="App\Repository\UserRepository" type="service" id="App\Repository\UserRepository"/>
@@ -5388,12 +5397,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.56q_u31"/>
+      <argument type="service" id=".service_locator.lucgzpH"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver" public="false">
-      <argument type="service" id=".service_locator.56q_u31"/>
+      <argument type="service" id=".service_locator.lucgzpH"/>
     </service>
     <service id=".service_locator.UwRI0uT" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
@@ -5418,9 +5427,6 @@
       </argument>
     </service>
     <service id=".errored..service_locator.Li7T3xG.App\Entity\Trick" class="App\Entity\Trick"/>
-    <service id=".errored..service_locator.czKK4py.Doctrine\Common\Persistence\ObjectManager" class="Doctrine\Common\Persistence\ObjectManager"/>
-    <service id=".errored..service_locator.Txvqv4R.Doctrine\Common\Persistence\ObjectManager" class="Doctrine\Common\Persistence\ObjectManager"/>
-    <service id=".errored..service_locator.wypGnUQ.App\Entity\User" class="App\Entity\User"/>
     <service id="console.command_loader" class="Symfony\Component\Console\CommandLoader\ContainerCommandLoader" public="true">
       <argument type="service" id=".service_locator.xeINJOL"/>
       <argument type="collection">
@@ -5791,7 +5797,7 @@
     <service id="Twig\Environment" alias="twig" public="false"/>
     <service id="logger" alias="monolog.logger"/>
     <service id="Psr\Log\LoggerInterface" alias="monolog.logger" public="false"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.56q_u31"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.lucgzpH"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>

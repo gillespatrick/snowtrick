@@ -12,28 +12,26 @@ use Symfony\Component\HttpFoundation\Request;
 //use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 
 class TickController extends AbstractController
 {
 
-
-
-    
-
-
-
      
     /**
      * @Route("/trick/addtrick", name="add_trick")
+     * @IsGranted("ROLE_USER")
      * 
      */
     public function add( Trick $trick = null, Request $request, EntityManagerInterface $manager)
     {
 
             $media = new Media();
-            //$trick = new Trick();   
+            $trick = new Trick(); 
+            $user = $this->getUser();  
 
         $form = $this -> createForm(TrickType::class,$trick); 
         $form -> handleRequest($request);
@@ -58,6 +56,8 @@ class TickController extends AbstractController
             if (!$trick -> getId()) {
                 $trick -> setCreateDate(new \DateTime());
             }
+
+          //  $trick -> setUser($this -> getUser());
             $manager -> persist($trick);
             $manager -> flush();
 
@@ -78,7 +78,9 @@ class TickController extends AbstractController
 /**
      * Display the edition form
      * 
-     * @Route("/trick/{id}/edit", name = "trick_edit")
+     * @Route("/trick/{slug}/edit", name = "trick_edit")
+     * 
+     * @Security("is_granted('ROLE_USER') and user === trick.getUser()")
      * 
      * @return Response 
      */
@@ -107,9 +109,6 @@ class TickController extends AbstractController
 
 
 
-
-
-
     /**
      * @Route("/trick/{slug}", name = "showdetail")
      *
@@ -120,7 +119,6 @@ class TickController extends AbstractController
 
         $trickRepository = $this->getDoctrine()->getRepository(Trick::class);
         $trick = $trickRepository -> findOneBySlug($slug);
-        
         
 
         return $this->render('home/showDetail.html.twig', [

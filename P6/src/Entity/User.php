@@ -5,6 +5,7 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\Common\Collections\ArrayCollection;
+use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -66,10 +67,23 @@ class User implements UserInterface
      */
     private $tricks;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Role", mappedBy="users")
+     */
+    private $userRoles;
+
+    /**
+     * @var string
+     * @Gedmo\Slug(fields = {"username"})
+     * @ORM\Column(type="string", length=255)
+     */
+    private $slug_name;
+
     public function __construct()
     {
         $this->comments = new ArrayCollection();
         $this->tricks = new ArrayCollection();
+        $this->userRoles = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -190,7 +204,13 @@ class User implements UserInterface
 
     public function getRoles()
     {
-        return ['ROLE_USER'];
+
+        $roles = $this->userRoles->map(function ($role) {
+            return $role->getTitle();
+        })->toArray();
+
+        $roles[] = 'ROLE_USER';
+        return  $roles;
     }
 
 
@@ -208,4 +228,44 @@ class User implements UserInterface
      */
     public function eraseCredentials()
     { }
+
+    /**
+     * @return Collection|Role[]
+     */
+    public function getUserRoles(): Collection
+    {
+        return $this->userRoles;
+    }
+
+    public function addUserRole(Role $userRole): self
+    {
+        if (!$this->userRoles->contains($userRole)) {
+            $this->userRoles[] = $userRole;
+            $userRole->addUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeUserRole(Role $userRole): self
+    {
+        if ($this->userRoles->contains($userRole)) {
+            $this->userRoles->removeElement($userRole);
+            $userRole->removeUser($this);
+        }
+
+        return $this;
+    }
+
+    public function getSlugName(): ?string
+    {
+        return $this->slug_name;
+    }
+
+    public function setSlugName(string $slug_name): self
+    {
+        $this->slug_name = $slug_name;
+
+        return $this;
+    }
 }

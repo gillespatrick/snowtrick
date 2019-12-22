@@ -5,9 +5,9 @@
 	</button>
 
 	<div class="collapse navbar-collapse" id="navbarColor03">
-		<ul class="navbar-nav mr-auto"><li class="nav-item">
-					<a class="nav-link" href="{{path('add_trick')}}">Add Trick</a>
-				</li></ul>
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item"></li>
+		</ul>
 		<form class="form-inline my-2 my-lg-0">
 			<ul class="navbar-nav mr-auto ">
 
@@ -15,30 +15,35 @@
 					<a class="nav-link" href="{{path('home')}}">Home</a>
 				</li>
 
-				<li class="nav-item">
-					<a class="nav-link" href="{{ path ('tricks') }}">
-						Tricks
-					</a>
-				</li>
-
 
 				{% if app.user %}
 
 
-					<li class="nav-item">
-						<a class="nav-link" href="#">
-							My Profile
-						</a>
-					</li>
-
-					<li class="nav-item">
-						<a class="nav-link" href="{{path('user_account_logout')}}">Logout</a>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{app.user.username}}</a>
+						<div class="dropdown-menu dropdown-menu-right" style="">
+							<a class="dropdown-item" href="{{ path ('add_trick')}}">
+								<i class="fa fa-plus"></i>
+								Create New Trick</a>
+							<div class="dropdown-divider"></div>
+							
+								<a class="dropdown-item" href="{{path ('show_user')}}">
+								<i class="fa fa-home"></i>
+								Dashboard</a>
+								<a class="dropdown-item" href="{{path ('update_profile')}}">
+								<i class="fas fa-user-circle"></i>
+								Update Profile</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="{{ path ('logout')}}">
+								<i class="fa fa-sign-out"></i>
+								Logout</a>
+						</div>
 					</li>
 
 
 				{% else %}
 					<li class="nav-item">
-						<a class="nav-link" href="{{path ('user_account')}}">Signin</a>
+						<a class="nav-link" href="{{path ('login_user')}}">Signin</a>
 					</li>
 
 					<li class="nav-item">
