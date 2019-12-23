@@ -16,6 +16,6 @@ if (!\class_exists(srcApp_KernelDevDebugContainer::class, false)) {
 
 return new \Container4OOYKNX\srcApp_KernelDevDebugContainer([
     'container.build_hash' => '4OOYKNX',
-    'container.build_id' => '024fef4c',
-    'container.build_time' => 1577055905,
+    'container.build_id' => '5fed82c5',
+    'container.build_time' => 1577062044,
 ], __DIR__.\DIRECTORY_SEPARATOR.'Container4OOYKNX');

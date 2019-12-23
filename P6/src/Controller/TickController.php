@@ -4,12 +4,13 @@ namespace App\Controller;
 
 
 
+use App\Entity\User;
 use App\Entity\Media;
 use App\Entity\Trick;
 use App\Form\TrickType;
 use Doctrine\ORM\EntityManagerInterface;
-use Symfony\Component\HttpFoundation\Request;
 //use Doctrine\Common\Persistence\ObjectManager;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
@@ -31,7 +32,7 @@ class TickController extends AbstractController
 
             $media = new Media();
             $trick = new Trick(); 
-            $user = $this->getUser();  
+             
 
         $form = $this -> createForm(TrickType::class,$trick); 
         $form -> handleRequest($request);
@@ -57,7 +58,7 @@ class TickController extends AbstractController
                 $trick -> setCreateDate(new \DateTime());
             }
 
-          //  $trick -> setUser($this -> getUser());
+            $trick -> setUser($this -> getUser());
             $manager -> persist($trick);
             $manager -> flush();
 

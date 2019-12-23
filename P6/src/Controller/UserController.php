@@ -23,13 +23,13 @@ class UserController extends AbstractController
      */
     public function index( UserRepository $repo)
     {
-
-         //$userRepository = $this->getDoctrine()->getRepository(User::class);
-        //$user = $repo->find($slug_name);
-
-
-
         $user = $this->getUser();
+         $userRepository = $this->getDoctrine()->getRepository(User::class);
+        $user = $repo->findAll();
+
+
+
+        
         return $this->render('user/user.html.twig', [
             //  'user' => $user
             'user' => $this->getUser()
