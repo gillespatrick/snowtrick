@@ -3842,7 +3842,7 @@
       <argument type="collection"/>
       <call method="setOptions">
         <argument type="collection">
-          <argument key="login_path">user_account</argument>
+          <argument key="login_path">login_user</argument>
           <argument key="always_use_default_target_path">false</argument>
           <argument key="default_target_path">/</argument>
           <argument key="target_path_parameter">_target_path</argument>
@@ -3860,7 +3860,7 @@
       <argument type="service" id="monolog.logger.security" on-invalid="null"/>
       <call method="setOptions">
         <argument type="collection">
-          <argument key="login_path">user_account</argument>
+          <argument key="login_path">login_user</argument>
           <argument key="failure_path">null</argument>
           <argument key="failure_forward">false</argument>
           <argument key="failure_path_parameter">_failure_path</argument>
@@ -3877,7 +3877,7 @@
       <argument type="service" id="security.authentication.success_handler.main.form_login"/>
       <argument type="service" id="security.authentication.failure_handler.main.form_login"/>
       <argument type="collection">
-        <argument key="check_path">user_account</argument>
+        <argument key="check_path">login_user</argument>
         <argument key="use_forward">false</argument>
         <argument key="require_previous_session">false</argument>
         <argument key="username_parameter">_username</argument>
@@ -3893,7 +3893,7 @@
     <service id="security.authentication.form_entry_point.main" class="Symfony\Component\Security\Http\EntryPoint\FormAuthenticationEntryPoint" public="false">
       <argument type="service" id="http_kernel"/>
       <argument type="service" id="security.http_utils"/>
-      <argument>user_account</argument>
+      <argument>login_user</argument>
       <argument>false</argument>
     </service>
     <service id="security.authentication.listener.anonymous.main" class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
@@ -4949,10 +4949,11 @@
         <argument key="auth" type="service" id="security.authentication_utils"/>
       </argument>
     </service>
-    <service id=".service_locator.ZCad3U8" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.n0_F0qI" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="encoder" type="service" id="security.user_password_encoder.generic"/>
+        <argument key="mailer" type="service" id="swiftmailer.mailer.default"/>
         <argument key="manager" type="service" id="doctrine.orm.default_entity_manager"/>
       </argument>
     </service>
@@ -4962,33 +4963,51 @@
         <argument key="manager" type="service" id="doctrine.orm.default_entity_manager"/>
       </argument>
     </service>
+    <service id=".service_locator.ZCad3U8" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="encoder" type="service" id="security.user_password_encoder.generic"/>
+        <argument key="manager" type="service" id="doctrine.orm.default_entity_manager"/>
+      </argument>
+    </service>
+    <service id=".service_locator._ii3W8d" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="manager" type="service" id="doctrine.orm.default_entity_manager"/>
+        <argument key="repo" type="service" id="App\Repository\UserRepository"/>
+      </argument>
+    </service>
     <service id=".service_locator.Eh5YPL1" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="repo" type="service" id="App\Repository\UserRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.lucgzpH" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.6zhdkcv" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\TickController::add" type="service" id=".service_locator.DelcpaA"/>
         <argument key="App\Controller\TickController::edit" type="service" id=".service_locator.Li7T3xG"/>
+        <argument key="App\Controller\UserAccountController::emailValidation" type="service" id=".service_locator._ii3W8d"/>
         <argument key="App\Controller\UserAccountController::login" type="service" id=".service_locator.FIoyO0m"/>
         <argument key="App\Controller\UserAccountController::profile" type="service" id=".service_locator.FufKbwa"/>
-        <argument key="App\Controller\UserAccountController::register" type="service" id=".service_locator.ZCad3U8"/>
+        <argument key="App\Controller\UserAccountController::register" type="service" id=".service_locator.n0_F0qI"/>
         <argument key="App\Controller\UserAccountController::updatePassword" type="service" id=".service_locator.ZCad3U8"/>
         <argument key="App\Controller\UserController::index" type="service" id=".service_locator.Eh5YPL1"/>
         <argument key="App\Controller\UserController::login" type="service" id=".service_locator.FIoyO0m"/>
         <argument key="App\Controller\UserController::profile" type="service" id=".service_locator.FufKbwa"/>
+        <argument key="App\Controller\UserController::updatePassword" type="service" id=".service_locator.ZCad3U8"/>
         <argument key="App\Controller\TickController:add" type="service" id=".service_locator.DelcpaA"/>
         <argument key="App\Controller\TickController:edit" type="service" id=".service_locator.Li7T3xG"/>
+        <argument key="App\Controller\UserAccountController:emailValidation" type="service" id=".service_locator._ii3W8d"/>
         <argument key="App\Controller\UserAccountController:login" type="service" id=".service_locator.FIoyO0m"/>
         <argument key="App\Controller\UserAccountController:profile" type="service" id=".service_locator.FufKbwa"/>
-        <argument key="App\Controller\UserAccountController:register" type="service" id=".service_locator.ZCad3U8"/>
+        <argument key="App\Controller\UserAccountController:register" type="service" id=".service_locator.n0_F0qI"/>
         <argument key="App\Controller\UserAccountController:updatePassword" type="service" id=".service_locator.ZCad3U8"/>
         <argument key="App\Controller\UserController:index" type="service" id=".service_locator.Eh5YPL1"/>
         <argument key="App\Controller\UserController:login" type="service" id=".service_locator.FIoyO0m"/>
         <argument key="App\Controller\UserController:profile" type="service" id=".service_locator.FufKbwa"/>
+        <argument key="App\Controller\UserController:updatePassword" type="service" id=".service_locator.ZCad3U8"/>
       </argument>
     </service>
     <service id=".service_locator.LtnrEkg" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
@@ -5397,12 +5416,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.lucgzpH"/>
+      <argument type="service" id=".service_locator.6zhdkcv"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver" public="false">
-      <argument type="service" id=".service_locator.lucgzpH"/>
+      <argument type="service" id=".service_locator.6zhdkcv"/>
     </service>
     <service id=".service_locator.UwRI0uT" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
@@ -5797,7 +5816,7 @@
     <service id="Twig\Environment" alias="twig" public="false"/>
     <service id="logger" alias="monolog.logger"/>
     <service id="Psr\Log\LoggerInterface" alias="monolog.logger" public="false"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.lucgzpH"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.6zhdkcv"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>

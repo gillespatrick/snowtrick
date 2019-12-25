@@ -73,6 +73,16 @@ class User implements UserInterface
     private $userRoles;
 
     /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $token;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $activate;
+
+    /**
      * @var string
      * @Gedmo\Slug(fields = {"username"})
      * @ORM\Column(type="string", length=255)
@@ -265,6 +275,30 @@ class User implements UserInterface
     public function setSlugName(string $slug_name): self
     {
         $this->slug_name = $slug_name;
+
+        return $this;
+    }
+
+    public function getToken(): ?string
+    {
+        return $this->token;
+    }
+
+    public function setToken(string $token): self
+    {
+        $this->token = $token;
+
+        return $this;
+    }
+
+    public function getActivate(): ?bool
+    {
+        return $this->activate;
+    }
+
+    public function setActivate(bool $activate): self
+    {
+        $this->activate = $activate;
 
         return $this;
     }

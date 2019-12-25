@@ -20,8 +20,10 @@ security:
             #Authentification des user
             provider: in_db
             form_login:
-                login_path: user_account
-                check_path: user_account
+                login_path: login_user
+                #login_path: user_account
+                #default_target_path: show_user
+                check_path: login_user
             logout:
                 path: logout
                 target: tricks
