@@ -85,7 +85,7 @@ class UserAccountController extends AbstractController
             $manager->flush();
 
             $message = (new \Swift_Message('Validating your SnowTricks account'))
-                ->setFrom('noreply_admin@snowtrick.com')
+                ->setFrom('ngondogillespatrick@gmail.com')
                 ->setTo($user->getEmail())
                 ->setBody(
                     $this->renderView('user_account/validation.html.twig', [
@@ -194,8 +194,9 @@ class UserAccountController extends AbstractController
     public function emailValidation(UserRepository $repo, $username, $token, EntityManagerInterface $manager)
     {
         $user = $repo->findOneByUsername($username);
+        # if($token != null && $token === $user->getToken())
 
-        if($token != null && $token === $user->getToken())
+        if($token === $user->getToken())
         {
             $user->setActivate(true);
             $manager->persist($user);
