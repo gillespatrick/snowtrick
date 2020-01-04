@@ -7170,7 +7170,8 @@
             "ZendFramework",
             "code",
             "zf"
-        ]
+        ],
+        "abandoned": "laminas/laminas-code"
     },
     {
         "name": "zendframework/zend-eventmanager",
@@ -7226,6 +7227,7 @@
             "eventmanager",
             "events",
             "zf2"
-        ]
+        ],
+        "abandoned": "laminas/laminas-eventmanager"
     }
 ]
