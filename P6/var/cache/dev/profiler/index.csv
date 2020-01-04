@@ -21941,3 +21941,16 @@ d15ded,127.0.0.1,GET,http://127.0.0.1:8000/webfonts/fa-brands-400.woff,157765443
 2cff57,127.0.0.1,GET,http://127.0.0.1:8000/webfonts/fa-regular-400.ttf,1577654435,,404
 415f93,127.0.0.1,GET,http://127.0.0.1:8000/webfonts/fa-brands-400.ttf,1577654435,e1feda,200
 e1feda,127.0.0.1,GET,http://127.0.0.1:8000/webfonts/fa-brands-400.ttf,1577654435,,404
+549404,127.0.0.1,GET,http://127.0.0.1:8000/,1578149466,,200
+6b24f8,127.0.0.1,GET,http://127.0.0.1:8000/webfonts/fa-regular-400.woff2,1578149467,a4a85b,200
+a4a85b,127.0.0.1,GET,http://127.0.0.1:8000/webfonts/fa-regular-400.woff2,1578149467,,404
+574cd3,127.0.0.1,GET,http://127.0.0.1:8000/webfonts/fa-brands-400.woff2,1578149467,0e07e6,200
+0e07e6,127.0.0.1,GET,http://127.0.0.1:8000/webfonts/fa-brands-400.woff2,1578149467,,404
+a85541,127.0.0.1,GET,http://127.0.0.1:8000/webfonts/fa-regular-400.woff,1578149467,3e4327,200
+3e4327,127.0.0.1,GET,http://127.0.0.1:8000/webfonts/fa-regular-400.woff,1578149467,,404
+b827f8,127.0.0.1,GET,http://127.0.0.1:8000/webfonts/fa-brands-400.woff,1578149468,cb3c4b,200
+cb3c4b,127.0.0.1,GET,http://127.0.0.1:8000/webfonts/fa-brands-400.woff,1578149468,,404
+e7210f,127.0.0.1,GET,http://127.0.0.1:8000/webfonts/fa-regular-400.ttf,1578149468,ef0b4a,200
+ef0b4a,127.0.0.1,GET,http://127.0.0.1:8000/webfonts/fa-regular-400.ttf,1578149468,,404
+e65343,127.0.0.1,GET,http://127.0.0.1:8000/webfonts/fa-brands-400.ttf,1578149468,0ad0fa,200
+0ad0fa,127.0.0.1,GET,http://127.0.0.1:8000/webfonts/fa-brands-400.ttf,1578149468,,404
