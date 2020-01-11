@@ -16,10 +16,7 @@ use function var_export;
  */
 class RemoteObjectMethod extends MethodGenerator
 {
-    /**
-     *
-     * @return self|static
-     */
+    /** @return self|static */
     public static function generateMethod(
         MethodReflection $originalMethod,
         PropertyGenerator $adapterProperty,

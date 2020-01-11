@@ -14,10 +14,6 @@ use Zend\Code\Generator\PropertyGenerator;
 
 /**
  * The `staticProxyConstructor` implementation for remote object proxies
- *
- * @author Vincent Blanchon <blanchon.vincent@gmail.com>
- * @author Marco Pivetta <ocramius@gmail.com>
- * @license MIT
  */
 class StaticProxyConstructor extends MethodGenerator
 {
@@ -41,8 +37,8 @@ class StaticProxyConstructor extends MethodGenerator
         );
 
         $body = 'static $reflection;' . "\n\n"
-            . '$reflection = $reflection ?? $reflection = new \ReflectionClass(__CLASS__);' . "\n"
-            . '$instance = $reflection->newInstanceWithoutConstructor();' . "\n\n"
+            . '$reflection = $reflection ?? new \ReflectionClass(__CLASS__);' . "\n"
+            . '$instance   = $reflection->newInstanceWithoutConstructor();' . "\n\n"
             . '$instance->' . $adapterName . ' = $' . $adapterName . ";\n\n"
             . UnsetPropertiesGenerator::generateSnippet(Properties::fromReflectionClass($originalClass), 'instance');
 

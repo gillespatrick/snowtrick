@@ -6,25 +6,19 @@ namespace ProxyManager\ProxyGenerator\PropertyGenerator;
 
 use ProxyManager\Generator\Util\IdentifierSuffixer;
 use ProxyManager\ProxyGenerator\Util\Properties;
+use Zend\Code\Generator\Exception\InvalidArgumentException;
 use Zend\Code\Generator\PropertyGenerator;
 
 /**
  * Map of public properties that exist in the class being proxied
- *
- * @author Marco Pivetta <ocramius@gmail.com>
- * @license MIT
  */
 class PublicPropertiesMap extends PropertyGenerator
 {
-    /**
-     * @var bool[]
-     */
-    private $publicProperties = [];
+    /** @var array<string, bool> */
+    private array $publicProperties = [];
 
     /**
-     * @param Properties $properties
-     *
-     * @throws \Zend\Code\Generator\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function __construct(Properties $properties)
     {
